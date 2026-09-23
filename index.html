@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ursprünge der Philosophie – Lesehilfe</title>
+<title>Henning Franzen – Philosophie und Mythos</title>
 <style>
 :root{
   --navy:#133248; --blue:#5b86a4; --light:#a4c0d0; --pale:#edf4f7;
@@ -18,6 +18,7 @@ body{
   line-height:1.6
 }
 button{font:inherit;cursor:pointer}
+a{color:var(--navy);overflow-wrap:anywhere}
 .topline{height:8px;background:linear-gradient(90deg,var(--navy) 0 34%,var(--blue) 34% 70%,var(--light) 70%)}
 header{background:var(--paper);border-bottom:1px solid var(--line)}
 .header-inner{
@@ -27,31 +28,20 @@ header{background:var(--paper);border-bottom:1px solid var(--line)}
 .school-logo{width:min(360px,46vw);height:auto;display:block}
 .header-copy{border-left:5px solid var(--navy);padding-left:22px}
 .eyebrow{margin:0 0 3px;color:var(--blue);font-size:.82rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-h1{margin:0;color:var(--navy);font-size:clamp(1.6rem,3vw,2.35rem);line-height:1.08}
+h1{margin:0;color:var(--navy);font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.08}
 .subtitle{margin:8px 0 0;color:var(--muted)}
 main{max-width:950px;margin:auto;padding:28px 20px 72px}
 .intro{
-  background:var(--navy);color:white;border-radius:var(--radius);padding:20px 24px;
-  box-shadow:var(--shadow);margin-bottom:18px
+  background:var(--navy);color:white;border-radius:var(--radius);
+  padding:20px 24px;box-shadow:var(--shadow);margin-bottom:20px
 }
 .intro p{margin:0;color:#eef6fa}
-.nav{
-  display:flex;flex-wrap:wrap;gap:9px;margin-top:14px
-}
-.nav a{
-  color:white;text-decoration:none;border:1px solid rgba(255,255,255,.28);
-  border-radius:999px;padding:7px 12px;font-weight:800;font-size:.9rem
-}
-.nav a:hover{background:rgba(255,255,255,.12)}
-.philosopher{
+.text-card,.sources-card{
   background:white;border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--shadow);margin:22px 0;overflow:hidden
+  box-shadow:var(--shadow);overflow:hidden;margin:20px 0
 }
-.philosopher-head{
-  padding:18px 22px;background:var(--pale);border-bottom:1px solid var(--line)
-}
-.philosopher-head h2{margin:0;color:var(--navy);font-size:1.4rem}
-.philosopher-head p{margin:5px 0 0;color:var(--muted);font-size:.95rem}
+.text-head{padding:18px 22px;background:var(--pale);border-bottom:1px solid var(--line)}
+.text-head h2{margin:0;color:var(--navy);font-size:1.3rem}
 .chunk{padding:22px}
 .chunk+.chunk{border-top:1px solid var(--line)}
 .original-label{
@@ -85,8 +75,15 @@ main{max-width:950px;margin:auto;padding:28px 20px 72px}
 }
 .word-row strong{color:var(--navy)}
 .word-es{color:var(--muted);font-size:.93rem}
-.source{
-  padding:0 22px 20px;color:var(--muted);font-size:.86rem
+.source-line{padding:0 22px 20px;color:var(--muted);font-size:.86rem}
+.sources-card{padding:22px}
+.sources-card h2{margin:0 0 8px;color:var(--navy);font-size:1.2rem}
+.sources-card p{margin:0 0 12px;color:var(--muted)}
+.sources-card ul{margin:0;padding-left:20px}
+.sources-card li{margin:8px 0}
+.note{
+  margin-top:14px;padding:12px 14px;background:#eef6f0;border:1px solid #c8dccb;
+  border-radius:10px;font-size:.9rem
 }
 .term-popover{
   position:fixed;z-index:50;left:50%;bottom:18px;transform:translateX(-50%);
@@ -108,10 +105,9 @@ main{max-width:950px;margin:auto;padding:28px 20px 72px}
   main{padding-left:14px;padding-right:14px}
 }
 @media print{
-  body{background:white}.topline,.help-buttons,.term-popover,.nav{display:none!important}
-  header,.philosopher{box-shadow:none}
+  body{background:white}.topline,.help-buttons,.term-popover{display:none!important}
+  header,.text-card,.sources-card{box-shadow:none}
   .help-panel{display:block!important}
-  .philosopher{break-inside:auto}
 }
 </style>
 </head>
@@ -122,8 +118,8 @@ main{max-width:950px;margin:auto;padding:28px 20px 72px}
     <img class="school-logo" alt="Humboldt-Gymnasium Düsseldorf" src="data:image/png;base64,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">
     <div class="header-copy">
       <p class="eyebrow">Philosophie EF · Interaktive Lesehilfe</p>
-      <h1>Wo liegen die Ursprünge der Philosophie?</h1>
-      <p class="subtitle">Aristoteles · René Descartes · Karl Jaspers</p>
+      <h1>Henning Franzen: Philosophie und Mythos</h1>
+      <p class="subtitle">Text A · Originaltext · Worterklärungen · Einfaches Deutsch · Español</p>
     </div>
   </div>
 </header>
@@ -131,266 +127,95 @@ main{max-width:950px;margin:auto;padding:28px 20px 72px}
 <main>
   <section class="intro">
     <p>Lies zuerst den deutschen Originaltext. Nutze bei Bedarf die Worterklärungen, danach „Einfaches Deutsch“ und erst dann die spanische Erklärung.</p>
-    <nav class="nav" aria-label="Texte">
-      <a href="#aristoteles">Aristoteles</a>
-      <a href="#descartes">Descartes</a>
-      <a href="#jaspers">Jaspers</a>
-    </nav>
   </section>
 
-  
-    <section class="philosopher" id="aristoteles">
-      <div class="philosopher-head">
-        <h2>Aristoteles (384–322 v. Chr.): ___________________ als Ursprung des Philosophierens</h2>
+  <article class="text-card">
+    <div class="text-head">
+      <h2>Henning Franzen: Philosophie und Mythos · Text A</h2>
+    </div>
+    
+    <section class="chunk">
+      <span class="original-label">Originaltext · Abschnitt 1</span>
+      <p class="original">Die Äußerungen der alten Dame in der Geschichte „Die Welt auf der Schildkröte" zeigen, dass weitere Fragen an ihre „Erklärung" nicht zulässig sind. Es stehen eben lauter Schildkröten aufeinander. Punkt. Keine weiteren Fragen. Dieses Moment der <button class="term" data-term="weiteren Unbefragbarkeit">weiteren Unbefragbarkeit</button> unterscheidet mythische Erzählungen grundsätzlich von <button class="term" data-term="wissenschaftlichen Erklärungen">wissenschaftlichen Erklärungen</button> und <button class="term" data-term="philosophischen Begründungen">philosophischen Begründungen</button>. Zwar müssen auch Wissenschaftler und Philosophen <button class="term" data-term="Annahmen">Annahmen</button> machen, auf deren Grundlage sie ihre <button class="term" data-term="Theorien">Theorien</button> entwickeln. Aber diese Annahmen dürfen grundsätzlich immer weiter <button class="term" data-term="infrage stellen">infrage gestellt werden</button> (Wilhelm Weischedel hat dies als <button class="term" data-term="radikales Fragen">radikales Fragen</button> bezeichnet). Wenn man dagegen beispielsweise die Entstehung der Welt <button class="term" data-term="mythisch erklären">mythisch erklärt</button>, etwa als von einem Gott oder von mehreren Göttern geschaffen, dann ist die Frage nach dem Ursprung Gottes innerhalb des Mythos nicht mehr zulässig, zumindest nicht mehr beantwortbar. Gott existiert eben außerhalb von Raum und Zeit, dem <button class="term" data-term="beschränkten Verstand">beschränkten Verstand</button> der unvollkommenen Menschen nur bedingt zugänglich. Keine weiteren Fragen.</p>
+      <div class="help-buttons">
+        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
+        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
+        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
       </div>
-      
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 1</span>
-          <p class="original"><button class="term" data-term="Staunen">Staunen</button> war den Menschen jetzt wie vormals der Anfang des Philosophierens, indem sie anfangs über die nächstliegenden <button class="term" data-term="Unerklärlichkeiten">Unerklärlichkeiten</button> staunten, dann allmählich fortschritten und auch über Größeres Fragen aufwarfen; z. B. über die Erscheinungen am Mond und der Sonne und den <button class="term" data-term="Gestirne">Gestirnen</button> [= Sternen] und über die Entstehung des <button class="term" data-term="All">Alls</button>. Wer sich aber über eine Sache fragt und verwundert, der glaubt sie nicht zu kennen.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Staunen</strong><div>Sich über etwas wundern und dadurch Fragen stellen.</div><div class="word-es" lang="es">asombro / admiración</div></div><div class="word-row"><strong>Unerklärlichkeiten</strong><div>Dinge oder Vorgänge, für die man noch keine Erklärung hat.</div><div class="word-es" lang="es">cosas o fenómenos que todavía no se pueden explicar</div></div><div class="word-row"><strong>Gestirne</strong><div>Himmelskörper, zum Beispiel Sterne, Sonne oder Mond.</div><div class="word-es" lang="es">astros / cuerpos celestes</div></div><div class="word-row"><strong>All</strong><div>Das gesamte Universum.</div><div class="word-es" lang="es">universo</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Menschen beginnen zu philosophieren, wenn sie über etwas staunen, das sie nicht erklären können. Aus kleinen Fragen entstehen größere Fragen. Wer staunt und fragt, merkt zugleich: Ich weiß etwas noch nicht.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Para Aristóteles, filosofar comienza con el asombro o la admiración. Una persona encuentra algo que no sabe explicar, reconoce que no lo conoce y empieza a hacer preguntas. De preguntas cercanas puede pasar a preguntas más grandes sobre el mundo y el universo.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 2</span>
-          <p class="original">[...] Wenn sie daher philosophierten, um der <button class="term" data-term="Unwissenheit">Unwissenheit</button> zu entgehen, so suchten sie das <button class="term" data-term="Erkennen">Erkennen</button> offenbar des <button class="term" data-term="Wissens">Wissens</button> wegen, nicht um irgendeines <button class="term" data-term="Nutzen">Nutzens</button> willen.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Unwissenheit</strong><div>Zustand, etwas nicht zu wissen.</div><div class="word-es" lang="es">ignorancia</div></div><div class="word-row"><strong>Erkennen</strong><div>Etwas verstehen oder Wissen darüber gewinnen.</div><div class="word-es" lang="es">conocer / llegar al conocimiento</div></div><div class="word-row"><strong>Wissen</strong><div>Begründetes Erkennen oder Kenntnis.</div><div class="word-es" lang="es">saber / conocimiento</div></div><div class="word-row"><strong>Nutzen</strong><div>Praktischer Vorteil oder Zweck.</div><div class="word-es" lang="es">utilidad / provecho</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Die Menschen philosophieren, weil sie nicht unwissend bleiben wollen. Sie möchten verstehen und wissen. Nach Aristoteles wird dieses Wissen nicht nur gesucht, weil es praktisch nützlich ist.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Las personas filosofan para salir de la ignorancia. Buscan conocimiento por el deseo de saber, no porque ese conocimiento tenga que ser útil para otra cosa.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 3</span>
-          <p class="original">Das bestätigt auch der Verlauf der [Geschehnisse]; denn als so ziemlich alles zur <button class="term" data-term="Annehmlichkeit">Annehmlichkeit</button> und (höheren) Lebensführung Nötige vorhanden war, da begann man diese Art der <button class="term" data-term="Einsicht">Einsicht</button> zu suchen. Daraus erhellt also, dass sie nicht um irgendeines willen suchen, sondern wie wir den Menschen frei nennen, der um seiner selbst willen, nicht um eines anderen willen ist, so auch diese <button class="term" data-term="Wissenschaft">Wissenschaft</button> als allein unter allen <button class="term" data-term="freie Wissenschaft">freie</button>; denn sie allein ist <button class="term" data-term="um ihrer selbst willen">um ihrer selbst willen</button>.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Annehmlichkeit</strong><div>Etwas, das das Leben angenehmer oder bequemer macht.</div><div class="word-es" lang="es">comodidad / bienestar</div></div><div class="word-row"><strong>Einsicht</strong><div>Tieferes Verstehen eines Zusammenhangs.</div><div class="word-es" lang="es">comprensión / conocimiento</div></div><div class="word-row"><strong>Wissenschaft</strong><div>Geordnetes und begründetes Wissen.</div><div class="word-es" lang="es">ciencia / saber sistemático</div></div><div class="word-row"><strong>freie Wissenschaft</strong><div>Eine Wissenschaft, die nicht bloß einem anderen praktischen Zweck dient.</div><div class="word-es" lang="es">ciencia libre</div></div><div class="word-row"><strong>um ihrer selbst willen</strong><div>Etwas wird nicht als Mittel für etwas anderes getan, sondern weil es selbst wertvoll ist.</div><div class="word-es" lang="es">por sí mismo / por el saber mismo</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Aristoteles sagt: Erst als die wichtigsten Dinge für das Leben vorhanden waren, suchten Menschen diese besondere Form des Wissens. Philosophie ist deshalb für ihn „frei“: Sie dient nicht einem anderen Zweck. Man philosophiert, weil man verstehen will.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Aristóteles considera la filosofía una ciencia «libre» porque no está subordinada a una utilidad externa. Se busca el saber por sí mismo. La filosofía tiene su finalidad en el conocimiento mismo.</p>
-          </div>
-        </div>
-      <div class="source"><strong>Quelle:</strong> Aristoteles: Metaphysik. Übersetzt von Hermann Bonitz. Reinbek bei Hamburg: Rowohlt 1994, 982c–d.</div>
-    </section>
-    <section class="philosopher" id="descartes">
-      <div class="philosopher-head">
-        <h2>René Descartes (1596–1650): ___________________ als Ursprung des Philosophierens</h2>
+      <div class="help-panel" data-help="words">
+        <h3>Worterklärungen</h3>
+        <div class="word-list"><div class="word-row"><strong>weitere Unbefragbarkeit</strong><div>Der Punkt, an dem eine Erklärung keine weiteren Fragen mehr zulässt.</div><div class="word-es" lang="es">imposibilidad de seguir cuestionando; punto en el que ya no se admiten más preguntas.</div></div><div class="word-row"><strong>wissenschaftliche Erklärungen</strong><div>Erklärungen, die mit überprüfbaren Gründen, Modellen und Theorien arbeiten.</div><div class="word-es" lang="es">explicaciones científicas.</div></div><div class="word-row"><strong>philosophische Begründungen</strong><div>Versuche, eine Behauptung durch nachvollziehbare Gründe zu rechtfertigen.</div><div class="word-es" lang="es">fundamentaciones o justificaciones filosóficas.</div></div><div class="word-row"><strong>Annahmen</strong><div>Voraussetzungen, von denen eine Theorie oder Argumentation zunächst ausgeht.</div><div class="word-es" lang="es">supuestos / presupuestos.</div></div><div class="word-row"><strong>Theorien</strong><div>Systematisch verbundene Aussagen, mit denen etwas erklärt oder beschrieben wird.</div><div class="word-es" lang="es">teorías.</div></div><div class="word-row"><strong>infrage stellen</strong><div>Prüfen, ob etwas wirklich stimmt oder ausreichend begründet ist.</div><div class="word-es" lang="es">cuestionar / poner en cuestión.</div></div><div class="word-row"><strong>radikales Fragen</strong><div>Weiterfragen bis zu den grundlegenden Voraussetzungen einer Behauptung oder Erklärung.</div><div class="word-es" lang="es">cuestionamiento radical; preguntar hasta llegar a los supuestos fundamentales.</div></div><div class="word-row"><strong>mythisch erklären</strong><div>Etwas mithilfe einer mythischen Erzählung deuten oder erklären.</div><div class="word-es" lang="es">explicar de forma mítica.</div></div><div class="word-row"><strong>beschränkter Verstand</strong><div>Die begrenzte menschliche Fähigkeit zu verstehen und zu erkennen.</div><div class="word-es" lang="es">entendimiento humano limitado.</div></div></div>
       </div>
-      
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 1</span>
-          <p class="original">Schon vor einer Reihe von Jahren habe ich bemerkt, wie viel <button class="term" data-term="Falsches">Falsches</button> ich in meiner Jugend habe gelten lassen und wie <button class="term" data-term="zweifelhaft">zweifelhaft</button> alles ist, was ich hernach [= seitdem] darauf aufbaute, dass ich daher einmal im Leben alles <button class="term" data-term="Umsturz">von Grund aus umstoßen</button> und von den ersten <button class="term" data-term="Grundlagen">Grundlagen</button> an neu beginnen müsse, wenn ich jemals für etwas <button class="term" data-term="Unerschütterliches">Unerschütterliches</button> und Bleibendes in den Wissenschaften festen Halt schaffen wollte.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Falsches</strong><div>Etwas, das nicht wahr ist.</div><div class="word-es" lang="es">algo falso</div></div><div class="word-row"><strong>zweifelhaft</strong><div>Nicht sicher; es gibt Gründe, die Wahrheit infrage zu stellen.</div><div class="word-es" lang="es">dudoso</div></div><div class="word-row"><strong>Umsturz</strong><div>Hier: die bisherigen Meinungen radikal aufgeben und neu prüfen.</div><div class="word-es" lang="es">derribo / revisión radical de las opiniones</div></div><div class="word-row"><strong>Grundlagen</strong><div>Die ersten Annahmen, auf denen weiteres Wissen aufbaut.</div><div class="word-es" lang="es">fundamentos / bases</div></div><div class="word-row"><strong>Unerschütterliches</strong><div>Etwas vollkommen Sicheres, das nicht ins Wanken gebracht werden kann.</div><div class="word-es" lang="es">algo firme e indudable</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Descartes merkt: Manche Dinge, die er früher für wahr hielt, waren falsch. Wenn die Grundlage falsch oder unsicher ist, können auch spätere Überzeugungen unsicher sein. Deshalb will er ganz von vorne anfangen und eine sichere Grundlage für Wissen finden.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Descartes descubre que muchas opiniones que antes aceptaba como verdaderas eran falsas o dudosas. Si el fundamento es inseguro, también lo que se construye sobre él puede ser inseguro. Por eso quiere empezar de nuevo desde los fundamentos y buscar algo firme.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 2</span>
-          <p class="original">Indessen schien mir dies ein <button class="term" data-term="gewaltiges Unternehmen">gewaltiges Unternehmen</button> zu sein, und ich wartete daher dasjenige reifere Alter ab, dem keines mehr folgen würde, das geeigneter wäre, sich der Wissenschaften gründlich anzunehmen. [...] So habe ich denn heute zur rechten Zeit meine Gedanken aller Sorgen entledigt, mir ungestörte <button class="term" data-term="Muße">Muße</button> in einsamer Zurückgezogenheit verschafft und werde endlich ernsthaft und unbeschwert zu diesem allgemeinen <button class="term" data-term="Umsturz">Umsturz</button> meiner Meinungen schreiten.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>gewaltiges Unternehmen</strong><div>Eine sehr große und schwierige Aufgabe.</div><div class="word-es" lang="es">una empresa muy grande y difícil</div></div><div class="word-row"><strong>Muße</strong><div>Freie, ungestörte Zeit zum Denken.</div><div class="word-es" lang="es">tiempo libre y tranquilo para reflexionar</div></div><div class="word-row"><strong>Umsturz</strong><div>Hier: die bisherigen Meinungen radikal aufgeben und neu prüfen.</div><div class="word-es" lang="es">derribo / revisión radical de las opiniones</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Descartes hält seine Aufgabe für sehr groß. Deshalb will er sie bewusst und konzentriert durchführen. Er zieht sich zurück, nimmt sich Zeit und beginnt, seine bisherigen Meinungen systematisch infrage zu stellen.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Descartes considera este proyecto muy difícil. Por eso busca tranquilidad y tiempo para examinar sus opiniones de manera sistemática. Su objetivo es revisar radicalmente aquello que hasta entonces había aceptado.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 3</span>
-          <p class="original">Dazu wird es indessen nicht nötig sein zu zeigen, dass sie alle falsch sind, denn das würde ich wohl niemals erreichen können; da es jedoch nur vernünftig ist, bei dem nicht ganz <button class="term" data-term="Gewissen">Gewissen</button> und <button class="term" data-term="Unzweifelhaften">Unzweifelhaften</button> ebenso sorgsam seine <button class="term" data-term="Zustimmung zurückhalten">Zustimmung zurückzuhalten</button> wie bei offenbar Falschem, so wird es, [um] sie alle zurückzuweisen, genügen, wenn ich in einer jeden irgendeinen <button class="term" data-term="Grund zu zweifeln">Grund zu zweifeln</button> antreffe.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Gewisses</strong><div>Etwas Sicheres.</div><div class="word-es" lang="es">algo cierto / seguro</div></div><div class="word-row"><strong>Unzweifelhaftes</strong><div>Etwas, an dem kein begründeter Zweifel besteht.</div><div class="word-es" lang="es">indudable</div></div><div class="word-row"><strong>Zustimmung zurückhalten</strong><div>Eine Aussage vorläufig nicht als wahr akzeptieren.</div><div class="word-es" lang="es">suspender el asentimiento</div></div><div class="word-row"><strong>Grund zu zweifeln</strong><div>Ein Argument oder Anlass, der eine Überzeugung unsicher macht.</div><div class="word-es" lang="es">motivo / razón para dudar</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Descartes muss nicht beweisen, dass jede einzelne Meinung falsch ist. Es reicht, wenn er einen vernünftigen Grund zum Zweifeln findet. Solange etwas nicht sicher ist, will er es noch nicht als wahr akzeptieren.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Descartes no necesita demostrar que cada opinión es falsa. Le basta encontrar un motivo para dudar. Si algo no es completamente seguro, decide suspender el asentimiento: todavía no lo acepta como verdadero.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 4</span>
-          <p class="original">Auch brauche ich sie deswegen nicht alle einzeln durchzugehen, was eine endlose Arbeit wäre; ich werde vielmehr, da bei <button class="term" data-term="Fundamente">untergrabenen Fundamenten</button> alles darauf Gebaute von selbst zusammenstürzt, den Angriff sogleich auf eben die <button class="term" data-term="Prinzipien">Prinzipien</button> richten, auf die sich alle meine früheren Meinungen stützen.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Fundamente</strong><div>Bildlich: die grundlegenden Überzeugungen, auf denen andere Meinungen aufbauen.</div><div class="word-es" lang="es">cimientos / fundamentos</div></div><div class="word-row"><strong>Prinzipien</strong><div>Grundlegende Annahmen oder Ausgangspunkte des Denkens.</div><div class="word-es" lang="es">principios</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Descartes benutzt ein Bild aus dem Bauen: Wenn ein Fundament nicht trägt, fällt auch das Gebäude darüber. Deshalb prüft er nicht jede Meinung einzeln. Er untersucht die grundlegenden Prinzipien, auf denen viele Meinungen beruhen.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Descartes utiliza la imagen de un edificio: si se derrumban los cimientos, también cae lo construido encima. Por eso examina los principios fundamentales en lugar de revisar una por una todas sus opiniones.</p>
-          </div>
-        </div>
-      <div class="source"><strong>Quelle:</strong> René Descartes: Meditationen über die Erste Philosophie. Erste Meditation. In: Philosophische Schriften in einem Band. Übersetzt von Lüder Gäbe, Heinrich Springmeyer und Hans Günter Zekl. Hamburg: Meiner 1996, S. 31.</div>
-    </section>
-    <section class="philosopher" id="jaspers">
-      <div class="philosopher-head">
-        <h2>Karl Jaspers (1883–1969): ___________________ als Ursprung des Philosophierens</h2>
+      <div class="help-panel" data-help="simple">
+        <h3>Einfaches Deutsch</h3>
+        <p>Franzen beschreibt einen wichtigen Unterschied: Ein Mythos kann an einen Punkt kommen, an dem nicht mehr weitergefragt wird. Wissenschaft und Philosophie brauchen zwar ebenfalls Voraussetzungen. Diese Voraussetzungen dürfen aber grundsätzlich wieder geprüft und infrage gestellt werden. Philosophie kann deshalb immer weiter nach Gründen fragen. In einem Mythos kann dagegen zum Beispiel ein Gott als letzte Erklärung für die Entstehung der Welt stehen; die Frage nach dem Ursprung dieses Gottes wird innerhalb der Erzählung nicht mehr beantwortet.</p>
       </div>
-      
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 1</span>
-          <p class="original">Wir sind immer in <button class="term" data-term="Situationen">Situationen</button>. Die Situationen wandeln sich, Gelegenheiten treten auf. Wenn sie versäumt werden, kehren sie nicht wieder. Ich kann selber an der Veränderung der Situation arbeiten. Aber es gibt Situationen, die in ihrem Wesen bleiben, auch wenn ihre augenblickliche Erscheinung anders wird und ihre überwältigende Macht sich in Schleier hüllt.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Situationen</strong><div>Konkrete Lebenslagen, in denen wir uns befinden.</div><div class="word-es" lang="es">situaciones</div></div><div class="word-row"><strong>Grundsituationen</strong><div>Grundlegende Situationen des menschlichen Lebens.</div><div class="word-es" lang="es">situaciones fundamentales</div></div><div class="word-row"><strong>Grenzsituationen</strong><div>Unvermeidbare Grundsituationen, über die wir nicht einfach hinauskommen.</div><div class="word-es" lang="es">situaciones límite</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Unser Leben besteht immer aus Situationen. Viele Situationen können sich verändern, und wir können manchmal selbst etwas verändern. Jaspers sagt aber: Es gibt auch grundlegende Situationen, die zum menschlichen Leben gehören und nicht einfach beseitigt werden können.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Siempre vivimos dentro de situaciones. Muchas pueden cambiar y nosotros podemos actuar sobre ellas. Pero Jaspers distingue también situaciones fundamentales que pertenecen a la existencia humana y que no podemos simplemente eliminar.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 2</span>
-          <p class="original">Ich muss <button class="term" data-term="Tod">sterben</button>, ich muss <button class="term" data-term="Leiden">leiden</button>, ich muss <button class="term" data-term="Kampf">kämpfen</button>, ich bin dem <button class="term" data-term="Zufall">Zufall</button> unterworfen, ich verstricke mich unausweichlich in <button class="term" data-term="Schuld">Schuld</button>. Diese <button class="term" data-term="Grundsituationen">Grundsituationen</button> unseres <button class="term" data-term="Daseins">Daseins</button> nennen wir <button class="term" data-term="Grenzsituationen">Grenzsituationen</button>. Das heißt, es sind Situationen, über die wir nicht hinaus können, die wir nicht ändern können.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Tod</strong><div>Die eigene Sterblichkeit als unausweichliche Grenze des Lebens.</div><div class="word-es" lang="es">muerte</div></div><div class="word-row"><strong>Leiden</strong><div>Schmerz, Verlust oder anderes schweres Erleben.</div><div class="word-es" lang="es">sufrimiento / padecimiento</div></div><div class="word-row"><strong>Kampf</strong><div>Unvermeidbare Auseinandersetzung oder Konflikt.</div><div class="word-es" lang="es">lucha</div></div><div class="word-row"><strong>Zufall</strong><div>Ereignisse, die nicht vollständig von uns kontrolliert oder geplant sind.</div><div class="word-es" lang="es">azar</div></div><div class="word-row"><strong>Schuld</strong><div>Verantwortung für eigenes Handeln oder Unterlassen.</div><div class="word-es" lang="es">culpa</div></div><div class="word-row"><strong>Grundsituationen</strong><div>Grundlegende Situationen des menschlichen Lebens.</div><div class="word-es" lang="es">situaciones fundamentales</div></div><div class="word-row"><strong>Dasein</strong><div>Hier: unser konkretes menschliches Leben und Existieren.</div><div class="word-es" lang="es">existencia / vida humana concreta</div></div><div class="word-row"><strong>Grenzsituationen</strong><div>Unvermeidbare Grundsituationen, über die wir nicht einfach hinauskommen.</div><div class="word-es" lang="es">situaciones límite</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Grenzsituationen sind Erfahrungen, die kein Mensch vollständig vermeiden oder abschaffen kann. Jaspers nennt Tod, Leiden, Kampf, Zufall und Schuld. Sie zeigen uns Grenzen unseres Lebens und unserer Kontrolle.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Las situaciones límite son experiencias que no podemos eliminar por completo: la muerte, el sufrimiento, la lucha, el azar y la culpa. Nos confrontan con límites fundamentales de nuestra existencia y de nuestro control.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 3</span>
-          <p class="original">Das <button class="term" data-term="Bewusstwerden">Bewusstwerden</button> dieser Grenzsituationen ist nach dem <button class="term" data-term="Staunen">Staunen</button> und dem <button class="term" data-term="Zweifel">Zweifel</button> der tiefere <button class="term" data-term="Ursprung">Ursprung</button> der Philosophie. Im bloßen Dasein weichen wir oft vor ihnen aus, indem wir die Augen schließen und leben, als ob sie nicht wären. Wir vergessen, dass wir sterben müssen, vergessen unser <button class="term" data-term="Schuldigsein">Schuldigsein</button> und unser <button class="term" data-term="Preisgegebensein">Preisgegebensein</button> an den Zufall.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Bewusstwerden</strong><div>Etwas ausdrücklich erkennen und sich darüber klar werden.</div><div class="word-es" lang="es">tomar conciencia / hacerse consciente</div></div><div class="word-row"><strong>Staunen</strong><div>Sich über etwas wundern und dadurch Fragen stellen.</div><div class="word-es" lang="es">asombro / admiración</div></div><div class="word-row"><strong>Zweifel</strong><div>Unsicherheit darüber, ob etwas wirklich wahr oder sicher ist.</div><div class="word-es" lang="es">duda</div></div><div class="word-row"><strong>Ursprung</strong><div>Hier: eine grundlegende Erfahrung, aus der Philosophieren entstehen kann.</div><div class="word-es" lang="es">origen</div></div><div class="word-row"><strong>Schuldigsein</strong><div>Das Bewusstsein, in Schuld geraten zu können oder schuldig geworden zu sein.</div><div class="word-es" lang="es">ser culpable / conciencia de culpa</div></div><div class="word-row"><strong>Preisgegebensein</strong><div>Etwas ausgesetzt sein, ohne es vollständig kontrollieren zu können.</div><div class="word-es" lang="es">estar expuesto / entregado a algo</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Für Jaspers beginnt tiefes Philosophieren, wenn wir uns Grenzsituationen wirklich bewusst machen. Im Alltag verdrängen wir sie oft. Wenn wir aber ernsthaft über Tod, Schuld oder Zufall nachdenken, stellen wir grundlegende Fragen über unser Leben und über uns selbst.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Para Jaspers, un origen especialmente profundo de la filosofía aparece cuando tomamos conciencia de las situaciones límite. En la vida cotidiana solemos evitar o esconder la muerte, la culpa o el azar. Cuando los afrontamos de verdad, surgen preguntas fundamentales sobre nuestra existencia.</p>
-          </div>
-        </div>
-        <div class="chunk">
-          <span class="original-label">Originaltext · Abschnitt 4</span>
-          <p class="original">Wir haben es dann nur mit den konkreten Situationen zu tun, die wir meistern zu unseren Gunsten [= zu unserem Vorteil], und auf die wir reagieren durch Plan und Handeln in der Welt, getrieben von unseren <button class="term" data-term="Daseinsinteressen">Daseinsinteressen</button>. Auf Grenzsituationen aber reagieren wir entweder durch <button class="term" data-term="Verschleierung">Verschleierung</button> oder, wenn wir sie wirklich erfassen, durch <button class="term" data-term="Verzweiflung">Verzweiflung</button> und durch <button class="term" data-term="Wiederherstellung">Wiederherstellung</button>: wir werden wir selbst in einer <button class="term" data-term="Verwandlung">Verwandlung</button> unseres <button class="term" data-term="Seinsbewusstseins">Seinsbewusstseins</button>.</p>
-          <div class="help-buttons">
-            <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-            <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-            <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-          </div>
-          <div class="help-panel" data-help="words">
-            <h3>Worterklärungen</h3>
-            <div class="word-list"><div class="word-row"><strong>Daseinsinteressen</strong><div>Alltägliche Interessen, die unser Leben erhalten oder verbessern sollen.</div><div class="word-es" lang="es">intereses vitales / intereses de la existencia cotidiana</div></div><div class="word-row"><strong>Verschleierung</strong><div>Eine unangenehme Wahrheit verdecken oder nicht wahrhaben wollen.</div><div class="word-es" lang="es">encubrimiento / velamiento</div></div><div class="word-row"><strong>Verzweiflung</strong><div>Zustand tiefster Hoffnungslosigkeit.</div><div class="word-es" lang="es">desesperación</div></div><div class="word-row"><strong>Wiederherstellung</strong><div>Hier: eine innere Neuorientierung nach der Krise.</div><div class="word-es" lang="es">reconstitución / reconstrucción interior</div></div><div class="word-row"><strong>Verwandlung</strong><div>Tiefgreifende Veränderung.</div><div class="word-es" lang="es">transformación</div></div><div class="word-row"><strong>Seinsbewusstsein</strong><div>Das Bewusstsein davon, wer und wie man selbst existiert.</div><div class="word-es" lang="es">conciencia del propio ser</div></div></div>
-          </div>
-          <div class="help-panel" data-help="simple">
-            <h3>Einfaches Deutsch</h3>
-            <p>Gewöhnliche Probleme versuchen wir zu planen und zu lösen. Grenzsituationen lassen sich nicht so beherrschen. Wir können sie verdrängen. Wenn wir sie aber wirklich annehmen, können Verzweiflung und eine innere Neuorientierung entstehen. Jaspers meint: Unser Verständnis von uns selbst kann sich dadurch verändern.</p>
-          </div>
-          <div class="help-panel" data-help="spanish" lang="es">
-            <h3>Explicación en español</h3>
-            <p>Los problemas cotidianos suelen poder resolverse con planes y acciones. Las situaciones límite no se dominan de la misma manera. Podemos encubrirlas, pero si las comprendemos realmente pueden provocar desesperación y una transformación de nuestra conciencia de nosotros mismos.</p>
-          </div>
-        </div>
-      <div class="source"><strong>Quelle:</strong> Karl Jaspers: Einführung in die Philosophie. München: Piper 1971, S. 18 ff.</div>
+      <div class="help-panel" data-help="spanish" lang="es">
+        <h3>Explicación en español</h3>
+        <p>Franzen señala una diferencia importante: una explicación mítica puede llegar a un punto en el que ya no se permiten más preguntas. La ciencia y la filosofía también parten de supuestos, pero esos supuestos pueden volver a cuestionarse. Por eso, en filosofía es posible seguir preguntando por las razones y por los fundamentos. En un mito, en cambio, un dios puede funcionar como explicación última del origen del mundo, y la pregunta por el origen de ese dios ya no se responde dentro del propio relato.</p>
+      </div>
     </section>
+    
+    <section class="chunk">
+      <span class="original-label">Originaltext · Abschnitt 2</span>
+      <p class="original">Der Begriff „<button class="term" data-term="Mythos">Mythos</button>" wird heute in vielen verschiedenen Bedeutungen verwendet. Hier wollen wir ihn verstehen als eine Erzählung (das ist auch die ursprüngliche Wortbedeutung), die im Allgemeinen von <button class="term" data-term="menschenähnlichen Göttergestalten">menschenähnlichen Göttergestalten</button>, <button class="term" data-term="personalisierten Naturerscheinungen">personalisierten Naturerscheinungen</button>, menschlichen Helden, <button class="term" data-term="übersinnlichen Kräften">übersinnlichen Kräften</button> u.Ä. berichtet. Mythen erzählen u. a. von der Entstehung der Welt und der Menschen, <button class="term" data-term="legitimieren">legitimieren</button> <button class="term" data-term="Herrschaftsansprüche">Herrschaftsansprüche</button> oder erklären <button class="term" data-term="rätselhafte Erscheinungen">rätselhafte Erscheinungen</button> — so wird z.B. ein Gewitter, das früheren Menschen sehr rätselhaft sein musste, je nach Mythos von Thor, Zeus oder anderen erzeugt.</p>
+      <div class="help-buttons">
+        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
+        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
+        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
+      </div>
+      <div class="help-panel" data-help="words">
+        <h3>Worterklärungen</h3>
+        <div class="word-list"><div class="word-row"><strong>Mythos</strong><div>Hier: eine Erzählung über Götter, Helden, Naturkräfte oder andere übernatürliche Mächte, die Welt und Leben deutet.</div><div class="word-es" lang="es">mito; relato sobre dioses, héroes, fuerzas naturales personificadas o poderes sobrenaturales.</div></div><div class="word-row"><strong>menschenähnliche Göttergestalten</strong><div>Götter, die menschliche Eigenschaften, Gefühle oder Verhaltensweisen besitzen.</div><div class="word-es" lang="es">figuras divinas antropomórficas.</div></div><div class="word-row"><strong>personalisierte Naturerscheinungen</strong><div>Naturvorgänge, die so dargestellt werden, als würden Personen oder Wesen dahinter handeln.</div><div class="word-es" lang="es">fenómenos naturales personificados.</div></div><div class="word-row"><strong>übersinnliche Kräfte</strong><div>Kräfte, die nicht als gewöhnliche natürliche oder sinnlich wahrnehmbare Kräfte verstanden werden.</div><div class="word-es" lang="es">fuerzas sobrenaturales.</div></div><div class="word-row"><strong>legitimieren</strong><div>Etwas rechtfertigen oder als berechtigt darstellen.</div><div class="word-es" lang="es">legitimar / justificar.</div></div><div class="word-row"><strong>Herrschaftsansprüche</strong><div>Der Anspruch von Personen oder Gruppen, über andere zu bestimmen oder Macht auszuüben.</div><div class="word-es" lang="es">pretensiones de poder o de dominio.</div></div><div class="word-row"><strong>rätselhafte Erscheinungen</strong><div>Vorgänge, deren Ursache oder Bedeutung unklar erscheint.</div><div class="word-es" lang="es">fenómenos enigmáticos o difíciles de explicar.</div></div></div>
+      </div>
+      <div class="help-panel" data-help="simple">
+        <h3>Einfaches Deutsch</h3>
+        <p>Franzen legt fest, wie er das Wort „Mythos“ in diesem Text verwendet. Ein Mythos ist hier eine Erzählung über Götter, Helden, personifizierte Naturerscheinungen oder übernatürliche Kräfte. Solche Erzählungen können erklären, wie die Welt oder die Menschen entstanden sind. Sie können außerdem politische oder gesellschaftliche Herrschaft rechtfertigen und schwer erklärbare Naturereignisse verständlich machen.</p>
+      </div>
+      <div class="help-panel" data-help="spanish" lang="es">
+        <h3>Explicación en español</h3>
+        <p>Franzen precisa qué significa «mito» en este texto. Un mito es aquí un relato sobre figuras divinas antropomórficas, héroes, fenómenos naturales personificados o fuerzas sobrenaturales. Estos relatos pueden explicar el origen del mundo y de los seres humanos, legitimar determinadas pretensiones de poder o dar una explicación a fenómenos difíciles de comprender, como una tormenta.</p>
+      </div>
+    </section>
+    
+    <section class="chunk">
+      <span class="original-label">Originaltext · Abschnitt 3</span>
+      <p class="original">Mythen haben oft auch die Funktion, <button class="term" data-term="Ordnung und Sinn">Ordnung und Sinn</button> in die Welt zu bringen. <button class="term" data-term="Zufall">Zufall</button> und <button class="term" data-term="Beliebigkeit">Beliebigkeit</button> im <button class="term" data-term="Weltgeschehen">Weltgeschehen</button> erzeugen oft Ängste, denen mit mythischen Erzählungen begegnet wird. <button class="term" data-term="Schicksalsschläge">Schicksalsschläge</button>, die den einen treffen und andere verschonen, können <button class="term" data-term="mythisch deuten">mythisch gedeutet</button> werden, z. B. als göttliche Strafe, sie sind damit nicht mehr zufällig. Das schwere menschliche Los, sich seine Lebensgrundlagen mühsam erarbeiten zu müssen, die Kinder unter Schmerzen gebären zu müssen, sterben zu müssen, ist nach dem biblischen Mythos vom <button class="term" data-term="Sündenfall">Sündenfall</button> keine zufällige Laune der natürlichen Evolution, sondern Konsequenz des Sündenfalls. Durch <button class="term" data-term="Anrufung">Anrufung</button>, Gebete, <button class="term" data-term="Opfer">Opfer</button> u.Ä. kann bisweilen Einfluss genommen werden auf die göttlichen oder <button class="term" data-term="dämonischen Mächte">dämonischen Mächte</button> und damit auch auf das persönliche <button class="term" data-term="Schicksal">Schicksal</button>.</p>
+      <div class="help-buttons">
+        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
+        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
+        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
+      </div>
+      <div class="help-panel" data-help="words">
+        <h3>Worterklärungen</h3>
+        <div class="word-list"><div class="word-row"><strong>Ordnung und Sinn</strong><div>Zusammenhang und Bedeutung, durch die Ereignisse nicht mehr völlig zufällig erscheinen.</div><div class="word-es" lang="es">orden y sentido.</div></div><div class="word-row"><strong>Zufall</strong><div>Ein Ereignis, das nicht als notwendig, geplant oder vorherbestimmt verstanden wird.</div><div class="word-es" lang="es">azar.</div></div><div class="word-row"><strong>Beliebigkeit</strong><div>Der Eindruck, dass etwas ohne erkennbare Regel oder notwendigen Grund geschieht.</div><div class="word-es" lang="es">arbitrariedad / falta de un orden necesario.</div></div><div class="word-row"><strong>Weltgeschehen</strong><div>Die Ereignisse und Vorgänge in der Welt.</div><div class="word-es" lang="es">acontecer del mundo / curso de los acontecimientos.</div></div><div class="word-row"><strong>Schicksalsschläge</strong><div>Schwere, belastende Ereignisse, die einen Menschen treffen.</div><div class="word-es" lang="es">golpes del destino / desgracias.</div></div><div class="word-row"><strong>mythisch deuten</strong><div>Einem Ereignis durch eine mythische Erzählung eine Bedeutung geben.</div><div class="word-es" lang="es">interpretar míticamente.</div></div><div class="word-row"><strong>Sündenfall</strong><div>Biblische Erzählung vom Bruch des Menschen mit Gottes Gebot; in der christlichen Tradition mit dem Ursprung menschlicher Mühsal verbunden.</div><div class="word-es" lang="es">la caída; relato bíblico relacionado con el pecado original.</div></div><div class="word-row"><strong>Anrufung</strong><div>Das feierliche oder religiöse Ansprechen einer Gottheit oder übernatürlichen Macht.</div><div class="word-es" lang="es">invocación.</div></div><div class="word-row"><strong>Opfer</strong><div>Eine Gabe oder Handlung, die einer Gottheit oder übernatürlichen Macht dargebracht wird.</div><div class="word-es" lang="es">sacrificio / ofrenda.</div></div><div class="word-row"><strong>dämonische Mächte</strong><div>Übernatürliche Kräfte oder Wesen, denen schädliche oder bedrohliche Macht zugeschrieben wird.</div><div class="word-es" lang="es">poderes demoníacos.</div></div><div class="word-row"><strong>Schicksal</strong><div>Der als gegeben oder vorherbestimmt verstandene Verlauf des Lebens und seiner Ereignisse.</div><div class="word-es" lang="es">destino.</div></div></div>
+      </div>
+      <div class="help-panel" data-help="simple">
+        <h3>Einfaches Deutsch</h3>
+        <p>Mythen können Ereignissen Ordnung und Bedeutung geben. Wenn etwas nur zufällig und ohne erkennbaren Grund geschieht, kann das Angst machen. Eine mythische Erzählung deutet solche Ereignisse als Teil eines größeren Zusammenhangs. Ein Unglück kann zum Beispiel als göttliche Strafe verstanden werden. Franzen nennt außerdem den biblischen Sündenfall als Erklärung für Mühe, Schmerz und Tod. Mythen können auch die Vorstellung enthalten, dass Menschen durch Gebete, Anrufungen oder Opfer Einfluss auf übernatürliche Mächte und damit auf ihr Schicksal nehmen können.</p>
+      </div>
+      <div class="help-panel" data-help="spanish" lang="es">
+        <h3>Explicación en español</h3>
+        <p>Los mitos también pueden dar orden y sentido a los acontecimientos. El azar y la aparente arbitrariedad pueden producir miedo; una narración mítica integra esos acontecimientos en un contexto con significado. Una desgracia puede interpretarse, por ejemplo, como un castigo divino y deja así de parecer puramente casual. Franzen menciona también el relato bíblico de la caída para explicar el esfuerzo, el dolor y la muerte. Además, algunos mitos incluyen la idea de que, mediante invocaciones, oraciones, sacrificios u ofrendas, las personas pueden influir en poderes divinos o demoníacos y, con ello, en su destino personal.</p>
+      </div>
+    </section>
+    
+    <div class="source-line"><strong>Quelle:</strong> Henning Franzen, „Philosophie und Mythos“, Text A, S. 1 des bereitgestellten Unterrichtsmaterials.</div>
+  </article>
+
+  <section class="sources-card">
+    <h2>Sprachliche Grundlage der spanischen Hilfen</h2>
+    <p>Für diesen Text wurde keine veröffentlichte spanische Übersetzung zugrunde gelegt. Die spanischen Abschnitte sind eigene didaktische Übertragungen. Zentrale philosophische und religionsbezogene Begriffe wurden mit spanischsprachigen Fach- und Wörterbuchquellen abgeglichen.</p>
+    <ul>
+      <li><strong>Encyclopaedia Herder – „Mito“:</strong> <a href="https://encyclopaedia.herdereditorial.com/wiki/Mito" target="_blank" rel="noopener">Mythos als Erzählung über Ursprünge, übernatürliche Mächte sowie als Deutung und Sinngebung</a></li>
+      <li><strong>Encyclopaedia Herder – „Logos“:</strong> <a href="https://encyclopaedia.herdereditorial.com/wiki/Logos" target="_blank" rel="noopener">„logos“ als razón, discurso und geordnetes Denken</a></li>
+      <li><strong>Filosofía en español – „Logos“:</strong> <a href="https://www.filosofia.org/enc/ros/logos.htm" target="_blank" rel="noopener">philosophische Bedeutungen von „logos“: pensamiento, discurso, razón</a></li>
+      <li><strong>RAE/ASALE – „mito“:</strong> <a href="https://dle.rae.es/mito" target="_blank" rel="noopener">„mito“ als Erzählung mit göttlichen oder heroischen Figuren</a></li>
+      <li><strong>RAE/ASALE – „destino“:</strong> <a href="https://dle.rae.es/destino" target="_blank" rel="noopener">„destino“ für Schicksal</a></li>
+      <li><strong>RAE/ASALE – „sacrificio“:</strong> <a href="https://dle.rae.es/sacrificio" target="_blank" rel="noopener">„sacrificio“ bzw. „ofrenda“ im religiösen Sinn</a></li>
+    </ul>
+    <div class="note"><strong>Übersetzungsprinzip:</strong> Die spanischen Hilfen sind keine behauptete „offizielle Übersetzung“. Begriffe wie <em>Mythos</em>, <em>radikales Fragen</em>, <em>Annahmen</em>, <em>Begründung</em>, <em>Zufall</em> und <em>Schicksal</em> werden möglichst nah am philosophischen Gebrauch übertragen und zugleich so erklärt, dass sie für einen Lernenden verständlich bleiben.</div>
+  </section>
 </main>
 
 <div class="term-popover" id="term-popover" role="dialog" aria-live="polite">
@@ -399,7 +224,7 @@ main{max-width:950px;margin:auto;padding:28px 20px 72px}
 </div>
 
 <script>
-const GLOSSARY = {"Staunen": {"de": "Sich über etwas wundern und dadurch Fragen stellen.", "es": "asombro / admiración"}, "Unerklärlichkeiten": {"de": "Dinge oder Vorgänge, für die man noch keine Erklärung hat.", "es": "cosas o fenómenos que todavía no se pueden explicar"}, "Gestirne": {"de": "Himmelskörper, zum Beispiel Sterne, Sonne oder Mond.", "es": "astros / cuerpos celestes"}, "All": {"de": "Das gesamte Universum.", "es": "universo"}, "Unwissenheit": {"de": "Zustand, etwas nicht zu wissen.", "es": "ignorancia"}, "Erkennen": {"de": "Etwas verstehen oder Wissen darüber gewinnen.", "es": "conocer / llegar al conocimiento"}, "Wissen": {"de": "Begründetes Erkennen oder Kenntnis.", "es": "saber / conocimiento"}, "Nutzen": {"de": "Praktischer Vorteil oder Zweck.", "es": "utilidad / provecho"}, "Annehmlichkeit": {"de": "Etwas, das das Leben angenehmer oder bequemer macht.", "es": "comodidad / bienestar"}, "Einsicht": {"de": "Tieferes Verstehen eines Zusammenhangs.", "es": "comprensión / conocimiento"}, "Wissenschaft": {"de": "Geordnetes und begründetes Wissen.", "es": "ciencia / saber sistemático"}, "freie Wissenschaft": {"de": "Eine Wissenschaft, die nicht bloß einem anderen praktischen Zweck dient.", "es": "ciencia libre"}, "um ihrer selbst willen": {"de": "Etwas wird nicht als Mittel für etwas anderes getan, sondern weil es selbst wertvoll ist.", "es": "por sí mismo / por el saber mismo"}, "Falsches": {"de": "Etwas, das nicht wahr ist.", "es": "algo falso"}, "zweifelhaft": {"de": "Nicht sicher; es gibt Gründe, die Wahrheit infrage zu stellen.", "es": "dudoso"}, "Umsturz": {"de": "Hier: die bisherigen Meinungen radikal aufgeben und neu prüfen.", "es": "derribo / revisión radical de las opiniones"}, "Grundlagen": {"de": "Die ersten Annahmen, auf denen weiteres Wissen aufbaut.", "es": "fundamentos / bases"}, "Unerschütterliches": {"de": "Etwas vollkommen Sicheres, das nicht ins Wanken gebracht werden kann.", "es": "algo firme e indudable"}, "gewaltiges Unternehmen": {"de": "Eine sehr große und schwierige Aufgabe.", "es": "una empresa muy grande y difícil"}, "Muße": {"de": "Freie, ungestörte Zeit zum Denken.", "es": "tiempo libre y tranquilo para reflexionar"}, "Gewisses": {"de": "Etwas Sicheres.", "es": "algo cierto / seguro"}, "Unzweifelhaftes": {"de": "Etwas, an dem kein begründeter Zweifel besteht.", "es": "indudable"}, "Zustimmung zurückhalten": {"de": "Eine Aussage vorläufig nicht als wahr akzeptieren.", "es": "suspender el asentimiento"}, "Grund zu zweifeln": {"de": "Ein Argument oder Anlass, der eine Überzeugung unsicher macht.", "es": "motivo / razón para dudar"}, "Fundamente": {"de": "Bildlich: die grundlegenden Überzeugungen, auf denen andere Meinungen aufbauen.", "es": "cimientos / fundamentos"}, "Prinzipien": {"de": "Grundlegende Annahmen oder Ausgangspunkte des Denkens.", "es": "principios"}, "Situationen": {"de": "Konkrete Lebenslagen, in denen wir uns befinden.", "es": "situaciones"}, "Grundsituationen": {"de": "Grundlegende Situationen des menschlichen Lebens.", "es": "situaciones fundamentales"}, "Grenzsituationen": {"de": "Unvermeidbare Grundsituationen, über die wir nicht einfach hinauskommen.", "es": "situaciones límite"}, "Tod": {"de": "Die eigene Sterblichkeit als unausweichliche Grenze des Lebens.", "es": "muerte"}, "Leiden": {"de": "Schmerz, Verlust oder anderes schweres Erleben.", "es": "sufrimiento / padecimiento"}, "Kampf": {"de": "Unvermeidbare Auseinandersetzung oder Konflikt.", "es": "lucha"}, "Zufall": {"de": "Ereignisse, die nicht vollständig von uns kontrolliert oder geplant sind.", "es": "azar"}, "Schuld": {"de": "Verantwortung für eigenes Handeln oder Unterlassen.", "es": "culpa"}, "Dasein": {"de": "Hier: unser konkretes menschliches Leben und Existieren.", "es": "existencia / vida humana concreta"}, "Bewusstwerden": {"de": "Etwas ausdrücklich erkennen und sich darüber klar werden.", "es": "tomar conciencia / hacerse consciente"}, "Zweifel": {"de": "Unsicherheit darüber, ob etwas wirklich wahr oder sicher ist.", "es": "duda"}, "Ursprung": {"de": "Hier: eine grundlegende Erfahrung, aus der Philosophieren entstehen kann.", "es": "origen"}, "Schuldigsein": {"de": "Das Bewusstsein, in Schuld geraten zu können oder schuldig geworden zu sein.", "es": "ser culpable / conciencia de culpa"}, "Preisgegebensein": {"de": "Etwas ausgesetzt sein, ohne es vollständig kontrollieren zu können.", "es": "estar expuesto / entregado a algo"}, "Daseinsinteressen": {"de": "Alltägliche Interessen, die unser Leben erhalten oder verbessern sollen.", "es": "intereses vitales / intereses de la existencia cotidiana"}, "Verschleierung": {"de": "Eine unangenehme Wahrheit verdecken oder nicht wahrhaben wollen.", "es": "encubrimiento / velamiento"}, "Verzweiflung": {"de": "Zustand tiefster Hoffnungslosigkeit.", "es": "desesperación"}, "Wiederherstellung": {"de": "Hier: eine innere Neuorientierung nach der Krise.", "es": "reconstitución / reconstrucción interior"}, "Verwandlung": {"de": "Tiefgreifende Veränderung.", "es": "transformación"}, "Seinsbewusstsein": {"de": "Das Bewusstsein davon, wer und wie man selbst existiert.", "es": "conciencia del propio ser"}};
+const GLOSSARY = {"weitere Unbefragbarkeit": {"de": "Der Punkt, an dem eine Erklärung keine weiteren Fragen mehr zulässt.", "es": "imposibilidad de seguir cuestionando; punto en el que ya no se admiten más preguntas."}, "wissenschaftliche Erklärungen": {"de": "Erklärungen, die mit überprüfbaren Gründen, Modellen und Theorien arbeiten.", "es": "explicaciones científicas."}, "philosophische Begründungen": {"de": "Versuche, eine Behauptung durch nachvollziehbare Gründe zu rechtfertigen.", "es": "fundamentaciones o justificaciones filosóficas."}, "Annahmen": {"de": "Voraussetzungen, von denen eine Theorie oder Argumentation zunächst ausgeht.", "es": "supuestos / presupuestos."}, "Theorien": {"de": "Systematisch verbundene Aussagen, mit denen etwas erklärt oder beschrieben wird.", "es": "teorías."}, "infrage stellen": {"de": "Prüfen, ob etwas wirklich stimmt oder ausreichend begründet ist.", "es": "cuestionar / poner en cuestión."}, "radikales Fragen": {"de": "Weiterfragen bis zu den grundlegenden Voraussetzungen einer Behauptung oder Erklärung.", "es": "cuestionamiento radical; preguntar hasta llegar a los supuestos fundamentales."}, "mythisch erklären": {"de": "Etwas mithilfe einer mythischen Erzählung deuten oder erklären.", "es": "explicar de forma mítica."}, "beschränkter Verstand": {"de": "Die begrenzte menschliche Fähigkeit zu verstehen und zu erkennen.", "es": "entendimiento humano limitado."}, "Mythos": {"de": "Hier: eine Erzählung über Götter, Helden, Naturkräfte oder andere übernatürliche Mächte, die Welt und Leben deutet.", "es": "mito; relato sobre dioses, héroes, fuerzas naturales personificadas o poderes sobrenaturales."}, "menschenähnliche Göttergestalten": {"de": "Götter, die menschliche Eigenschaften, Gefühle oder Verhaltensweisen besitzen.", "es": "figuras divinas antropomórficas."}, "personalisierte Naturerscheinungen": {"de": "Naturvorgänge, die so dargestellt werden, als würden Personen oder Wesen dahinter handeln.", "es": "fenómenos naturales personificados."}, "übersinnliche Kräfte": {"de": "Kräfte, die nicht als gewöhnliche natürliche oder sinnlich wahrnehmbare Kräfte verstanden werden.", "es": "fuerzas sobrenaturales."}, "legitimieren": {"de": "Etwas rechtfertigen oder als berechtigt darstellen.", "es": "legitimar / justificar."}, "Herrschaftsansprüche": {"de": "Der Anspruch von Personen oder Gruppen, über andere zu bestimmen oder Macht auszuüben.", "es": "pretensiones de poder o de dominio."}, "rätselhafte Erscheinungen": {"de": "Vorgänge, deren Ursache oder Bedeutung unklar erscheint.", "es": "fenómenos enigmáticos o difíciles de explicar."}, "Ordnung und Sinn": {"de": "Zusammenhang und Bedeutung, durch die Ereignisse nicht mehr völlig zufällig erscheinen.", "es": "orden y sentido."}, "Zufall": {"de": "Ein Ereignis, das nicht als notwendig, geplant oder vorherbestimmt verstanden wird.", "es": "azar."}, "Beliebigkeit": {"de": "Der Eindruck, dass etwas ohne erkennbare Regel oder notwendigen Grund geschieht.", "es": "arbitrariedad / falta de un orden necesario."}, "Weltgeschehen": {"de": "Die Ereignisse und Vorgänge in der Welt.", "es": "acontecer del mundo / curso de los acontecimientos."}, "Schicksalsschläge": {"de": "Schwere, belastende Ereignisse, die einen Menschen treffen.", "es": "golpes del destino / desgracias."}, "mythisch deuten": {"de": "Einem Ereignis durch eine mythische Erzählung eine Bedeutung geben.", "es": "interpretar míticamente."}, "Sündenfall": {"de": "Biblische Erzählung vom Bruch des Menschen mit Gottes Gebot; in der christlichen Tradition mit dem Ursprung menschlicher Mühsal verbunden.", "es": "la caída; relato bíblico relacionado con el pecado original."}, "Anrufung": {"de": "Das feierliche oder religiöse Ansprechen einer Gottheit oder übernatürlichen Macht.", "es": "invocación."}, "Opfer": {"de": "Eine Gabe oder Handlung, die einer Gottheit oder übernatürlichen Macht dargebracht wird.", "es": "sacrificio / ofrenda."}, "dämonische Mächte": {"de": "Übernatürliche Kräfte oder Wesen, denen schädliche oder bedrohliche Macht zugeschrieben wird.", "es": "poderes demoníacos."}, "Schicksal": {"de": "Der als gegeben oder vorherbestimmt verstandene Verlauf des Lebens und seiner Ereignisse.", "es": "destino."}};
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
