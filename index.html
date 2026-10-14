@@ -1,276 +1,272 @@
-<!doctype html>
-<html lang="de">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kant – Was ist Aufklärung? (2) · Interaktive Lesehilfe</title>
-<style>
-:root{
-  --navy:#133248; --blue:#5b86a4; --light:#a4c0d0; --pale:#edf4f7;
-  --paper:#fff; --ink:#19262f; --muted:#60717c; --line:#d7e2e8;
-  --shadow:0 10px 30px rgba(19,50,72,.08); --radius:18px;
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <meta name="theme-color" content="#f8f5ee">
+ <meta name="description" content="Guía estática de ensayo filosófico para iPad: cuatro impulsos bilingües alemán–español y siete etapas de escritura, sin formularios ni funciones de exportación.">
+ <title>Mi ensayo filosófico · Guía de lectura y escritura 2026/27</title>
+ <style>
+:root { --navy:#19263d; --rust:#d9634c; --teal:#17656b; --mid:#55667a; --pale:#e9f1ef; --faint:#f2f5f4; --warm:#f8f5ee; --line:#ced7d5; --blue:#2a5799; --paper:#fff; --background:#edf0ee; color-scheme:light; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:120px; }
+body { margin:0; background:var(--background); color:var(--navy); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif; }
+a { color:var(--teal); }
+a:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
+.site-header { position:sticky; top:0; z-index:10; background:rgba(248,245,238,.98); border-bottom:1px solid #d2d8d5; box-shadow:0 4px 16px #19263d11; padding:calc(12px + env(safe-area-inset-top, 0px)) max(18px,env(safe-area-inset-right,18px)) 10px max(18px,env(safe-area-inset-left,18px)); }
+.site-header-inner { max-width:1000px; margin:auto; }
+.brand { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:baseline; gap:5px 16px; font-weight:850; color:var(--navy); font-size:.95rem; }
+.brand span { font-size:.76rem; font-weight:550; color:var(--mid); }
+.mini-nav { display:flex; gap:7px; overflow-x:auto; scrollbar-width:thin; white-space:nowrap; margin-top:10px; padding:2px 0 5px; }
+.mini-nav a { text-decoration:none; background:#ebf1ee; border:1px solid #d9e3df; border-radius:7px; padding:6px 11px; color:var(--teal); font-size:.78rem; font-weight:750; }
+.mini-nav a:hover { background:#dce9e5; }
+.sheet { max-width:880px; padding:0 15px; margin:23px auto 62px; }
+.page { position:relative; background:var(--paper); border-left:8px solid var(--rust); border-radius:5px; margin-bottom:21px; padding:32px 43px 26px; box-shadow:0 3px 22px #19263d15; scroll-margin-top:15px; overflow:hidden; }
+.page:before { content:""; background:var(--warm); position:absolute; top:0; left:0; right:0; height:74px; }
+.page > * { position:relative; }
+.running { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 40px; font-weight:800; font-size:.69rem; letter-spacing:.045em; color:var(--teal); }
+.running .year { color:var(--blue); white-space:nowrap; }
+.page-footer { display:flex; justify-content:space-between; gap:10px; margin-top:32px; padding-top:14px; border-top:1px solid var(--line); color:var(--mid); font-size:.69rem; font-weight:750; letter-spacing:.03em; }
+.kicker { margin:0 0 7px; color:var(--teal); font-size:.8rem; font-weight:800; letter-spacing:.055em; }
+h1,h2 { font-family:Georgia,"Times New Roman",serif; color:var(--navy); font-weight:700; letter-spacing:-.018em; line-height:1.16; }
+h1 { font-size:clamp(2rem,5vw,2.95rem); margin:0 0 9px; }
+h2 { font-size:clamp(1.72rem,3.8vw,2.12rem); margin:0 0 9px; }
+h3 { margin:27px 0 10px; font-size:.86rem; line-height:1.4; text-transform:uppercase; color:var(--teal); font-weight:850; letter-spacing:.018em; }
+h4 { font-size:.88rem; color:var(--teal); margin:0 0 9px; }
+p { margin:0 0 14px; }
+.deck { color:var(--mid); font-size:.96rem; margin-bottom:18px; }
+.callout { padding:16px 18px; border-radius:7px; background:var(--pale); font-size:.94rem; }
+.callout.warm { background:var(--warm); }
+.callout p:last-child { margin:0; }
+.criteria,.stages,.reading-table,.angles,.essay-parts { display:grid; gap:3px; }
+.list-row { display:grid; grid-template-columns:33px minmax(130px,.9fr) minmax(0,1.7fr); align-items:start; gap:11px; padding:9px 10px; border-radius:5px; font-size:.89rem; }
+.list-row:nth-child(odd),.angle:nth-child(odd),.essay-part:nth-child(odd) { background:var(--faint); }
+.list-row .number,.reading-row .number { font-weight:850; color:var(--rust); }
+.list-row .term { font-weight:760; color:var(--teal); }
+.list-row p { margin:0; }
+.impulse { background:var(--warm); border-left:5px solid var(--rust); border-radius:8px; padding:19px 21px; margin:13px 0 21px; }
+.quote-title { display:flex; align-items:center; gap:17px; margin:0 0 8px; }
+.quote-number { color:var(--rust); font-size:2rem; font-weight:850; line-height:1; }
+.lang-label { font-weight:850; font-size:.7rem; text-transform:uppercase; letter-spacing:.07em; color:var(--mid); margin:13px 0 6px; }
+.lang-label.es { color:var(--teal); }
+blockquote { font-family:Georgia,"Times New Roman",serif; font-size:1.11rem; line-height:1.57; margin:0 0 11px; hyphens:auto; overflow-wrap:break-word; }
+.attribution { font-size:.81rem; color:var(--mid); margin:8px 0 11px; }
+.term-note { border-top:1px solid var(--line); padding-top:11px; margin:0; font-size:.86rem; color:var(--teal); }
+.reading-row { display:grid; grid-template-columns:34px minmax(120px,.9fr) minmax(0,1.9fr); gap:10px; padding:12px; border-radius:6px; font-size:.89rem; }
+.reading-row:nth-child(odd) { background:var(--faint); }
+.reading-row strong { color:var(--teal); }
+.angle { display:grid; grid-template-columns:minmax(130px,.75fr) 1.85fr; gap:12px; border-radius:5px; padding:10px; font-size:.89rem; }
+.angle strong { color:var(--teal); }
+.step-label { font-weight:850; color:var(--rust); font-size:.93rem; letter-spacing:.01em; margin:28px 0 9px; }
+.argument { margin:17px 0; padding:16px 19px; border-radius:8px; background:var(--faint); }
+.argument:nth-of-type(even) { background:var(--warm); }
+.argument h4 { letter-spacing:.025em; text-transform:uppercase; }
+.essay-part { display:grid; grid-template-columns:120px 1fr; gap:12px; padding:10px; border-radius:5px; font-size:.89rem; }
+.essay-part strong { color:var(--teal); }
+.reflection { margin:16px 0 20px; background:var(--pale); border-left:3px solid var(--teal); border-radius:5px; padding:13px 17px; font-size:.92rem; }
+.reflection strong { display:block; color:var(--teal); margin-bottom:3px; }
+.reflection p { margin:0; }
+.thought-prompts { margin:16px 0 19px; padding:15px 17px; border-radius:7px; background:var(--faint); }
+.thought-prompts ul { margin:4px 0 0 19px; padding:0; }
+.thought-prompts li { padding-left:2px; margin:6px 0; }
+.checks { margin:12px 0 15px; padding-left:24px; display:grid; gap:10px; }
+.checks li { padding-left:3px; }
+.sources { margin:19px 0 10px; border-radius:6px; background:var(--warm); color:var(--mid); font-size:.83rem; padding:15px 17px; }
+.sources p { margin:0; }
+@media(max-width:650px) {
+ body { font-size:15px; }
+ html { scroll-padding-top:135px; }
+ .site-header { padding-top:calc(9px + env(safe-area-inset-top,0px)); }
+ .sheet { padding:0 8px; margin:13px auto 42px; }
+ .page { padding:22px 19px 18px; border-left-width:6px; margin-bottom:13px; }
+ .page:before { height:56px; }
+ .running { font-size:.58rem; margin-bottom:29px; }
+ .deck { font-size:.92rem; }
+ .impulse { padding:15px 13px; }
+ blockquote { font-size:1.01rem; }
+ .list-row { grid-template-columns:26px 1fr; gap:3px 10px; }
+ .list-row p { grid-column:2; }
+ .reading-row { grid-template-columns:28px 1fr; gap:5px 8px; }
+ .reading-row .row-description { grid-column:2; }
+ .angle,.essay-part { grid-template-columns:1fr; gap:3px; }
+ .page-footer { font-size:.58rem; }
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:#f5f8fa;color:var(--ink);
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.6
-}
-button{font:inherit;cursor:pointer}
-a{color:var(--navy);overflow-wrap:anywhere}
-.topline{height:8px;background:linear-gradient(90deg,var(--navy) 0 34%,var(--blue) 34% 70%,var(--light) 70%)}
-header{background:var(--paper);border-bottom:1px solid var(--line)}
-.header-inner{
-  max-width:1080px;margin:auto;padding:18px 22px 20px;
-  display:flex;align-items:center;gap:28px
-}
-.school-logo{width:min(360px,46vw);height:auto;display:block}
-.header-copy{border-left:5px solid var(--navy);padding-left:22px;min-width:0}
-.eyebrow{margin:0 0 3px;color:var(--blue);font-size:.82rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-h1{margin:0;color:var(--navy);font-size:clamp(1.55rem,3vw,2.3rem);line-height:1.08}
-.subtitle{margin:8px 0 0;color:var(--muted)}
-main{max-width:950px;margin:auto;padding:28px 20px 72px}
-.intro{
-  background:var(--navy);color:white;border-radius:var(--radius);
-  padding:20px 24px;box-shadow:var(--shadow);margin-bottom:20px
-}
-.intro p{margin:0;color:#eef6fa}
-.text-card,.sources-card{
-  background:white;border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--shadow);overflow:hidden;margin:20px 0
-}
-.text-head{padding:18px 22px;background:var(--pale);border-bottom:1px solid var(--line)}
-.text-head h2{margin:0;color:var(--navy);font-size:1.3rem}
-.chunk{padding:22px}
-.chunk+.chunk{border-top:1px solid var(--line)}
-.original-label{
-  display:block;margin:0 0 7px;color:var(--muted);font-size:.79rem;font-weight:850;
-  letter-spacing:.08em;text-transform:uppercase
-}
-.original{
-  font-family:Georgia,"Times New Roman",serif;font-size:1.08rem;line-height:1.78;margin:0
-}
-.term{
-  display:inline;border:0;border-bottom:2px dotted var(--blue);background:transparent;
-  color:inherit;font:inherit;padding:0 1px;text-align:left
-}
-.term:hover,.term:focus{background:#e8f1f6;border-bottom-style:solid;outline:none}
-.help-buttons{display:flex;flex-wrap:wrap;gap:9px;margin:18px 0 0}
-.help-btn{
-  border:1px solid var(--blue);background:white;color:var(--navy);border-radius:999px;
-  padding:8px 13px;font-weight:800;font-size:.9rem
-}
-.help-btn:hover,.help-btn[aria-expanded="true"]{background:var(--blue);color:white}
-.help-panel{
-  display:none;margin-top:14px;padding:16px 18px;background:#f7fafc;
-  border-left:5px solid var(--light);border-radius:10px
-}
-.help-panel.open{display:block}
-.help-panel h3{margin:0 0 8px;color:var(--navy);font-size:1rem}
-.help-panel p{margin:0}
-.word-list{display:grid;grid-template-columns:1fr;gap:8px}
-.word-row{
-  background:white;border:1px solid var(--line);border-radius:10px;padding:10px 12px
-}
-.word-row strong{color:var(--navy)}
-.word-es{color:var(--muted);font-size:.93rem}
-.source-line{padding:0 22px 20px;color:var(--muted);font-size:.86rem}
-.sources-card{padding:22px}
-.sources-card h2{margin:0 0 8px;color:var(--navy);font-size:1.2rem}
-.sources-card p{margin:0 0 12px;color:var(--muted)}
-.sources-card ul{margin:0;padding-left:20px}
-.sources-card li{margin:8px 0}
-.note{
-  margin-top:14px;padding:12px 14px;background:#eef6f0;border:1px solid #c8dccb;
-  border-radius:10px;font-size:.9rem
-}
-.term-popover{
-  position:fixed;z-index:50;left:50%;bottom:18px;transform:translateX(-50%);
-  width:min(660px,calc(100vw - 28px));background:var(--navy);color:white;border-radius:14px;
-  padding:15px 44px 15px 16px;box-shadow:0 18px 60px rgba(0,0,0,.22);display:none
-}
-.term-popover.open{display:block}
-.term-popover strong{font-size:1rem}
-.term-popover .es{color:#d9e8f0;margin-top:4px}
-.close-pop{
-  position:absolute;top:7px;right:8px;border:0;background:transparent;color:white;
-  font-size:1.4rem;line-height:1;padding:5px 8px
-}
-@media(max-width:720px){
-  .header-inner{display:block}
-  .school-logo{width:min(440px,100%);margin-bottom:18px}
-  .header-copy{border-left:0;border-top:4px solid var(--navy);padding:14px 0 0}
-  .chunk{padding:18px}
-  main{padding-left:14px;padding-right:14px}
-}
-@media print{
-  body{background:white}.topline,.help-buttons,.term-popover{display:none!important}
-  header,.text-card,.sources-card{box-shadow:none}
-  .help-panel{display:block!important}
-}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 </style>
 </head>
 <body>
-<div class="topline"></div>
-<header>
-  <div class="header-inner">
-    <img class="school-logo" alt="Humboldt-Gymnasium Düsseldorf" src="data:image/png;base64,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">
-    <div class="header-copy">
-      <p class="eyebrow">Philosophie EF · Interaktive Lesehilfe</p>
-      <h1>Was braucht es, damit Aufklärung gelingt?</h1>
-      <p class="subtitle">Immanuel Kant (1724–1804): Was ist Aufklärung? (2)</p>
-    </div>
-  </div>
+<header class="site-header">
+ <div class="site-header-inner">
+  <div class="brand">Mi ensayo filosófico <span>Guía de lectura y escritura · 2026/27</span></div>
+  <nav class="mini-nav" aria-label="Secciones de la guía">
+   <a href="#inicio">Introducción</a>
+   <a href="#impulsos-1">Impulsos 1–2</a>
+   <a href="#impulsos-2">Impulsos 3–4</a>
+   <a href="#comprender">Comprender</a>
+   <a href="#argumentar">Argumentar</a>
+   <a href="#revisar">Revisar</a>
+  </nav>
+ </div>
 </header>
-
-<main>
-  <section class="intro">
-    <p>Lies zuerst den deutschen Originaltext. Nutze bei Bedarf die Worterklärungen, danach „Einfaches Deutsch“ und erst dann die spanische Erklärung.</p>
-  </section>
-
-  <article class="text-card">
-    <div class="text-head">
-      <h2>Immanuel Kant (1724–1804): Was ist Aufklärung? (2)</h2>
-    </div>
-    
-    <section class="chunk">
-      <span class="original-label">Originaltext · Abschnitt 1</span>
-      <p class="original">Zu dieser Aufklärung aber wird nichts erfordert als <button class="term" data-term="Freiheit">Freiheit</button>; und zwar die unschädlichste unter allem, was nur Freiheit heißen mag, nämlich die: von seiner <button class="term" data-term="Vernunft">Vernunft</button> in allen Stücken <button class="term" data-term="öffentlicher Gebrauch der Vernunft">öffentlichen Gebrauch</button> zu machen. Nun höre ich aber von allen Seiten rufen: <button class="term" data-term="räsonieren">Räsoniert</button> nicht! Der Offizier sagt: Räsoniert nicht, sondern <button class="term" data-term="exerzieren">exerziert</button>! Der Finanzrat: Räsoniert nicht, sondern bezahlt! Der Geistliche: Räsoniert nicht, sondern glaubt! […] Hier ist überall <button class="term" data-term="Einschränkung">Einschränkung</button> der Freiheit. Welche Einschränkung aber ist der Aufklärung hinderlich, welche nicht, sondern ihr wohl gar <button class="term" data-term="förderlich">beförderlich</button>?</p>
-      <div class="help-buttons">
-        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-      </div>
-      <div class="help-panel" data-help="words">
-        <h3>Worterklärungen</h3>
-        <div class="word-list"><div class="word-row"><strong>Freiheit</strong><div>Hier vor allem: die Möglichkeit, die eigene Vernunft öffentlich zu gebrauchen und Gedanken öffentlich zur Prüfung zu stellen.</div><div class="word-es" lang="es">libertad; aquí, sobre todo la libertad de hacer uso público de la propia razón.</div></div><div class="word-row"><strong>Vernunft</strong><div>Fähigkeit, Gründe zu prüfen, zu urteilen und öffentlich zu argumentieren. Im Spanischen: razón.</div><div class="word-es" lang="es">razón.</div></div><div class="word-row"><strong>öffentlicher Gebrauch der Vernunft</strong><div>Bei Kant: der Vernunftgebrauch als Gelehrter vor der gesamten Öffentlichkeit bzw. Leserwelt. Dieser Gebrauch soll frei sein.</div><div class="word-es" lang="es">uso público de la razón; uso de la razón ante el conjunto del público lector.</div></div><div class="word-row"><strong>räsonieren</strong><div>Nachdenken, den Verstand bzw. die Vernunft gebrauchen und dies kritisch äußern; je nach Kontext auch abwertend: nörgeln.</div><div class="word-es" lang="es">razonar; usar la razón y expresar críticamente el propio juicio.</div></div><div class="word-row"><strong>exerzieren</strong><div>Militärische Übungen ausführen; marschieren und Befehle einüben.</div><div class="word-es" lang="es">adiestrarse / hacer ejercicios militares.</div></div><div class="word-row"><strong>Einschränkung</strong><div>Begrenzung einer Möglichkeit oder Freiheit.</div><div class="word-es" lang="es">limitación / restricción.</div></div><div class="word-row"><strong>förderlich</strong><div>Hilfreich; etwas unterstützt oder begünstigt eine Entwicklung.</div><div class="word-es" lang="es">favorable / que fomenta.</div></div></div>
-      </div>
-      <div class="help-panel" data-help="simple">
-        <h3>Einfaches Deutsch</h3>
-        <p>Kant sagt: Für Aufklärung braucht es vor allem Freiheit. Besonders wichtig ist die Freiheit, die eigene Vernunft öffentlich zu gebrauchen. Gleichzeitig erlebt der Mensch im Alltag viele Situationen, in denen ihm gesagt wird: Diskutiere nicht, sondern erfülle deine Aufgabe. Kant fragt deshalb, welche Einschränkungen der Freiheit Aufklärung verhindern und welche mit ihr vereinbar sein können.</p>
-      </div>
-      <div class="help-panel" data-help="spanish" lang="es">
-        <h3>Explicación en español</h3>
-        <p>Kant sostiene que para la Ilustración se necesita ante todo libertad, especialmente la libertad de hacer un uso público de la propia razón. Sin embargo, en la vida social existen muchas situaciones en las que se exige obedecer o cumplir una función en vez de discutir. Por eso Kant plantea la cuestión de qué limitaciones de la libertad impiden la Ilustración y cuáles pueden ser compatibles con ella o incluso favorecerla.</p>
-      </div>
-    </section>
-    
-    <section class="chunk">
-      <span class="original-label">Originaltext · Abschnitt 2</span>
-      <p class="original">Ich antworte: Der <button class="term" data-term="öffentlicher Gebrauch der Vernunft">öffentliche Gebrauch seiner Vernunft</button> muss jederzeit frei sein, und der allein kann Aufklärung unter Menschen zustande bringen; der <button class="term" data-term="Privatgebrauch der Vernunft">Privatgebrauch</button> derselben aber darf öfters sehr enge eingeschränkt sein, ohne doch darum den Fortschritt der Aufklärung sonderlich zu hindern. Ich verstehe aber unter dem öffentlichen Gebrauche seiner eigenen Vernunft denjenigen, den jemand als <button class="term" data-term="Gelehrter">Gelehrter</button> von ihr vor dem ganzen <button class="term" data-term="Publikum der Leserwelt">Publikum der Leserwelt</button> macht. Den Privatgebrauch nenne ich denjenigen, den er in einem gewissen ihm anvertrauten <button class="term" data-term="bürgerlichen Posten">bürgerlichen Posten</button> oder <button class="term" data-term="Amt">Amte</button> von seiner Vernunft machen darf. […]</p>
-      <div class="help-buttons">
-        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-      </div>
-      <div class="help-panel" data-help="words">
-        <h3>Worterklärungen</h3>
-        <div class="word-list"><div class="word-row"><strong>öffentlicher Gebrauch der Vernunft</strong><div>Bei Kant: der Vernunftgebrauch als Gelehrter vor der gesamten Öffentlichkeit bzw. Leserwelt. Dieser Gebrauch soll frei sein.</div><div class="word-es" lang="es">uso público de la razón; uso de la razón ante el conjunto del público lector.</div></div><div class="word-row"><strong>Privatgebrauch der Vernunft</strong><div>Bei Kant: Vernunftgebrauch innerhalb einer bestimmten anvertrauten Funktion, eines Amtes oder Dienstes. Er kann eingeschränkt sein.</div><div class="word-es" lang="es">uso privado de la razón; uso de la razón dentro de un cargo, función o puesto confiado.</div></div><div class="word-row"><strong>Gelehrter</strong><div>Eine Person, die als sachkundiger Denker öffentlich argumentiert und sich an die Leserwelt richtet.</div><div class="word-es" lang="es">sabio / docto; persona que se dirige al público como conocedor de una materia.</div></div><div class="word-row"><strong>Publikum der Leserwelt</strong><div>Die gesamte Öffentlichkeit der Lesenden, an die sich ein Gelehrter mit seinen Argumenten wenden kann.</div><div class="word-es" lang="es">totalidad del público lector / mundo de los lectores.</div></div><div class="word-row"><strong>bürgerlicher Posten</strong><div>Eine konkrete gesellschaftliche oder berufliche Funktion mit bestimmten Pflichten.</div><div class="word-es" lang="es">puesto civil / función pública o social.</div></div><div class="word-row"><strong>Amt</strong><div>Eine übertragene öffentliche oder berufliche Funktion mit festgelegten Aufgaben.</div><div class="word-es" lang="es">cargo / función.</div></div></div>
-      </div>
-      <div class="help-panel" data-help="simple">
-        <h3>Einfaches Deutsch</h3>
-        <p>Kant unterscheidet zwei Arten des Vernunftgebrauchs. Der öffentliche Vernunftgebrauch soll immer frei sein: Eine Person äußert sich als Gelehrter vor der Öffentlichkeit und legt ihre Gedanken zur Prüfung vor. Der private Vernunftgebrauch betrifft dagegen eine konkrete Funktion oder ein Amt. Dort kann die Freiheit eingeschränkt sein, weil die Person bestimmte Aufgaben und Pflichten erfüllen muss. Wichtig: „öffentlich“ und „privat“ bedeuten bei Kant nicht einfach dasselbe wie heute „öffentliches Leben“ und „Privatleben“.</p>
-      </div>
-      <div class="help-panel" data-help="spanish" lang="es">
-        <h3>Explicación en español</h3>
-        <p>Kant distingue dos usos de la razón. El uso público de la razón debe ser siempre libre: una persona se dirige, en calidad de sabio o docto, al conjunto del público lector y somete sus ideas a la discusión. El uso privado de la razón se refiere, en cambio, al ejercicio de una función, un cargo o un puesto determinado. Dentro de esa función pueden existir límites porque la persona tiene obligaciones concretas. En Kant, «público» y «privado» no significan simplemente lo mismo que en el uso cotidiano actual.</p>
-      </div>
-    </section>
-    
-    <section class="chunk">
-      <span class="original-label">Originaltext · Abschnitt 3</span>
-      <p class="original">So würde es sehr <button class="term" data-term="verderblich">verderblich</button> sein, wenn ein Offizier, dem von seinen Oberen etwas anbefohlen wird, im Dienste über die <button class="term" data-term="Zweckmäßigkeit">Zweckmäßigkeit</button> oder <button class="term" data-term="Nützlichkeit">Nützlichkeit</button> dieses Befehls laut <button class="term" data-term="vernünfteln">vernünfteln</button> wollte; er muss gehorchen. Es kann ihm aber <button class="term" data-term="billigermaßen nicht">billigermaßen nicht</button> verwehrt werden, als Gelehrter über die Fehler im <button class="term" data-term="Kriegesdienst">Kriegesdienste</button> Anmerkungen zu machen und diese seinem Publikum zur Beurteilung vorzulegen. […] Ebenso ist ein Geistlicher verbunden [= verpflichtet], seinen <button class="term" data-term="Katechismusschüler">Katechismusschülern</button> und seiner Gemeinde nach dem <button class="term" data-term="Symbol der Kirche">Symbol der Kirche</button> , der er dient, seinen Vortrag zu tun, denn er ist auf diese Bedingung angenommen worden. Aber als Gelehrter hat er volle Freiheit, ja sogar den Beruf dazu, alle seine sorgfältig geprüften und <button class="term" data-term="wohlmeinend">wohlmeinenden</button> Gedanken über das Fehlerhafte in jenem Symbol und Vorschläge wegen besserer Einrichtung des <button class="term" data-term="Religions- und Kirchenwesens">Religions- und Kirchenwesens</button> dem Publikum mitzuteilen. […]</p>
-      <div class="help-buttons">
-        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-      </div>
-      <div class="help-panel" data-help="words">
-        <h3>Worterklärungen</h3>
-        <div class="word-list"><div class="word-row"><strong>verderblich</strong><div>Sehr schädlich; mit negativen Folgen.</div><div class="word-es" lang="es">perjudicial / pernicioso.</div></div><div class="word-row"><strong>Zweckmäßigkeit</strong><div>Die Frage, ob etwas für ein bestimmtes Ziel geeignet oder sinnvoll ist.</div><div class="word-es" lang="es">conveniencia / adecuación a un fin.</div></div><div class="word-row"><strong>Nützlichkeit</strong><div>Die Frage, welchen praktischen Nutzen etwas hat.</div><div class="word-es" lang="es">utilidad.</div></div><div class="word-row"><strong>vernünfteln</strong><div>Hier abwertend: über etwas diskutieren, nachdenken oder es infrage stellen, obwohl in der konkreten Situation Gehorsam verlangt wird.</div><div class="word-es" lang="es">razonar o discutir, aquí con matiz despectivo en el contexto del servicio.</div></div><div class="word-row"><strong>billigermaßen nicht</strong><div>Nicht mit Recht; es wäre nicht gerechtfertigt, etwas zu verbieten.</div><div class="word-es" lang="es">no con justicia / no legítimamente.</div></div><div class="word-row"><strong>Kriegesdienst</strong><div>Militärischer Dienst.</div><div class="word-es" lang="es">servicio militar.</div></div><div class="word-row"><strong>Katechismusschüler</strong><div>Schüler, die im christlichen Glauben anhand eines Katechismus unterrichtet werden.</div><div class="word-es" lang="es">catecúmenos / alumnos de catecismo.</div></div><div class="word-row"><strong>Symbol der Kirche</strong><div>Hier: das verbindliche Glaubensbekenntnis bzw. die festgelegte Lehre einer Kirche.</div><div class="word-es" lang="es">símbolo o credo de la Iglesia; doctrina confesional establecida.</div></div><div class="word-row"><strong>wohlmeinend</strong><div>Mit guter Absicht.</div><div class="word-es" lang="es">bienintencionado.</div></div><div class="word-row"><strong>Religions- und Kirchenwesen</strong><div>Die Organisation und Gestaltung von Religion und Kirche.</div><div class="word-es" lang="es">instituciones y organización de la religión y de la Iglesia.</div></div></div>
-      </div>
-      <div class="help-panel" data-help="simple">
-        <h3>Einfaches Deutsch</h3>
-        <p>Kant erklärt seine Unterscheidung mit Beispielen. Ein Offizier muss im Dienst einen Befehl ausführen und kann nicht währenddessen jede Anweisung öffentlich diskutieren. Als Gelehrter darf er aber später öffentlich begründete Kritik am Militär äußern. Ähnlich ist es beim Geistlichen: In seinem Amt soll er die Lehre seiner Kirche vertreten. Als Gelehrter darf er diese Lehre öffentlich prüfen, kritisieren und Verbesserungen vorschlagen. Kant trennt also die Pflichten einer konkreten Funktion vom freien öffentlichen Nachdenken über diese Funktion und ihre Regeln.</p>
-      </div>
-      <div class="help-panel" data-help="spanish" lang="es">
-        <h3>Explicación en español</h3>
-        <p>Kant explica su distinción mediante ejemplos. Un oficial debe cumplir una orden mientras está de servicio y no puede convertir cada orden en una discusión pública. Sin embargo, como sabio puede analizar públicamente los defectos del servicio militar y someter sus observaciones al juicio del público. Algo semejante ocurre con un clérigo: en el ejercicio de su cargo debe enseñar la doctrina de la Iglesia a la que sirve, pero como sabio puede examinarla públicamente, criticar sus defectos y proponer mejoras. Kant separa así las obligaciones de una función concreta del uso público y libre de la razón.</p>
-      </div>
-    </section>
-    
-    <section class="chunk">
-      <span class="original-label">Originaltext · Abschnitt 4</span>
-      <p class="original">Wenn denn nun gefragt wird: leben wir jetzt in einem <button class="term" data-term="aufgeklärten Zeitalter">aufgeklärten Zeitalter</button>? so ist die Antwort: Nein, aber wohl in einem <button class="term" data-term="Zeitalter der Aufklärung">Zeitalter der Aufklärung</button>. Dass die Menschen, wie die Sachen jetzt stehen, im Ganzen genommen, schon imstande wären oder darin auch nur gesetzt werden könnten, in <button class="term" data-term="Religionsdingen">Religionsdingen</button> sich ihres eigenen Verstandes ohne Leitung eines andern sicher und gut zu bedienen, daran fehlt noch sehr viel. Allein, dass jetzt ihnen doch das <button class="term" data-term="Feld geöffnet">Feld geöffnet</button> wird, sich dahin frei zu bearbeiten und die Hindernisse der <button class="term" data-term="allgemeinen Aufklärung">allgemeinen Aufklärung</button> oder des Ausganges aus ihrer <button class="term" data-term="selbstverschuldeten Unmündigkeit">selbstverschuldeten Unmündigkeit</button> allmählich weniger werden, davon haben wir doch deutliche <button class="term" data-term="Anzeigen">Anzeigen</button>[= Anzeichen].</p>
-      <div class="help-buttons">
-        <button type="button" class="help-btn" data-panel="words" aria-expanded="false">Wörter</button>
-        <button type="button" class="help-btn" data-panel="simple" aria-expanded="false">Einfaches Deutsch</button>
-        <button type="button" class="help-btn" data-panel="spanish" aria-expanded="false">Español</button>
-      </div>
-      <div class="help-panel" data-help="words">
-        <h3>Worterklärungen</h3>
-        <div class="word-list"><div class="word-row"><strong>aufgeklärtes Zeitalter</strong><div>Eine Epoche, in der die Menschen bereits weitgehend selbstständig und sicher ihren eigenen Verstand gebrauchen.</div><div class="word-es" lang="es">época ilustrada.</div></div><div class="word-row"><strong>Zeitalter der Aufklärung</strong><div>Eine Epoche, in der der Prozess der Aufklärung im Gang ist, auch wenn er noch nicht abgeschlossen ist.</div><div class="word-es" lang="es">época de Ilustración.</div></div><div class="word-row"><strong>Religionsdinge</strong><div>Fragen und Angelegenheiten der Religion.</div><div class="word-es" lang="es">asuntos religiosos / cuestiones religiosas.</div></div><div class="word-row"><strong>Feld geöffnet</strong><div>Bildlich: Es bestehen zunehmend Möglichkeiten, sich frei in Richtung Selbstständigkeit zu entwickeln.</div><div class="word-es" lang="es">se abre el campo / se abren posibilidades para avanzar libremente.</div></div><div class="word-row"><strong>allgemeine Aufklärung</strong><div>Aufklärung nicht nur einzelner Menschen, sondern der Gesellschaft insgesamt.</div><div class="word-es" lang="es">Ilustración general.</div></div><div class="word-row"><strong>selbstverschuldete Unmündigkeit</strong><div>Kants Ausdruck für den Zustand, in dem Menschen ihren eigenen Verstand nicht selbstständig gebrauchen, obwohl sie grundsätzlich dazu fähig wären.</div><div class="word-es" lang="es">minoría de edad de la que uno mismo es culpable / culpable minoría de edad.</div></div><div class="word-row"><strong>Anzeigen</strong><div>Hier: Anzeichen oder Hinweise.</div><div class="word-es" lang="es">indicios / señales.</div></div></div>
-      </div>
-      <div class="help-panel" data-help="simple">
-        <h3>Einfaches Deutsch</h3>
-        <p>Kant sagt: Seine Gegenwart ist noch kein vollständig aufgeklärtes Zeitalter. Viele Menschen können ihren eigenen Verstand noch nicht sicher und selbstständig gebrauchen. Trotzdem sieht er Fortschritt: Es entstehen mehr Möglichkeiten, frei zu denken, und einige Hindernisse der Aufklärung werden kleiner. Deshalb spricht er nicht von einem „aufgeklärten Zeitalter“, sondern von einem „Zeitalter der Aufklärung“ – also von einem noch laufenden Prozess.</p>
-      </div>
-      <div class="help-panel" data-help="spanish" lang="es">
-        <h3>Explicación en español</h3>
-        <p>Kant afirma que su época todavía no es una época plenamente ilustrada. A muchas personas aún les falta la capacidad o la posibilidad de usar su propio entendimiento de manera segura e independiente, especialmente en asuntos religiosos. Sin embargo, observa un progreso: se abren más posibilidades para avanzar libremente hacia ese objetivo y disminuyen gradualmente algunos obstáculos de la Ilustración. Por eso habla de una «época de Ilustración» y no de una «época ilustrada»: el proceso todavía está en marcha.</p>
-      </div>
-    </section>
-    
-    <div class="source-line"><strong>Textgrundlage:</strong> Kant-Text auf Seite 1 des bereitgestellten Arbeitsblatts vom 09.10.2026. Aufgaben und Zusatzmaterial der Folgeseiten sind nicht Bestandteil der Lesehilfe.</div>
-  </article>
-
-  <section class="sources-card">
-    <h2>Sprachliche Grundlage der spanischen Hilfen</h2>
-    <p>Für Kants Aufsatz liegen wissenschaftlich veröffentlichte spanische Übersetzungen vor. Die spanischen Abschnitte dieser Lesehilfe sind eigene didaktische Erklärungen; die zentralen Fachbegriffe wurden mit etablierten Übersetzungen abgeglichen.</p>
-    <ul>
-      <li><strong>Universidad Nacional de Colombia:</strong> Immanuel Kant, „Respuesta a la pregunta: ¿qué es la ilustración?“, Übersetzung Rubén Jaramillo Vélez, <em>Revista Colombiana de Psicología</em> 3 (1994): <a href="https://revistas.unal.edu.co/index.php/psicologia/article/view/15803" target="_blank" rel="noopener">Publikationsseite</a>. Diese Fassung verwendet u. a. <em>uso público de la razón</em>, <em>uso privado</em>, <em>sabio</em>, <em>público lector</em> und <em>época de ilustración</em>.</li>
-      <li><strong>CSIC / Isegoría:</strong> Immanuel Kant, „Contestación a la pregunta: ¿Qué es la ilustración?“, veröffentlicht in <em>Isegoría</em> 25 (2001): <a href="https://isegoria.revistas.csic.es/index.php/isegoria/article/view/595" target="_blank" rel="noopener">Publikationsseite</a>.</li>
-      <li><strong>Terminologischer Fachabgleich:</strong> In der spanischsprachigen Kant-Forschung sind <em>uso público de la razón</em> und <em>uso privado de la razón</em> die etablierten Bezeichnungen für Kants Unterscheidung.</li>
-    </ul>
-    <div class="note"><strong>Übersetzungsprinzip:</strong> Die längeren spanischen Hilfen sind keine kopierte Vollübersetzung. Sie erklären den jeweiligen Abschnitt schülergerecht und verwenden dabei das etablierte Kant-Vokabular, insbesondere <em>razón</em>, <em>uso público</em>, <em>uso privado</em>, <em>Ilustración</em> und <em>minoría de edad</em>.</div>
-  </section>
-</main>
-
-<div class="term-popover" id="term-popover" role="dialog" aria-live="polite">
-  <button class="close-pop" id="close-pop" type="button" aria-label="Schließen">×</button>
-  <div id="term-popover-content"></div>
+<main class="sheet" id="guia">
+<section aria-labelledby="titulo-inicio" class="page" id="inicio">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">UNA IDEA QUE SE ATREVE.</p>
+<h1 id="titulo-inicio">Mi ensayo filosófico</h1>
+<p class="deck">Una guía de lectura y escritura: del impulso del concurso al ensayo con voz propia.</p>
+<aside class="callout"><p><strong>Tu objetivo:</strong> no encontrar la «opinión correcta», sino elaborar una respuesta propia y razonada a una pregunta filosófica. Puedes estar de acuerdo, discrepar o modificar una postura a medida que argumentas.</p></aside>
+<h3>¿Qué valora el jurado en un buen ensayo?</h3>
+<div aria-label="Cinco criterios del jurado" class="criteria">
+<div class="list-row"><span class="number">01</span><span class="term">Relación con el tema</span><p>Partes del impulso elegido y de una pregunta pertinente.</p></div>
+<div class="list-row"><span class="number">02</span><span class="term">Profundidad filosófica</span><p>Aclaras conceptos, supuestos y consecuencias.</p></div>
+<div class="list-row"><span class="number">03</span><span class="term">Argumentación</span><p>Defiendes una tesis y examinas objeciones sólidas.</p></div>
+<div class="list-row"><span class="number">04</span><span class="term">Coherencia</span><p>Tus ideas siguen un hilo lógico reconocible.</p></div>
+<div class="list-row"><span class="number">05</span><span class="term">Originalidad</span><p>Piensas por tu cuenta y no solo resumes a otros.</p></div>
 </div>
+<h3>Siete etapas · Un resultado en cada una</h3>
+<div aria-label="Siete etapas del ensayo" class="stages">
+<div class="list-row"><span class="number">01</span><span class="term">Comprender el impulso</span><p>Identificar una dificultad filosófica interesante.</p></div>
+<div class="list-row"><span class="number">02</span><span class="term">Formular una pregunta</span><p>Plantear una pregunta central para el ensayo.</p></div>
+<div class="list-row"><span class="number">03</span><span class="term">Proponer una tesis</span><p>Dar una respuesta provisional y discutible.</p></div>
+<div class="list-row"><span class="number">04</span><span class="term">Examinar argumentos</span><p>Desarrollar dos razonamientos defendibles.</p></div>
+<div class="list-row"><span class="number">05</span><span class="term">Considerar objeciones</span><p>Responder justamente al mejor contraargumento.</p></div>
+<div class="list-row"><span class="number">06</span><span class="term">Escribir el ensayo</span><p>Redactar un razonamiento continuo y personal.</p></div>
+<div class="list-row"><span class="number">07</span><span class="term">Revisar</span><p>Comprobar los cinco criterios del jurado.</p></div>
+</div>
+<aside class="callout warm" style="margin-top:18px"><p><strong>Importante:</strong> esta guía ayuda a pensar y planificar; no es una plantilla para rellenar. El ensayo final debe ser un texto propio y cohesionado.</p></aside>
 
-<script>
-const GLOSSARY = {"Freiheit": {"de": "Hier vor allem: die Möglichkeit, die eigene Vernunft öffentlich zu gebrauchen und Gedanken öffentlich zur Prüfung zu stellen.", "es": "libertad; aquí, sobre todo la libertad de hacer uso público de la propia razón."}, "Vernunft": {"de": "Fähigkeit, Gründe zu prüfen, zu urteilen und öffentlich zu argumentieren. Im Spanischen: razón.", "es": "razón."}, "öffentlicher Gebrauch der Vernunft": {"de": "Bei Kant: der Vernunftgebrauch als Gelehrter vor der gesamten Öffentlichkeit bzw. Leserwelt. Dieser Gebrauch soll frei sein.", "es": "uso público de la razón; uso de la razón ante el conjunto del público lector."}, "räsonieren": {"de": "Nachdenken, den Verstand bzw. die Vernunft gebrauchen und dies kritisch äußern; je nach Kontext auch abwertend: nörgeln.", "es": "razonar; usar la razón y expresar críticamente el propio juicio."}, "exerzieren": {"de": "Militärische Übungen ausführen; marschieren und Befehle einüben.", "es": "adiestrarse / hacer ejercicios militares."}, "Einschränkung": {"de": "Begrenzung einer Möglichkeit oder Freiheit.", "es": "limitación / restricción."}, "förderlich": {"de": "Hilfreich; etwas unterstützt oder begünstigt eine Entwicklung.", "es": "favorable / que fomenta."}, "Privatgebrauch der Vernunft": {"de": "Bei Kant: Vernunftgebrauch innerhalb einer bestimmten anvertrauten Funktion, eines Amtes oder Dienstes. Er kann eingeschränkt sein.", "es": "uso privado de la razón; uso de la razón dentro de un cargo, función o puesto confiado."}, "Gelehrter": {"de": "Eine Person, die als sachkundiger Denker öffentlich argumentiert und sich an die Leserwelt richtet.", "es": "sabio / docto; persona que se dirige al público como conocedor de una materia."}, "Publikum der Leserwelt": {"de": "Die gesamte Öffentlichkeit der Lesenden, an die sich ein Gelehrter mit seinen Argumenten wenden kann.", "es": "totalidad del público lector / mundo de los lectores."}, "bürgerlicher Posten": {"de": "Eine konkrete gesellschaftliche oder berufliche Funktion mit bestimmten Pflichten.", "es": "puesto civil / función pública o social."}, "Amt": {"de": "Eine übertragene öffentliche oder berufliche Funktion mit festgelegten Aufgaben.", "es": "cargo / función."}, "verderblich": {"de": "Sehr schädlich; mit negativen Folgen.", "es": "perjudicial / pernicioso."}, "Zweckmäßigkeit": {"de": "Die Frage, ob etwas für ein bestimmtes Ziel geeignet oder sinnvoll ist.", "es": "conveniencia / adecuación a un fin."}, "Nützlichkeit": {"de": "Die Frage, welchen praktischen Nutzen etwas hat.", "es": "utilidad."}, "vernünfteln": {"de": "Hier abwertend: über etwas diskutieren, nachdenken oder es infrage stellen, obwohl in der konkreten Situation Gehorsam verlangt wird.", "es": "razonar o discutir, aquí con matiz despectivo en el contexto del servicio."}, "billigermaßen nicht": {"de": "Nicht mit Recht; es wäre nicht gerechtfertigt, etwas zu verbieten.", "es": "no con justicia / no legítimamente."}, "Kriegesdienst": {"de": "Militärischer Dienst.", "es": "servicio militar."}, "Katechismusschüler": {"de": "Schüler, die im christlichen Glauben anhand eines Katechismus unterrichtet werden.", "es": "catecúmenos / alumnos de catecismo."}, "Symbol der Kirche": {"de": "Hier: das verbindliche Glaubensbekenntnis bzw. die festgelegte Lehre einer Kirche.", "es": "símbolo o credo de la Iglesia; doctrina confesional establecida."}, "wohlmeinend": {"de": "Mit guter Absicht.", "es": "bienintencionado."}, "Religions- und Kirchenwesen": {"de": "Die Organisation und Gestaltung von Religion und Kirche.", "es": "instituciones y organización de la religión y de la Iglesia."}, "aufgeklärtes Zeitalter": {"de": "Eine Epoche, in der die Menschen bereits weitgehend selbstständig und sicher ihren eigenen Verstand gebrauchen.", "es": "época ilustrada."}, "Zeitalter der Aufklärung": {"de": "Eine Epoche, in der der Prozess der Aufklärung im Gang ist, auch wenn er noch nicht abgeschlossen ist.", "es": "época de Ilustración."}, "Religionsdinge": {"de": "Fragen und Angelegenheiten der Religion.", "es": "asuntos religiosos / cuestiones religiosas."}, "Feld geöffnet": {"de": "Bildlich: Es bestehen zunehmend Möglichkeiten, sich frei in Richtung Selbstständigkeit zu entwickeln.", "es": "se abre el campo / se abren posibilidades para avanzar libremente."}, "allgemeine Aufklärung": {"de": "Aufklärung nicht nur einzelner Menschen, sondern der Gesellschaft insgesamt.", "es": "Ilustración general."}, "selbstverschuldete Unmündigkeit": {"de": "Kants Ausdruck für den Zustand, in dem Menschen ihren eigenen Verstand nicht selbstständig gebrauchen, obwohl sie grundsätzlich dazu fähig wären.", "es": "minoría de edad de la que uno mismo es culpable / culpable minoría de edad."}, "Anzeigen": {"de": "Hier: Anzeichen oder Hinweise.", "es": "indicios / señales."}};
-const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-$$(".chunk").forEach(chunk=>{
-  $$(".help-btn",chunk).forEach(btn=>{
-    btn.addEventListener("click",()=>{
-      const panel=$(`.help-panel[data-help="${btn.dataset.panel}"]`,chunk);
-      const wasOpen=panel.classList.contains("open");
-      $$(".help-panel",chunk).forEach(p=>p.classList.remove("open"));
-      $$(".help-btn",chunk).forEach(b=>b.setAttribute("aria-expanded","false"));
-      if(!wasOpen){
-        panel.classList.add("open");
-        btn.setAttribute("aria-expanded","true");
-      }
-    });
-  });
-});
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>01 / 06</span></footer>
+</section>
+<section aria-labelledby="titulo-impulsos-1" class="page" id="impulsos-1">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">ELIGE UNO DE LOS CUATRO IMPULSOS</p>
+<h2 id="titulo-impulsos-1">Cuatro puntos de partida</h2>
+<p class="deck">Compara el original alemán con la versión española. Marca los términos que puedan discutirse.</p>
+<article aria-labelledby="tema-1" class="impulse" lang="es"><div class="quote-title"><span class="quote-number">01</span><h3 id="tema-1" style="margin:0">Tema 1</h3></div>
+<div class="lang-label">Original · DE</div>
+<blockquote lang="de">«Sind moralische Urteile bloß Ausdruck unserer Gefühle?»</blockquote>
+<div class="lang-label es">Traducción de trabajo · ES</div>
+<blockquote>«¿Son los juicios morales meras expresiones de nuestros sentimientos?»</blockquote>
+<p class="attribution">Tema 1 · Pregunta filosófica del concurso 2026/27.</p>
+<p class="term-note"><strong>Clave terminológica:</strong> «juicios morales» alude a valoraciones sobre lo bueno, lo malo, lo correcto o lo incorrecto; «meras» expresa una posible reducción a los sentimientos.</p>
+</article>
+<article aria-labelledby="tema-2" class="impulse"><div class="quote-title"><span class="quote-number">02</span><h3 id="tema-2" style="margin:0">Tema 2</h3></div>
+<div class="lang-label">Original · DE</div>
+<blockquote lang="de">«Die Umwelt ist dasjenige Moment, welches die menschliche Existenz objektiviert. Aber, wenn dies geschieht, versteht der Mensch sich selbst. Wir können dies „Selbstentdeckung durch die eigene Umwelt“ nennen.»</blockquote>
+<div class="lang-label es">Traducción de trabajo · ES</div>
+<blockquote>«El entorno es el momento que objetiva la existencia humana. Pero, cuando esto ocurre, el ser humano se comprende a sí mismo. Podemos llamar a esto «autodescubrimiento a través del propio entorno».»</blockquote>
+<p class="attribution">Tetsurō Watsuji, <cite>Fūdo</cite> (1935); en español: <cite>Antropología del paisaje</cite>.</p>
+<p class="term-note"><strong>Clave terminológica:</strong> «momento» significa aquí un elemento constitutivo, no un instante. «Entorno» (<i>fūdo</i>) no es solo naturaleza física: incluye el ambiente vivido, histórico y cultural.</p>
+</article>
+<h3>Piensa antes de elegir</h3>
+<aside class="reflection"><strong>Pregunta para elegir</strong><p>¿Qué frase despierta una duda auténtica, aunque todavía no sepas cómo responderla?</p></aside>
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>02 / 06</span></footer>
+</section>
+<section aria-labelledby="titulo-impulsos-2" class="page" id="impulsos-2">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">ELIGE UNO DE LOS CUATRO IMPULSOS</p>
+<h2 id="titulo-impulsos-2">Más ideas para discutir</h2>
+<p class="deck">La finalidad no es aceptar la cita, sino descubrir una pregunta que merezca un ensayo.</p>
+<article aria-labelledby="tema-3" class="impulse"><div class="quote-title"><span class="quote-number">03</span><h3 id="tema-3" style="margin:0">Tema 3</h3></div>
+<div class="lang-label">Original · DE</div>
+<blockquote lang="de">«Hoffnung […] ist in Wahrheit das übelste der Übel, weil sie die Qual der Menschen verlängert.»</blockquote>
+<div class="lang-label es">Traducción de trabajo · ES</div>
+<blockquote>«La esperanza […] es, en verdad, el peor de los males, porque prolonga el tormento de los seres humanos.»</blockquote>
+<p class="attribution">Friedrich Nietzsche, <cite>Humano, demasiado humano</cite> I, § 71 (1878); la diapositiva cita una edición de 1954.</p>
+<p class="term-note"><strong>Clave terminológica:</strong> «esperanza» no es necesariamente optimismo; «el peor de los males» constituye una tesis provocadora y «tormento» conserva la fuerza de «Qual».</p>
+</article>
+<article aria-labelledby="tema-4" class="impulse"><div class="quote-title"><span class="quote-number">04</span><h3 id="tema-4" style="margin:0">Tema 4</h3></div>
+<div class="lang-label">Original · DE</div>
+<blockquote lang="de">«Strukturelle Ungerechtigkeit entsteht dadurch, dass viele Einzelpersonen und Institutionen ihre jeweiligen Ziele und Interessen verfolgen, meist im Rahmen der geltenden Regeln und Normen.»</blockquote>
+<div class="lang-label es">Traducción de trabajo · ES</div>
+<blockquote>«La injusticia estructural surge como consecuencia de que muchas personas e instituciones persiguen sus respectivos objetivos e intereses, por lo general dentro del marco de las reglas y normas vigentes.»</blockquote>
+<p class="attribution">Según Iris Marion Young, <cite>Responsibility for Justice</cite> (2011); versión española: <cite>Responsabilidad por la justicia</cite>.</p>
+<p class="term-note"><strong>Clave terminológica:</strong> «injusticia estructural» alude a resultados injustos de procesos sociales, incluso cuando las acciones individuales se ajustan a reglas y normas aceptadas.</p>
+</article>
+<h3>Cómo elegir un impulso</h3>
+<aside class="reflection"><strong>Decisión fundamentada</strong><p>Elijo el impulso n.º ______ porque la cuestión que me interesa es…</p></aside>
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>03 / 06</span></footer>
+</section>
+<section aria-labelledby="titulo-comprender" class="page" id="comprender">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">TALLER DE ESCRITURA · 01</p>
+<h2 id="titulo-comprender">Comprender de verdad el impulso</h2>
+<p class="deck">Lee varias veces el texto elegido: primero con apertura, después con caridad interpretativa y, por último, críticamente.</p>
+<h3>Tres formas de leer</h3>
+<div class="reading-table">
+<div class="reading-row"><span class="number">01</span><strong>Comprender</strong><span class="row-description">Subraya los conceptos clave. Expresa la idea central con tus propias palabras.</span></div>
+<div class="reading-row"><span class="number">02</span><strong>Leer con caridad</strong><span class="row-description">¿Qué interpretación razonable puede darse a esta afirmación? Formúlala en su versión más fuerte.</span></div>
+<div class="reading-row"><span class="number">03</span><strong>Leer críticamente</strong><span class="row-description">¿Qué sigue siendo ambiguo? ¿Qué supuesto, excepción o consecuencia resulta discutible?</span></div>
+</div>
+<div class="thought-prompts"><h4>Después de las tres lecturas, comprueba si puedes…</h4><ul><li>Explica con tus propias palabras qué afirma el impulso.</li><li>Formula la interpretación más sólida y caritativa de su tesis.</li><li>Identifica las dudas, ambigüedades y preguntas que surgen al examinarlo.</li></ul></div>
 
-const pop=$("#term-popover"), popC=$("#term-popover-content");
-function openTerm(term){
-  const x=GLOSSARY[term]; if(!x) return;
-  popC.innerHTML=`<strong>${esc(term)}</strong><div>${esc(x.de)}</div><div class="es" lang="es">${esc(x.es)}</div>`;
-  pop.classList.add("open");
-}
-$$(".term").forEach(b=>b.addEventListener("click",()=>openTerm(b.dataset.term)));
-$("#close-pop").addEventListener("click",()=>pop.classList.remove("open"));
-document.addEventListener("keydown",e=>{if(e.key==="Escape")pop.classList.remove("open")});
-</script>
+
+<h3>Explora desde distintos ángulos</h3>
+<div class="angles">
+<div class="angle"><strong>Vida cotidiana</strong><span>¿Qué situación concreta muestra el problema?</span></div>
+<div class="angle"><strong>Conocimientos</strong><span>¿Qué concepto o teoría del curso podría ayudarte?</span></div>
+<div class="angle"><strong>Distinciones</strong><span>¿Qué dos sentidos o casos conviene no confundir?</span></div>
+</div>
+<aside class="callout warm" style="margin-top:16px"><p><strong>Pregunta para pensar:</strong> ¿qué presupone la afirmación sin decirlo de forma explícita? A menudo, ahí comienza tu propio argumento.</p></aside>
+<aside class="reflection"><strong>Resultado de la etapa 01</strong><p>Formula en una sola frase el problema filosófico que deseas investigar. Este será tu punto de partida.</p></aside>
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>04 / 06</span></footer>
+</section>
+<section aria-labelledby="titulo-argumentar" class="page" id="argumentar">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">TALLER DE ESCRITURA · 02–04</p>
+<h2 id="titulo-argumentar">De la pregunta a los argumentos</h2>
+<p class="deck">No es suficiente tener una opinión: hay que convertirla en una tesis razonada y abierta al debate.</p>
+<div class="step-label">02 FORMULAR UNA PREGUNTA FILOSÓFICA</div>
+<p>Una pregunta filosófica permite examinar razones, conceptos y alternativas. Puede comenzar por «¿En qué sentido…?», «¿Hasta qué punto…?» o «¿Bajo qué condiciones…?».</p>
+<aside class="reflection"><strong>Resultado de la etapa 02</strong><p>Elige una pregunta central que permita analizar conceptos, supuestos y razones contrapuestas.</p></aside>
+<div class="step-label">03 PROPONER UNA TESIS PROVISIONAL</div>
+<p>Responde a tu pregunta con una afirmación precisa y discutible. Evita tanto lo obvio como lo imposible de justificar.</p>
+<aside class="reflection"><strong>Resultado de la etapa 03</strong><p>Propón una respuesta provisional, precisa y discutible. Ten presente que podrás modificarla después.</p></aside>
+<div class="step-label">04 EXAMINAR DOS ARGUMENTOS</div>
+<p>Un argumento necesita razones que apoyen la tesis. Un ejemplo puede aclarar una razón, pero no la sustituye.</p>
+<div class="argument"><h4>Argumento 1</h4>
+
+
+
+<div class="thought-prompts"><h4>Elementos que debe contener</h4><ul><li>Razón principal: ¿qué afirmación respalda tu tesis?</li><li>Justificación: ¿por qué esa razón permite sostener la tesis?</li><li>Ejemplo o caso: ¿cómo se puede ilustrar o poner a prueba el argumento?</li></ul></div></div>
+<div class="argument"><h4>Argumento 2</h4>
+
+
+
+<div class="thought-prompts"><h4>Elementos que debe contener</h4><ul><li>Razón principal: ¿qué afirmación respalda tu tesis?</li><li>Justificación: ¿por qué esa razón permite sostener la tesis?</li><li>Ejemplo o caso: ¿cómo se puede ilustrar o poner a prueba el argumento?</li></ul></div></div>
+<h3>Una distinción importante</h3>
+<aside class="reflection"><strong>Distinción conceptual</strong><p>Distingue conceptos, situaciones o sentidos cercanos que no deben confundirse. Una buena distinción puede fortalecer decisivamente tu razonamiento.</p></aside>
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>05 / 06</span></footer>
+</section>
+<section aria-labelledby="titulo-revisar" class="page" id="revisar">
+<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
+<p class="kicker">TALLER DE ESCRITURA · 05–07</p>
+<h2 id="titulo-revisar">Pensar también contra tu tesis</h2>
+<p class="deck">Un buen ensayo considera razones en contra, responde con precisión y mantiene un hilo argumentativo.</p>
+<div class="step-label">05 TOMAR EN SERIO LAS OBJECIONES</div>
+<p>Formula el mejor contraargumento posible, sin ridiculizar a quien discrepa. Después decide si tu tesis resiste, debe matizarse o necesita cambiar.</p>
+<aside class="reflection"><strong>Prueba de la objeción</strong><p>Expón la objeción más fuerte que podría plantear una persona que no comparte tu tesis.</p></aside>
+<aside class="reflection"><strong>Respuesta filosófica</strong><p>Responde con razones a esa objeción. Si es convincente, matiza o revisa tu tesis.</p></aside>
+<div class="step-label">06 ESCRIBIR UN ENSAYO CONTINUO</div>
+<p>Redacta un texto que avance mediante ideas conectadas, no una sucesión de respuestas breves.</p>
+<div class="essay-parts">
+<div class="essay-part"><strong>Inicio</strong><span>Presenta el impulso, explica el problema y plantea tu pregunta.</span></div>
+<div class="essay-part"><strong>Desarrollo</strong><span>Aclara los términos, defiende tu tesis, fundamenta los argumentos y valora objeciones.</span></div>
+<div class="essay-part"><strong>Cierre</strong><span>Responde a la pregunta sin fingir una certeza que no has demostrado.</span></div>
+</div>
+<div class="step-label">07 REVISAR CON LOS CRITERIOS DEL JURADO</div>
+<ul class="checks">
+<li>¿Mi texto trabaja realmente el impulso y mi pregunta?</li>
+<li>¿He aclarado los conceptos, supuestos y consecuencias?</li>
+<li>¿He fundamentado la tesis y tratado objeciones fuertes?</li>
+<li>¿Se entiende cómo se conecta cada parte con la anterior?</li>
+<li>¿Se percibe una reflexión propia, y no solo un resumen?</li>
+</ul>
+<aside class="reflection"><strong>Último paso</strong><p>Antes de entregar, identifica qué cambio mejoraría más tu ensayo y realízalo.</p></aside>
+<aside aria-label="Fuentes y criterios de traducción" class="sources"><p><strong>Nota sobre las traducciones.</strong> Las versiones españolas son traducciones didácticas de los enunciados alemanes facilitados, no citas literales de una edición publicada. La terminología se ha contrastado con: T. Watsuji, <cite>Antropología del paisaje</cite> (trad. Juan Masiá y Anselmo Mataix, Sígueme, 2006); F. Nietzsche, <cite>Humano, demasiado humano</cite>, I, § 71; I. M. Young, <cite>Responsabilidad por la justicia</cite> (Morata) y «Responsabilidad y justicia global: un modelo de conexión social» (2005). El cuarto impulso es una reformulación atribuida a Young.</p></aside>
+<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>06 / 06</span></footer>
+</section>
+</main>
 </body>
 </html>
