@@ -1,272 +1,220 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
- <meta name="theme-color" content="#f8f5ee">
- <meta name="description" content="Guía estática de ensayo filosófico para iPad: cuatro impulsos bilingües alemán–español y siete etapas de escritura, sin formularios ni funciones de exportación.">
- <title>Mi ensayo filosófico · Guía de lectura y escritura 2026/27</title>
- <style>
-:root { --navy:#19263d; --rust:#d9634c; --teal:#17656b; --mid:#55667a; --pale:#e9f1ef; --faint:#f2f5f4; --warm:#f8f5ee; --line:#ced7d5; --blue:#2a5799; --paper:#fff; --background:#edf0ee; color-scheme:light; }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; scroll-padding-top:120px; }
-body { margin:0; background:var(--background); color:var(--navy); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif; }
-a { color:var(--teal); }
-a:focus-visible { outline:3px solid var(--blue); outline-offset:3px; }
-.site-header { position:sticky; top:0; z-index:10; background:rgba(248,245,238,.98); border-bottom:1px solid #d2d8d5; box-shadow:0 4px 16px #19263d11; padding:calc(12px + env(safe-area-inset-top, 0px)) max(18px,env(safe-area-inset-right,18px)) 10px max(18px,env(safe-area-inset-left,18px)); }
-.site-header-inner { max-width:1000px; margin:auto; }
-.brand { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:baseline; gap:5px 16px; font-weight:850; color:var(--navy); font-size:.95rem; }
-.brand span { font-size:.76rem; font-weight:550; color:var(--mid); }
-.mini-nav { display:flex; gap:7px; overflow-x:auto; scrollbar-width:thin; white-space:nowrap; margin-top:10px; padding:2px 0 5px; }
-.mini-nav a { text-decoration:none; background:#ebf1ee; border:1px solid #d9e3df; border-radius:7px; padding:6px 11px; color:var(--teal); font-size:.78rem; font-weight:750; }
-.mini-nav a:hover { background:#dce9e5; }
-.sheet { max-width:880px; padding:0 15px; margin:23px auto 62px; }
-.page { position:relative; background:var(--paper); border-left:8px solid var(--rust); border-radius:5px; margin-bottom:21px; padding:32px 43px 26px; box-shadow:0 3px 22px #19263d15; scroll-margin-top:15px; overflow:hidden; }
-.page:before { content:""; background:var(--warm); position:absolute; top:0; left:0; right:0; height:74px; }
-.page > * { position:relative; }
-.running { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0 0 40px; font-weight:800; font-size:.69rem; letter-spacing:.045em; color:var(--teal); }
-.running .year { color:var(--blue); white-space:nowrap; }
-.page-footer { display:flex; justify-content:space-between; gap:10px; margin-top:32px; padding-top:14px; border-top:1px solid var(--line); color:var(--mid); font-size:.69rem; font-weight:750; letter-spacing:.03em; }
-.kicker { margin:0 0 7px; color:var(--teal); font-size:.8rem; font-weight:800; letter-spacing:.055em; }
-h1,h2 { font-family:Georgia,"Times New Roman",serif; color:var(--navy); font-weight:700; letter-spacing:-.018em; line-height:1.16; }
-h1 { font-size:clamp(2rem,5vw,2.95rem); margin:0 0 9px; }
-h2 { font-size:clamp(1.72rem,3.8vw,2.12rem); margin:0 0 9px; }
-h3 { margin:27px 0 10px; font-size:.86rem; line-height:1.4; text-transform:uppercase; color:var(--teal); font-weight:850; letter-spacing:.018em; }
-h4 { font-size:.88rem; color:var(--teal); margin:0 0 9px; }
-p { margin:0 0 14px; }
-.deck { color:var(--mid); font-size:.96rem; margin-bottom:18px; }
-.callout { padding:16px 18px; border-radius:7px; background:var(--pale); font-size:.94rem; }
-.callout.warm { background:var(--warm); }
-.callout p:last-child { margin:0; }
-.criteria,.stages,.reading-table,.angles,.essay-parts { display:grid; gap:3px; }
-.list-row { display:grid; grid-template-columns:33px minmax(130px,.9fr) minmax(0,1.7fr); align-items:start; gap:11px; padding:9px 10px; border-radius:5px; font-size:.89rem; }
-.list-row:nth-child(odd),.angle:nth-child(odd),.essay-part:nth-child(odd) { background:var(--faint); }
-.list-row .number,.reading-row .number { font-weight:850; color:var(--rust); }
-.list-row .term { font-weight:760; color:var(--teal); }
-.list-row p { margin:0; }
-.impulse { background:var(--warm); border-left:5px solid var(--rust); border-radius:8px; padding:19px 21px; margin:13px 0 21px; }
-.quote-title { display:flex; align-items:center; gap:17px; margin:0 0 8px; }
-.quote-number { color:var(--rust); font-size:2rem; font-weight:850; line-height:1; }
-.lang-label { font-weight:850; font-size:.7rem; text-transform:uppercase; letter-spacing:.07em; color:var(--mid); margin:13px 0 6px; }
-.lang-label.es { color:var(--teal); }
-blockquote { font-family:Georgia,"Times New Roman",serif; font-size:1.11rem; line-height:1.57; margin:0 0 11px; hyphens:auto; overflow-wrap:break-word; }
-.attribution { font-size:.81rem; color:var(--mid); margin:8px 0 11px; }
-.term-note { border-top:1px solid var(--line); padding-top:11px; margin:0; font-size:.86rem; color:var(--teal); }
-.reading-row { display:grid; grid-template-columns:34px minmax(120px,.9fr) minmax(0,1.9fr); gap:10px; padding:12px; border-radius:6px; font-size:.89rem; }
-.reading-row:nth-child(odd) { background:var(--faint); }
-.reading-row strong { color:var(--teal); }
-.angle { display:grid; grid-template-columns:minmax(130px,.75fr) 1.85fr; gap:12px; border-radius:5px; padding:10px; font-size:.89rem; }
-.angle strong { color:var(--teal); }
-.step-label { font-weight:850; color:var(--rust); font-size:.93rem; letter-spacing:.01em; margin:28px 0 9px; }
-.argument { margin:17px 0; padding:16px 19px; border-radius:8px; background:var(--faint); }
-.argument:nth-of-type(even) { background:var(--warm); }
-.argument h4 { letter-spacing:.025em; text-transform:uppercase; }
-.essay-part { display:grid; grid-template-columns:120px 1fr; gap:12px; padding:10px; border-radius:5px; font-size:.89rem; }
-.essay-part strong { color:var(--teal); }
-.reflection { margin:16px 0 20px; background:var(--pale); border-left:3px solid var(--teal); border-radius:5px; padding:13px 17px; font-size:.92rem; }
-.reflection strong { display:block; color:var(--teal); margin-bottom:3px; }
-.reflection p { margin:0; }
-.thought-prompts { margin:16px 0 19px; padding:15px 17px; border-radius:7px; background:var(--faint); }
-.thought-prompts ul { margin:4px 0 0 19px; padding:0; }
-.thought-prompts li { padding-left:2px; margin:6px 0; }
-.checks { margin:12px 0 15px; padding-left:24px; display:grid; gap:10px; }
-.checks li { padding-left:3px; }
-.sources { margin:19px 0 10px; border-radius:6px; background:var(--warm); color:var(--mid); font-size:.83rem; padding:15px 17px; }
-.sources p { margin:0; }
-@media(max-width:650px) {
- body { font-size:15px; }
- html { scroll-padding-top:135px; }
- .site-header { padding-top:calc(9px + env(safe-area-inset-top,0px)); }
- .sheet { padding:0 8px; margin:13px auto 42px; }
- .page { padding:22px 19px 18px; border-left-width:6px; margin-bottom:13px; }
- .page:before { height:56px; }
- .running { font-size:.58rem; margin-bottom:29px; }
- .deck { font-size:.92rem; }
- .impulse { padding:15px 13px; }
- blockquote { font-size:1.01rem; }
- .list-row { grid-template-columns:26px 1fr; gap:3px 10px; }
- .list-row p { grid-column:2; }
- .reading-row { grid-template-columns:28px 1fr; gap:5px 8px; }
- .reading-row .row-description { grid-column:2; }
- .angle,.essay-part { grid-template-columns:1fr; gap:3px; }
- .page-footer { font-size:.58rem; }
-}
-@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light" name="color-scheme"/>
+<title>Guía para escribir un ensayo filosófico · EF</title>
+<style>
+    :root {
+      --ink: #203045;
+      --muted: #526376;
+      --navy: #183451;
+      --accent: #146b76;
+      --light-accent: #eaf4f4;
+      --cream: #fbf7ef;
+      --rule: #d7e0e5;
+      --pale: #f4f7f8;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { margin: 0; background: #e9edf0; color: var(--ink); font-family: "Arial", "Liberation Sans", sans-serif; font-size: 10.3pt; line-height: 1.40; }
+    .document { padding: 20px 12px 32px; }
+    .page { width: 210mm; min-height: 297mm; margin: 0 auto 19px; background: #fff; box-shadow: 0 7px 23px rgba(21,42,55,.13); padding: 14.5mm 16.5mm 12.7mm; position: relative; display: flex; flex-direction: column; }
+    .important { padding: 10px 13px 11px; background: #fff5dc; border-left: 4px solid #b17922; color: #4a3820; font-size: 10.2pt; line-height: 1.42; margin: -1mm 0 15px; }
+    .important strong { display: block; font-size: 8.7pt; letter-spacing: .065em; margin-bottom: 2px; }
+    .masthead { border-bottom: 1px solid var(--rule); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: baseline; gap: 15px; font-size: 8.1pt; font-weight: 700; color: var(--muted); letter-spacing: .07em; }
+    .masthead .ref { color: var(--accent); font-weight: 700; white-space: nowrap; }
+    .hero { display: flex; align-items: flex-start; gap: 16px; margin: 16px 0 13px; }
+    .phase-number { flex: 0 0 47px; width: 47px; height: 47px; border-radius: 11px; background: var(--navy); color: white; display: flex; align-items: center; justify-content: center; font-size: 21pt; font-weight: 700; letter-spacing: -.05em; }
+    h1 { font-size: 21pt; line-height: 1.13; margin: -1px 0 6px; letter-spacing: -.022em; font-weight: 750; color: var(--navy); }
+    .subtitle { margin: 0; font-size: 10.55pt; line-height: 1.40; color: #4a5869; }
+    .progress { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; margin: 0 0 17px; }
+    .progress span { padding: 7px 3px; text-align: center; background: #eff3f4; color: #526778; border-radius: 4px; text-transform: uppercase; font-size: 7.8pt; letter-spacing: .036em; font-weight: 700; }
+    .progress span.active { color: #fff; background: var(--accent); }
+    .intro-note { display: flex; gap: 11px; align-items: flex-start; border: 1px solid #bcd8db; border-radius: 7px; background: #f3fafa; padding: 11px 12px; margin: 0 0 17px; }
+    .intro-note .icon { display: flex; justify-content: center; align-items: center; height: 23px; width: 23px; flex: 0 0 23px; border-radius: 50%; background: #d6e9ea; color: #225d65; font-size: 13pt; font-weight: 700; }
+    .intro-note p { margin: 0; }
+    .tiny-heading { color: var(--accent); font-size: 8pt; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 3px; }
+    .step { margin: 0 0 17px; break-inside: avoid; page-break-inside: avoid; }
+    .step h2 { display: flex; align-items: flex-start; gap: 9px; font-size: 12.1pt; line-height: 1.27; font-weight: 760; margin: 0 0 5px; color: var(--navy); }
+    .step h2 .n { font-size: 8.6pt; flex: 0 0 21px; width: 21px; height: 21px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--light-accent); color: var(--accent); }
+    .step > p { margin: 0 0 7px 30px; }
+    .activity { background: var(--pale); border-left: 3px solid #77b4bb; border-radius: 0 5px 5px 0; padding: 9px 11px; margin-left: 30px; font-size: 9.9pt; }
+    .activity .tag { display: inline-block; margin-right: 7px; font-size: 8pt; font-weight: 800; text-transform: uppercase; letter-spacing: .045em; color: var(--accent); }
+    .example { background: var(--cream); border-radius: 6px; border: 1px solid #e9dcca; padding: 10px 13px; margin: 2px 0 14px; font-size: 9.75pt; line-height: 1.41; }
+    .example b { display: inline-block; color: #75582e; letter-spacing: .05em; text-transform: uppercase; font-size: 7.9pt; margin-right: 7px; }
+    .outline { display: grid; grid-template-columns: 29% 1fr; margin: 9px 0 8px 30px; border: 1px solid var(--rule); border-bottom: 0; font-size: 9.45pt; }
+    .outline div { padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+    .outline .label { font-weight: 700; background: #f3f7f8; color: var(--navy); }
+    .criteria { display: grid; grid-template-columns: 30% 1fr; border: 1px solid var(--rule); border-bottom: 0; margin: 8px 0 14px 30px; font-size: 9.2pt; }
+    .criteria div { padding: 7.2px 9px; border-bottom: 1px solid var(--rule); }
+    .criteria .label { background: #f3f7f8; font-weight: 700; color: var(--navy); }
+    .output { border-top: 1.5px solid #a3c8cc; background: #f5f9f9; margin-top: auto; padding: 10px 11px; display: flex; gap: 8px; font-size: 9.65pt; line-height: 1.35; }
+    .output b { color: var(--accent); text-transform: uppercase; letter-spacing: .045em; white-space: nowrap; font-size: 8.35pt; margin-top: 1px; }
+    footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--rule); color: #637487; font-size: 7.75pt; }
+    footer .folio { color: var(--accent); font-weight: 800; }
+    .deadline { padding: 10px 12px; border-left: 4px solid var(--accent); background: var(--light-accent); border-radius: 0 6px 6px 0; font-size: 10pt; margin: 0 0 14px; }
+    .deadline strong { color: var(--accent); display: block; text-transform: uppercase; letter-spacing: .055em; font-size: 8pt; margin-bottom: 3px; }
+    ul.checklist { margin: 3px 0 12px 29px; padding-left: 16px; }
+    ul.checklist li { padding-left: 1px; margin: 6px 0; }
+    .declaration { background: var(--cream); padding: 9px 12px; border: 1px solid #eadcc4; border-radius: 6px; margin: 0 0 10px; font-size: 9.4pt; }
+    .declaration .quotation { margin: 3px 0 4px; font-style: italic; }
+    .note-small { font-size: 8.9pt; line-height: 1.35; color: #506173; margin: 0 0 8px; }
+    a { color: #146b76; text-decoration: underline; text-underline-offset: 2px; }
+    .source { font-size: 7.6pt; line-height: 1.35; color: #5b6879; border-top: 1px solid var(--rule); padding-top: 8px; }
+    .page-four .hero { margin-top: 13px; margin-bottom: 10px; }
+    .page-four .progress { margin-bottom: 12px; }
+    .page-four .step { margin-bottom: 11px; }
+    .page-four .step > p { margin-bottom: 6px; }
+    .page-four .criteria { margin-bottom: 11px; }
+    .page-four ul.checklist { font-size: 9.35pt; line-height: 1.32; }
+    .page-four footer { margin-top: auto; }
+    @media screen and (max-width: 800px) {
+      .document { padding: 0; }
+      .page { width: 100%; min-height: auto; padding: 26px 21px 23px; margin: 0 0 13px; box-shadow: none; }
+      h1 { font-size: 19pt; }
+      .phase-number { width: 42px; height: 42px; flex-basis: 42px; }
+      .progress span { font-size: 6.7pt; }
+      .criteria { margin-left: 0; grid-template-columns: 36% 1fr; }
+      .outline { margin-left: 0; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 0; }
+      body { background: #fff; }
+      .document { padding: 0; }
+      .page { width: 210mm; height: 297mm; min-height: 297mm; max-height: 297mm; margin: 0; box-shadow: none; break-after: page; page-break-after: always; overflow: hidden; }
+      .page:last-child { break-after: auto; page-break-after: auto; }
+      a { color: inherit; }
+    }
+  
+
+    /* Los impulsos bilingües están pensados para leer y elegir, no para rellenar. */
+    .prompt-panel { margin: 0 0 12px; padding: 8px 11px 7px; border: 1px solid #c9dde1; border-radius: 7px; background: #f7fbfb; break-inside: avoid; }
+    .prompt-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 5px; }
+    .prompt-heading h2 { margin: 0; font-size: 11.5pt; color: var(--navy); line-height: 1.18; }
+    .prompt-heading a { font-size: 8pt; white-space: nowrap; }
+    .prompt-row { display: grid; grid-template-columns: 22px minmax(0,1fr) minmax(0,1fr); gap: 9px; padding: 4px 0; align-items: start; border-top: 1px solid #d8e7e9; }
+    .prompt-number { width: 20px; height: 20px; border-radius: 5px; background: #dcebed; color: var(--accent); font-weight: bold; text-align: center; line-height: 20px; font-size: 9pt; }
+    .prompt-language { display: inline-block; font-size: 7pt; color: var(--accent); font-weight: 800; letter-spacing: .055em; margin-right: 5px; }
+    .prompt-text { margin: 1px 0; font-size: 8.85pt; line-height: 1.22; }
+    .prompt-attribution { color: #586a7d; font-size: 7.35pt; line-height: 1.2; }
+    .prompt-caveat { color: #526879; font-size: 7.5pt; line-height: 1.25; margin: 5px 0 0; }
+    .page-one .hero { margin: 12px 0 10px; }
+    .page-one .progress { margin-bottom: 10px; }
+    .page-one .important { margin-bottom: 11px; padding: 8px 12px; }
+    .page-one .intro-note { margin-bottom: 10px; padding: 7px 10px; align-items: center; }
+    .page-one .step { margin-bottom: 7px; }
+    .page-one .step > p { margin-bottom: 5px; }
+    .page-one .activity { padding: 7px 9px; }
+    .page-one .output { padding: 8px 11px; }
+    .page-two .step { margin-bottom: 12px; }
+    .page-two .step > p { margin-bottom: 5px; }
+    .page-two .activity { padding: 8px 10px; }
+    .page-two .example { margin-bottom: 10px; padding: 8px 11px; }
+    .page-two .output { padding: 8px 11px; }
+    @media screen and (max-width: 600px) {
+      .prompt-row { grid-template-columns: 24px minmax(0,1fr); }
+      .prompt-row .prompt-es { grid-column: 2; }
+      .prompt-heading { flex-wrap: wrap; }
+    }
+    @media print { .prompt-row { break-inside: avoid; } }
+
+/* Die deutschen Wettbewerbsvorgaben sind wortgetreu wiedergegeben. */
+.prompt-panel { padding: 7px 10px; margin-bottom: 9px; }
+.prompt-heading { margin-bottom: 3px; }
+.prompt-row { column-gap: 8px; padding: 4px 0; }
+.prompt-text { font-size: 8.4pt; line-height: 1.19; margin: 2px 0 3px; hyphens: auto; }
+.prompt-attribution { font-size: 7.1pt; line-height: 1.18; }
+.prompt-caveat { margin: 5px 0 0; font-size: 7.05pt; }
+.page-one .hero { margin: 9px 0 7px; }
+.page-one .progress { margin-bottom: 7px; }
+.page-one .important { margin-bottom: 8px; padding: 7px 12px; }
+.page-one .intro-note { margin-bottom: 7px; padding: 6px 9px; }
+.page-one .step { margin-bottom: 5px; }
+.page-one .step > p { margin-bottom: 3px; }
+.page-one .activity { padding: 5px 8px; font-size: 9.2pt; }
+.page-one .output { padding: 6px 9px; }
 </style>
 </head>
 <body>
-<header class="site-header">
- <div class="site-header-inner">
-  <div class="brand">Mi ensayo filosófico <span>Guía de lectura y escritura · 2026/27</span></div>
-  <nav class="mini-nav" aria-label="Secciones de la guía">
-   <a href="#inicio">Introducción</a>
-   <a href="#impulsos-1">Impulsos 1–2</a>
-   <a href="#impulsos-2">Impulsos 3–4</a>
-   <a href="#comprender">Comprender</a>
-   <a href="#argumentar">Argumentar</a>
-   <a href="#revisar">Revisar</a>
-  </nav>
- </div>
-</header>
-<main class="sheet" id="guia">
-<section aria-labelledby="titulo-inicio" class="page" id="inicio">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">UNA IDEA QUE SE ATREVE.</p>
-<h1 id="titulo-inicio">Mi ensayo filosófico</h1>
-<p class="deck">Una guía de lectura y escritura: del impulso del concurso al ensayo con voz propia.</p>
-<aside class="callout"><p><strong>Tu objetivo:</strong> no encontrar la «opinión correcta», sino elaborar una respuesta propia y razonada a una pregunta filosófica. Puedes estar de acuerdo, discrepar o modificar una postura a medida que argumentas.</p></aside>
-<h3>¿Qué valora el jurado en un buen ensayo?</h3>
-<div aria-label="Cinco criterios del jurado" class="criteria">
-<div class="list-row"><span class="number">01</span><span class="term">Relación con el tema</span><p>Partes del impulso elegido y de una pregunta pertinente.</p></div>
-<div class="list-row"><span class="number">02</span><span class="term">Profundidad filosófica</span><p>Aclaras conceptos, supuestos y consecuencias.</p></div>
-<div class="list-row"><span class="number">03</span><span class="term">Argumentación</span><p>Defiendes una tesis y examinas objeciones sólidas.</p></div>
-<div class="list-row"><span class="number">04</span><span class="term">Coherencia</span><p>Tus ideas siguen un hilo lógico reconocible.</p></div>
-<div class="list-row"><span class="number">05</span><span class="term">Originalidad</span><p>Piensas por tu cuenta y no solo resumes a otros.</p></div>
+<main class="document">
+<article aria-labelledby="page1-title" class="page page-one">
+<div class="important"><strong>AVISO IMPORTANTE PARA EL ALUMNO</strong>El concurso solo admite ensayos redactados <b>en alemán</b>. Sin embargo, puedes aprovechar esta oportunidad para <b>practicar la escritura filosófica en español</b>. Tu ensayo en español será un ejercicio de aprendizaje, no una candidatura válida para el concurso.</div>
+<div class="masthead"><span>ENSAYO FILOSÓFICO / GUÍA DE ESCRITURA · EF</span><span class="ref">DEL TEMA A LA PREGUNTA</span></div>
+<div class="hero"><div class="phase-number">01</div><div><h1 id="page1-title">Elegir y comprender un tema</h1><p class="subtitle">Compara los cuatro impulsos de 2026/27. Después, elige uno y descubre qué cuestión filosófica plantea.</p></div></div>
+<div aria-label="Fases del proceso" class="progress"><span class="active">01 · Comprender</span><span>02 · Argumentar</span><span>03 · Examinar</span><span>04 · Revisar</span></div>
+<aside class="intro-note"><div aria-hidden="true" class="icon">i</div><div><div class="tiny-heading">Cómo utilizar esta guía</div><p>Trabaja siempre <b>en tu propio cuaderno</b> (o en un documento digital aparte). Esta guía se lee y se consulta; <b>no se rellena</b>.</p></div></aside><section aria-labelledby="prompt-title" class="prompt-panel">
+<div class="prompt-heading"><h2 id="prompt-title">Los 4 impulsos · Die 4 Impulse</h2><a href="https://phil-essay.de/" rel="noopener" target="_blank">Originales oficiales ↗</a></div>
+<div class="prompt-row">
+<div class="prompt-number">1</div>
+<div class="prompt-de" lang="de"><span class="prompt-language">DE · ORIGINAL</span><p class="prompt-text">„Sind moralische Urteile bloß Ausdruck unserer Gefühle?“</p><div class="prompt-attribution">Thema 1</div></div>
+<div class="prompt-es" lang="es"><span class="prompt-language">ES · TRADUCCIÓN</span><p class="prompt-text">«¿Son los juicios morales simplemente expresión de nuestros sentimientos?»</p><div class="prompt-attribution">Tema 1</div></div>
 </div>
-<h3>Siete etapas · Un resultado en cada una</h3>
-<div aria-label="Siete etapas del ensayo" class="stages">
-<div class="list-row"><span class="number">01</span><span class="term">Comprender el impulso</span><p>Identificar una dificultad filosófica interesante.</p></div>
-<div class="list-row"><span class="number">02</span><span class="term">Formular una pregunta</span><p>Plantear una pregunta central para el ensayo.</p></div>
-<div class="list-row"><span class="number">03</span><span class="term">Proponer una tesis</span><p>Dar una respuesta provisional y discutible.</p></div>
-<div class="list-row"><span class="number">04</span><span class="term">Examinar argumentos</span><p>Desarrollar dos razonamientos defendibles.</p></div>
-<div class="list-row"><span class="number">05</span><span class="term">Considerar objeciones</span><p>Responder justamente al mejor contraargumento.</p></div>
-<div class="list-row"><span class="number">06</span><span class="term">Escribir el ensayo</span><p>Redactar un razonamiento continuo y personal.</p></div>
-<div class="list-row"><span class="number">07</span><span class="term">Revisar</span><p>Comprobar los cinco criterios del jurado.</p></div>
+<div class="prompt-row">
+<div class="prompt-number">2</div>
+<div class="prompt-de" lang="de"><span class="prompt-language">DE · ORIGINAL</span><p class="prompt-text">„Die Umwelt ist dasjenige Moment, welches die menschliche Existenz objektiviert. Aber, wenn dies geschieht, versteht der Mensch sich selbst. Wir können dies ‚Selbstentdeckung durch die eigene Umwelt‘ nennen.“</p><div class="prompt-attribution">Tetsuro Watsuji, Fûdo (1935; japanischer Philosoph)</div></div>
+<div class="prompt-es" lang="es"><span class="prompt-language">ES · TRADUCCIÓN</span><p class="prompt-text">«El entorno es aquel factor que objetiva la existencia humana. Pero, cuando esto ocurre, el ser humano se comprende a sí mismo. Podemos llamar a esto “autodescubrimiento a través del propio entorno”.»</p><div class="prompt-attribution">Tetsuro Watsuji, Fûdo (1935; filósofo japonés)</div></div>
 </div>
-<aside class="callout warm" style="margin-top:18px"><p><strong>Importante:</strong> esta guía ayuda a pensar y planificar; no es una plantilla para rellenar. El ensayo final debe ser un texto propio y cohesionado.</p></aside>
-
-
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>01 / 06</span></footer>
+<div class="prompt-row">
+<div class="prompt-number">3</div>
+<div class="prompt-de" lang="de"><span class="prompt-language">DE · ORIGINAL</span><p class="prompt-text">„Hoffnung […] ist in Wahrheit das übelste der Übel, weil sie die Qual der Menschen verlängert.“</p><div class="prompt-attribution">Friedrich Nietzsche, Werke in drei Bänden (1954)</div></div>
+<div class="prompt-es" lang="es"><span class="prompt-language">ES · TRADUCCIÓN</span><p class="prompt-text">«La esperanza […] es en verdad el peor de los males, porque prolonga el tormento de los seres humanos.»</p><div class="prompt-attribution">Friedrich Nietzsche, Werke in drei Bänden (1954)</div></div>
+</div>
+<div class="prompt-row">
+<div class="prompt-number">4</div>
+<div class="prompt-de" lang="de"><span class="prompt-language">DE · ORIGINAL</span><p class="prompt-text">„Strukturelle Ungerechtigkeit entsteht dadurch, dass viele Einzelpersonen und Institutionen ihre jeweiligen Ziele und Interessen verfolgen, meist im Rahmen der geltenden Regeln und Normen.“</p><div class="prompt-attribution">Nach Iris Marion Young, Responsibility for Justice (2011)</div></div>
+<div class="prompt-es" lang="es"><span class="prompt-language">ES · TRADUCCIÓN</span><p class="prompt-text">«La injusticia estructural surge del hecho de que muchas personas e instituciones persiguen sus respectivos objetivos e intereses, generalmente dentro del marco de las reglas y normas vigentes.»</p><div class="prompt-attribution">Según Iris Marion Young, Responsibility for Justice (2011)</div></div>
+</div>
+<p class="prompt-caveat">Las citas en alemán reproducen literalmente los cuatro enunciados de la convocatoria 2026/27. Las versiones en español son traducciones para esta actividad, no textos oficiales.</p>
 </section>
-<section aria-labelledby="titulo-impulsos-1" class="page" id="impulsos-1">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">ELIGE UNO DE LOS CUATRO IMPULSOS</p>
-<h2 id="titulo-impulsos-1">Cuatro puntos de partida</h2>
-<p class="deck">Compara el original alemán con la versión española. Marca los términos que puedan discutirse.</p>
-<article aria-labelledby="tema-1" class="impulse" lang="es"><div class="quote-title"><span class="quote-number">01</span><h3 id="tema-1" style="margin:0">Tema 1</h3></div>
-<div class="lang-label">Original · DE</div>
-<blockquote lang="de">«Sind moralische Urteile bloß Ausdruck unserer Gefühle?»</blockquote>
-<div class="lang-label es">Traducción de trabajo · ES</div>
-<blockquote>«¿Son los juicios morales meras expresiones de nuestros sentimientos?»</blockquote>
-<p class="attribution">Tema 1 · Pregunta filosófica del concurso 2026/27.</p>
-<p class="term-note"><strong>Clave terminológica:</strong> «juicios morales» alude a valoraciones sobre lo bueno, lo malo, lo correcto o lo incorrecto; «meras» expresa una posible reducción a los sentimientos.</p>
+<section class="step"><h2><span class="n">1</span> Lee el tema desde distintas perspectivas</h2><p>Lee varias veces la pregunta o la cita: primero con una actitud abierta, después intentando interpretarla de la manera más favorable y, por último, de forma crítica. <b>Comprender es anterior a juzgar.</b></p><div class="activity"><span class="tag">En tu cuaderno</span>Elige uno de los temas 1–4, anota su número y expresa su idea principal con tus palabras. ¿Qué tiene de convincente y qué te resulta problemático?</div></section>
+<section class="step"><h2><span class="n">2</span> Descubre el problema filosófico</h2><p>Tu pregunta es filosófica cuando trata sobre conceptos, razones, supuestos o criterios de valoración, y no se limita a reunir datos.</p><div class="activity"><span class="tag">En tu cuaderno</span>Explica uno o dos conceptos clave. Identifica un supuesto no expresado, una posible excepción o una consecuencia sorprendente del tema.</div></section>
+<div class="output"><b>Tu resultado</b><span>Has elegido un tema y comprendido sus conceptos, supuestos y puntos discutibles. En el siguiente paso formularás tu pregunta.</span></div>
+<footer><span>Guía de escritura · Ensayo filosófico en español</span><span class="folio">1 / 4</span></footer>
 </article>
-<article aria-labelledby="tema-2" class="impulse"><div class="quote-title"><span class="quote-number">02</span><h3 id="tema-2" style="margin:0">Tema 2</h3></div>
-<div class="lang-label">Original · DE</div>
-<blockquote lang="de">«Die Umwelt ist dasjenige Moment, welches die menschliche Existenz objektiviert. Aber, wenn dies geschieht, versteht der Mensch sich selbst. Wir können dies „Selbstentdeckung durch die eigene Umwelt“ nennen.»</blockquote>
-<div class="lang-label es">Traducción de trabajo · ES</div>
-<blockquote>«El entorno es el momento que objetiva la existencia humana. Pero, cuando esto ocurre, el ser humano se comprende a sí mismo. Podemos llamar a esto «autodescubrimiento a través del propio entorno».»</blockquote>
-<p class="attribution">Tetsurō Watsuji, <cite>Fūdo</cite> (1935); en español: <cite>Antropología del paisaje</cite>.</p>
-<p class="term-note"><strong>Clave terminológica:</strong> «momento» significa aquí un elemento constitutivo, no un instante. «Entorno» (<i>fūdo</i>) no es solo naturaleza física: incluye el ambiente vivido, histórico y cultural.</p>
+<article aria-labelledby="page2-title" class="page page-two">
+<div class="masthead"><span>ENSAYO FILOSÓFICO / GUÍA DE ESCRITURA · EF</span><span class="ref">DE LA PREGUNTA A LOS ARGUMENTOS</span></div>
+<div class="hero"><div class="phase-number">02</div><div><h1 id="page2-title">Preguntar y argumentar</h1><p class="subtitle">Transforma el tema elegido en una pregunta propia; después formula una tesis discutible y defiéndela con razones.</p></div></div>
+<div class="progress"><span>01 · Comprender</span><span class="active">02 · Argumentar</span><span>03 · Examinar</span><span>04 · Revisar</span></div><section class="step"><h2><span class="n">3</span> Formula tu propia pregunta central</h2><p>Puedes centrarte en un aspecto concreto del tema, pero la relación con la propuesta elegida debe seguir siendo reconocible en todo momento.</p><div class="activity"><span class="tag">En tu cuaderno</span>Escribe dos posibles preguntas centrales. Elige aquella que de verdad te interese y sobre la que sea posible defender posturas distintas con buenas razones.</div></section>
+<section class="step"><h2><span class="n">4</span> Escribe una tesis principal provisional</h2><p>Una tesis es una respuesta a tu pregunta central que necesita justificación. Puedes modificarla si descubres que tus argumentos no la sostienen.</p><div class="activity"><span class="tag">En tu cuaderno</span>Formula tu respuesta en una sola frase. Comprueba: ¿una persona razonable podría estar en desacuerdo? ¿Podría yo responder con buenos argumentos?</div></section>
+<aside class="example"><b>La diferencia</b><b style="font-size:9pt;letter-spacing:normal;text-transform:none;color:#203045">Anuncio:</b> «Voy a examinar si las decisiones tomadas bajo presión son libres».<br/><b style="font-size:9pt;letter-spacing:normal;text-transform:none;color:#203045">Tesis:</b> «Una decisión no es libre por el mero hecho de que la tomemos nosotros mismos».</aside>
+<section class="step"><h2><span class="n">5</span> Desarrolla dos argumentos sólidos</h2><p>Dos argumentos bien pensados son más útiles que una larga lista de afirmaciones. Cada uno debe aportar una idea diferente.</p><div class="activity"><span class="tag">En tu cuaderno</span>Abre dos apartados: «Argumento 1» y «Argumento 2». Para cada uno, responde: <b>(a)</b> ¿Qué afirmo? <b>(b)</b> ¿Por qué debería ser cierto? <b>(c)</b> ¿Qué supuesto o criterio general sostiene mi argumento? <b>(d)</b> ¿Qué implica para mi tesis?</div></section>
+<section class="step"><h2><span class="n">6</span> Haz visibles tus ideas</h2><p>Un ejemplo cotidiano o un experimento mental puede ayudarte a mostrar una razón con claridad. Pero no sustituye la explicación de <em>por qué</em> esa razón es convincente.</p><div class="activity"><span class="tag">En tu cuaderno</span>Añade un ejemplo breve a cada argumento y explica en una o dos frases qué demuestra. Pregúntate: ¿mi argumento seguiría siendo válido sin este ejemplo?</div></section>
+<aside class="example"><b>Prueba de reflexión</b>Distingue entre una afirmación sobre hechos y una valoración filosófica: aunque sepamos cómo deciden realmente las personas, todavía debemos aclarar cuándo <em>deberíamos</em> llamar «libre» a una decisión.</aside>
+<div class="output"><b>Tu resultado</b><span>Has formulado una pregunta central, una tesis y dos argumentos distintos, claros y fundamentados.</span></div>
+<footer><span>Guía de escritura · Ensayo filosófico en español</span><span class="folio">2 / 4</span></footer>
 </article>
-<h3>Piensa antes de elegir</h3>
-<aside class="reflection"><strong>Pregunta para elegir</strong><p>¿Qué frase despierta una duda auténtica, aunque todavía no sepas cómo responderla?</p></aside>
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>02 / 06</span></footer>
-</section>
-<section aria-labelledby="titulo-impulsos-2" class="page" id="impulsos-2">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">ELIGE UNO DE LOS CUATRO IMPULSOS</p>
-<h2 id="titulo-impulsos-2">Más ideas para discutir</h2>
-<p class="deck">La finalidad no es aceptar la cita, sino descubrir una pregunta que merezca un ensayo.</p>
-<article aria-labelledby="tema-3" class="impulse"><div class="quote-title"><span class="quote-number">03</span><h3 id="tema-3" style="margin:0">Tema 3</h3></div>
-<div class="lang-label">Original · DE</div>
-<blockquote lang="de">«Hoffnung […] ist in Wahrheit das übelste der Übel, weil sie die Qual der Menschen verlängert.»</blockquote>
-<div class="lang-label es">Traducción de trabajo · ES</div>
-<blockquote>«La esperanza […] es, en verdad, el peor de los males, porque prolonga el tormento de los seres humanos.»</blockquote>
-<p class="attribution">Friedrich Nietzsche, <cite>Humano, demasiado humano</cite> I, § 71 (1878); la diapositiva cita una edición de 1954.</p>
-<p class="term-note"><strong>Clave terminológica:</strong> «esperanza» no es necesariamente optimismo; «el peor de los males» constituye una tesis provocadora y «tormento» conserva la fuerza de «Qual».</p>
+<article aria-labelledby="page3-title" class="page">
+<div class="masthead"><span>ENSAYO FILOSÓFICO / GUÍA DE ESCRITURA · EF</span><span class="ref">DE LOS ARGUMENTOS AL ENSAYO</span></div>
+<div class="hero"><div class="phase-number">03</div><div><h1 id="page3-title">Examinar y escribir</h1><p class="subtitle">La buena filosofía también consiste en tomarse en serio las objeciones más fuertes contra la propia postura.</p></div></div>
+<div class="progress"><span>01 · Comprender</span><span>02 · Argumentar</span><span class="active">03 · Examinar</span><span>04 · Revisar</span></div>
+<section class="step"><h2><span class="n">7</span> Pon a prueba tus argumentos con objeciones inteligentes</h2><p>No inventes un adversario fácil de refutar. Busca la crítica que realmente podría poner en dificultades tu argumento.</p><div class="activity"><span class="tag">En tu cuaderno</span>Anota, para cada argumento: <b>(1)</b> la objeción más fuerte; <b>(2)</b> por qué puede parecer válida; <b>(3)</b> tu respuesta razonada. Si es necesario, reformula tu tesis con mayor precisión.</div></section>
+<aside class="example"><b>Mini-ejemplo</b><b style="font-size:9pt;letter-spacing:normal;text-transform:none;color:#203045">Objeción:</b> «Incluso bajo presión puedo decir que no». <b style="font-size:9pt;letter-spacing:normal;text-transform:none;color:#203045">Respuesta:</b> «Sí, pero la mera posibilidad de elegir todavía no demuestra que las alternativas sean razonablemente aceptables».</aside>
+<section class="step"><h2><span class="n">8</span> Prepara un esquema breve en tu cuaderno</h2><p>Tu texto debe seguir un hilo conductor. El siguiente orden es una orientación útil, <b>no una estructura obligatoria e inflexible</b>:</p><div aria-label="Estructura sugerida" class="outline" role="table"><div class="label">Introducción</div><div>Del tema a la pregunta central y de esta a la tesis.</div><div class="label">Desarrollo I</div><div>Argumento 1 → objeción correspondiente → tu respuesta.</div><div class="label">Desarrollo II</div><div>Argumento 2 → objeción correspondiente → tu respuesta.</div><div class="label">Conclusión</div><div>Resultado fundamentado, posible límite o consecuencia; sin introducir un nuevo argumento principal.</div></div></section>
+<section class="step"><h2><span class="n">9</span> Redacta la primera versión</h2><div class="activity"><span class="tag">En tu cuaderno</span>Transforma el esquema en un ensayo completo y coherente, <b>no en una lista de ideas</b>. Organízalo en párrafos y utiliza transiciones claras. Explica los conceptos filosóficos cuando los necesites y recurre a citas solo cuando aporten algo a tu razonamiento.</div></section>
+<aside class="example"><b>Para ayudarte a redactar</b>Inicios de frase útiles: «Por … entiendo …» · «A favor de esta idea se puede argumentar que …» · «Una objeción importante sostiene que …» · «Este argumento me parece convincente porque …; sin embargo, …»</aside>
+<div class="output"><b>Tu resultado</b><span>Dispones de un primer borrador completo, con una tesis reconocible, argumentos, objeciones tomadas en serio y una conclusión.</span></div>
+<footer><span>Guía de escritura · Ensayo filosófico en español</span><span class="folio">3 / 4</span></footer>
 </article>
-<article aria-labelledby="tema-4" class="impulse"><div class="quote-title"><span class="quote-number">04</span><h3 id="tema-4" style="margin:0">Tema 4</h3></div>
-<div class="lang-label">Original · DE</div>
-<blockquote lang="de">«Strukturelle Ungerechtigkeit entsteht dadurch, dass viele Einzelpersonen und Institutionen ihre jeweiligen Ziele und Interessen verfolgen, meist im Rahmen der geltenden Regeln und Normen.»</blockquote>
-<div class="lang-label es">Traducción de trabajo · ES</div>
-<blockquote>«La injusticia estructural surge como consecuencia de que muchas personas e instituciones persiguen sus respectivos objetivos e intereses, por lo general dentro del marco de las reglas y normas vigentes.»</blockquote>
-<p class="attribution">Según Iris Marion Young, <cite>Responsibility for Justice</cite> (2011); versión española: <cite>Responsabilidad por la justicia</cite>.</p>
-<p class="term-note"><strong>Clave terminológica:</strong> «injusticia estructural» alude a resultados injustos de procesos sociales, incluso cuando las acciones individuales se ajustan a reglas y normas aceptadas.</p>
+<article aria-labelledby="page4-title" class="page page-four">
+<div class="masthead"><span>ENSAYO FILOSÓFICO / GUÍA DE ESCRITURA · EF</span><span class="ref">DEL BORRADOR A LA ENTREGA</span></div>
+<div class="hero"><div class="phase-number">04</div><div><h1 id="page4-title">Revisar y entregar</h1><p class="subtitle">Entrega un texto bien elaborado, no un primer borrador. Reserva tiempo para leerlo de nuevo y mejorarlo.</p></div></div>
+<div class="progress"><span>01 · Comprender</span><span>02 · Argumentar</span><span>03 · Examinar</span><span class="active">04 · Revisar</span></div>
+<div class="deadline"><strong>Tu fecha de entrega obligatoria</strong><b>Viernes, 6 de noviembre de 2026:</b> entrega el ensayo terminado a tu profesor o profesora. Es el plazo fijado en clase, no el plazo posterior del concurso.</div>
+<section class="step"><h2><span class="n">10</span> Revisa tu texto a partir de los cinco criterios del jurado</h2><p>Primero examina la solidez del razonamiento. Después mejora la expresión, las transiciones y la claridad directamente en tu ensayo.</p>
+<div aria-label="Cinco criterios de evaluación" class="criteria" role="table"><div class="label">Relación con el tema</div><div>¿Mi texto trata siempre el tema elegido y mi pregunta central?</div><div class="label">Comprensión filosófica</div><div>¿Explico los conceptos y supuestos de forma correcta, matizada y comprensible?</div><div class="label">Fuerza de la argumentación</div><div>¿Mis razones sostienen la tesis? ¿Trato justamente las objeciones más fuertes?</div><div class="label">Coherencia</div><div>¿Los párrafos siguen un orden lógico? ¿Me contradigo?</div><div class="label">Originalidad</div><div>¿Se reconoce mi reflexión personal en lugar de una mera repetición de ideas ajenas?</div></div>
+</section>
+<section class="step"><h2><span class="n">11</span> Haz la revisión final antes de entregar</h2><p>Lee en voz alta: ¿se entienden las frases, se explican los ejemplos y se han eliminado las repeticiones innecesarias? Comprueba también lo siguiente:</p>
+<ul class="checklist"><li>Como referencia del concurso: <b>un máximo de cuatro páginas de ensayo</b> (aproximadamente 2.500 palabras) y una portada con datos personales, curso y docente.</li><li>Identifica con claridad las fuentes y los préstamos literales o de ideas, incluidos los fragmentos de texto generados por IA. El trabajo debe ser propio.</li><li>Al final del ensayo debe figurar una <b>declaración de autoría</b> firmada (traducción orientativa a continuación).</li></ul>
+</section>
+<aside class="declaration"><div class="tiny-heading">Declaración de autoría · traducción al español</div><p class="quotation">«Declaro que he redactado este trabajo de forma independiente, que no he utilizado otras fuentes distintas de las indicadas y que he señalado de manera comprobable todas las ideas y los pasajes tomados de otras fuentes».</p><span>(Firma)</span></aside>
+<p class="note-small"><b>Importante:</b> El plazo de envío en línea al concurso termina el <b>19 de noviembre de 2026 a las 18:00 h</b>. Consulta con tu docente cómo se hará la selección previa y una posible presentación oficial <b>en alemán</b>. Para esta última se requiere un PDF con el nombre <code>Apellido_Nombre_NumeroDeTema.pdf</code>. La declaración anterior es una traducción para practicar; para una presentación oficial deben seguirse las indicaciones originales del concurso.</p>
+<div class="source">Indicaciones oficiales (consultadas el 15/10/2026): <a href="https://phil-essay.de/essay-schreiben/">phil-essay.de/essay-schreiben/</a> · <a href="https://phil-essay.de/bewertungskriterien/">/bewertungskriterien/</a> · <a href="https://phil-essay.de/ausschreibung/">/ausschreibung/</a>. · <a href="https://phil-essay.de/">/ (impulsos oficiales 2026/27)</a>.</div>
+<footer><span>Guía de escritura · Ensayo filosófico en español</span><span class="folio">4 / 4</span></footer>
 </article>
-<h3>Cómo elegir un impulso</h3>
-<aside class="reflection"><strong>Decisión fundamentada</strong><p>Elijo el impulso n.º ______ porque la cuestión que me interesa es…</p></aside>
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>03 / 06</span></footer>
-</section>
-<section aria-labelledby="titulo-comprender" class="page" id="comprender">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">TALLER DE ESCRITURA · 01</p>
-<h2 id="titulo-comprender">Comprender de verdad el impulso</h2>
-<p class="deck">Lee varias veces el texto elegido: primero con apertura, después con caridad interpretativa y, por último, críticamente.</p>
-<h3>Tres formas de leer</h3>
-<div class="reading-table">
-<div class="reading-row"><span class="number">01</span><strong>Comprender</strong><span class="row-description">Subraya los conceptos clave. Expresa la idea central con tus propias palabras.</span></div>
-<div class="reading-row"><span class="number">02</span><strong>Leer con caridad</strong><span class="row-description">¿Qué interpretación razonable puede darse a esta afirmación? Formúlala en su versión más fuerte.</span></div>
-<div class="reading-row"><span class="number">03</span><strong>Leer críticamente</strong><span class="row-description">¿Qué sigue siendo ambiguo? ¿Qué supuesto, excepción o consecuencia resulta discutible?</span></div>
-</div>
-<div class="thought-prompts"><h4>Después de las tres lecturas, comprueba si puedes…</h4><ul><li>Explica con tus propias palabras qué afirma el impulso.</li><li>Formula la interpretación más sólida y caritativa de su tesis.</li><li>Identifica las dudas, ambigüedades y preguntas que surgen al examinarlo.</li></ul></div>
-
-
-<h3>Explora desde distintos ángulos</h3>
-<div class="angles">
-<div class="angle"><strong>Vida cotidiana</strong><span>¿Qué situación concreta muestra el problema?</span></div>
-<div class="angle"><strong>Conocimientos</strong><span>¿Qué concepto o teoría del curso podría ayudarte?</span></div>
-<div class="angle"><strong>Distinciones</strong><span>¿Qué dos sentidos o casos conviene no confundir?</span></div>
-</div>
-<aside class="callout warm" style="margin-top:16px"><p><strong>Pregunta para pensar:</strong> ¿qué presupone la afirmación sin decirlo de forma explícita? A menudo, ahí comienza tu propio argumento.</p></aside>
-<aside class="reflection"><strong>Resultado de la etapa 01</strong><p>Formula en una sola frase el problema filosófico que deseas investigar. Este será tu punto de partida.</p></aside>
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>04 / 06</span></footer>
-</section>
-<section aria-labelledby="titulo-argumentar" class="page" id="argumentar">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">TALLER DE ESCRITURA · 02–04</p>
-<h2 id="titulo-argumentar">De la pregunta a los argumentos</h2>
-<p class="deck">No es suficiente tener una opinión: hay que convertirla en una tesis razonada y abierta al debate.</p>
-<div class="step-label">02 FORMULAR UNA PREGUNTA FILOSÓFICA</div>
-<p>Una pregunta filosófica permite examinar razones, conceptos y alternativas. Puede comenzar por «¿En qué sentido…?», «¿Hasta qué punto…?» o «¿Bajo qué condiciones…?».</p>
-<aside class="reflection"><strong>Resultado de la etapa 02</strong><p>Elige una pregunta central que permita analizar conceptos, supuestos y razones contrapuestas.</p></aside>
-<div class="step-label">03 PROPONER UNA TESIS PROVISIONAL</div>
-<p>Responde a tu pregunta con una afirmación precisa y discutible. Evita tanto lo obvio como lo imposible de justificar.</p>
-<aside class="reflection"><strong>Resultado de la etapa 03</strong><p>Propón una respuesta provisional, precisa y discutible. Ten presente que podrás modificarla después.</p></aside>
-<div class="step-label">04 EXAMINAR DOS ARGUMENTOS</div>
-<p>Un argumento necesita razones que apoyen la tesis. Un ejemplo puede aclarar una razón, pero no la sustituye.</p>
-<div class="argument"><h4>Argumento 1</h4>
-
-
-
-<div class="thought-prompts"><h4>Elementos que debe contener</h4><ul><li>Razón principal: ¿qué afirmación respalda tu tesis?</li><li>Justificación: ¿por qué esa razón permite sostener la tesis?</li><li>Ejemplo o caso: ¿cómo se puede ilustrar o poner a prueba el argumento?</li></ul></div></div>
-<div class="argument"><h4>Argumento 2</h4>
-
-
-
-<div class="thought-prompts"><h4>Elementos que debe contener</h4><ul><li>Razón principal: ¿qué afirmación respalda tu tesis?</li><li>Justificación: ¿por qué esa razón permite sostener la tesis?</li><li>Ejemplo o caso: ¿cómo se puede ilustrar o poner a prueba el argumento?</li></ul></div></div>
-<h3>Una distinción importante</h3>
-<aside class="reflection"><strong>Distinción conceptual</strong><p>Distingue conceptos, situaciones o sentidos cercanos que no deben confundirse. Una buena distinción puede fortalecer decisivamente tu razonamiento.</p></aside>
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>05 / 06</span></footer>
-</section>
-<section aria-labelledby="titulo-revisar" class="page" id="revisar">
-<div class="running"><span>ENSAYO FILOSÓFICO · GUÍA DE LECTURA Y ESCRITURA</span><span class="year">TEMAS 2026/27</span></div>
-<p class="kicker">TALLER DE ESCRITURA · 05–07</p>
-<h2 id="titulo-revisar">Pensar también contra tu tesis</h2>
-<p class="deck">Un buen ensayo considera razones en contra, responde con precisión y mantiene un hilo argumentativo.</p>
-<div class="step-label">05 TOMAR EN SERIO LAS OBJECIONES</div>
-<p>Formula el mejor contraargumento posible, sin ridiculizar a quien discrepa. Después decide si tu tesis resiste, debe matizarse o necesita cambiar.</p>
-<aside class="reflection"><strong>Prueba de la objeción</strong><p>Expón la objeción más fuerte que podría plantear una persona que no comparte tu tesis.</p></aside>
-<aside class="reflection"><strong>Respuesta filosófica</strong><p>Responde con razones a esa objeción. Si es convincente, matiza o revisa tu tesis.</p></aside>
-<div class="step-label">06 ESCRIBIR UN ENSAYO CONTINUO</div>
-<p>Redacta un texto que avance mediante ideas conectadas, no una sucesión de respuestas breves.</p>
-<div class="essay-parts">
-<div class="essay-part"><strong>Inicio</strong><span>Presenta el impulso, explica el problema y plantea tu pregunta.</span></div>
-<div class="essay-part"><strong>Desarrollo</strong><span>Aclara los términos, defiende tu tesis, fundamenta los argumentos y valora objeciones.</span></div>
-<div class="essay-part"><strong>Cierre</strong><span>Responde a la pregunta sin fingir una certeza que no has demostrado.</span></div>
-</div>
-<div class="step-label">07 REVISAR CON LOS CRITERIOS DEL JURADO</div>
-<ul class="checks">
-<li>¿Mi texto trabaja realmente el impulso y mi pregunta?</li>
-<li>¿He aclarado los conceptos, supuestos y consecuencias?</li>
-<li>¿He fundamentado la tesis y tratado objeciones fuertes?</li>
-<li>¿Se entiende cómo se conecta cada parte con la anterior?</li>
-<li>¿Se percibe una reflexión propia, y no solo un resumen?</li>
-</ul>
-<aside class="reflection"><strong>Último paso</strong><p>Antes de entregar, identifica qué cambio mejoraría más tu ensayo y realízalo.</p></aside>
-<aside aria-label="Fuentes y criterios de traducción" class="sources"><p><strong>Nota sobre las traducciones.</strong> Las versiones españolas son traducciones didácticas de los enunciados alemanes facilitados, no citas literales de una edición publicada. La terminología se ha contrastado con: T. Watsuji, <cite>Antropología del paisaje</cite> (trad. Juan Masiá y Anselmo Mataix, Sígueme, 2006); F. Nietzsche, <cite>Humano, demasiado humano</cite>, I, § 71; I. M. Young, <cite>Responsabilidad por la justicia</cite> (Morata) y «Responsabilidad y justicia global: un modelo de conexión social» (2005). El cuarto impulso es una reformulación atribuida a Young.</p></aside>
-<footer class="page-footer"><span>EDICIÓN PARA ESTUDIANTES HISPANOHABLANTES</span><span>06 / 06</span></footer>
-</section>
 </main>
 </body>
 </html>
