@@ -3,480 +3,576 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Unterrichtsbegleiter – Was macht eine Schule gerecht?</title>
+<title>Interaktiver Kriterienbogen – Philosophie EF</title>
 <style>
 :root{
-  --navy:#133248; --blue:#5b86a4; --light:#a4c0d0; --pale:#edf4f7;
-  --paper:#fff; --ink:#19262f; --muted:#60717c; --line:#d7e2e8;
-  --yellow:#f0c24f; --purple:#9073b7; --green:#68b79c; --cyan:#70b5d8; --coral:#ed8a6f;
-  --shadow:0 10px 30px rgba(19,50,72,.08); --radius:18px;
+  --navy:#133248;
+  --blue:#5b86a4;
+  --light:#a4c0d0;
+  --pale:#edf4f7;
+  --paper:#ffffff;
+  --ink:#17252e;
+  --muted:#62717b;
+  --line:#d6e1e7;
+  --ok:#2f7d55;
+  --ok-bg:#eaf5ef;
+  --mid:#8a651c;
+  --mid-bg:#fff6df;
+  --open:#8b4c4c;
+  --open-bg:#faeeee;
+  --shadow:0 10px 30px rgba(19,50,72,.08);
+  --radius:18px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;background:#f5f8fa;color:var(--ink);
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-  line-height:1.58
+  line-height:1.55
 }
-button{font:inherit;cursor:pointer}
-a{color:var(--navy)}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
 .topline{height:8px;background:linear-gradient(90deg,var(--navy) 0 34%,var(--blue) 34% 70%,var(--light) 70%)}
-header{background:#fff;border-bottom:1px solid var(--line)}
+header{background:white;border-bottom:1px solid var(--line)}
 .header-inner{
-  max-width:1080px;margin:auto;padding:18px 22px 20px;
+  max-width:1040px;margin:auto;padding:18px 22px 20px;
   display:flex;align-items:center;gap:28px
 }
-.school-logo{width:min(360px,46vw);height:auto;display:block}
+.school-logo{width:min(350px,44vw);height:auto;display:block}
 .header-copy{border-left:5px solid var(--navy);padding-left:22px;min-width:0}
-.eyebrow{margin:0 0 3px;color:var(--blue);font-size:.82rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-h1{margin:0;color:var(--navy);font-size:clamp(1.55rem,3vw,2.3rem);line-height:1.08}
+.eyebrow{margin:0 0 3px;color:var(--blue);font-size:.8rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+h1{margin:0;color:var(--navy);font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.08}
 .subtitle{margin:8px 0 0;color:var(--muted)}
-main{max-width:980px;margin:auto;padding:26px 20px 70px}
-.hero{
-  background:var(--navy);color:#fff;border-radius:var(--radius);padding:22px 24px;
-  box-shadow:var(--shadow);margin-bottom:18px
+main{max-width:980px;margin:auto;padding:26px 18px 70px}
+.intro{
+  background:var(--navy);color:white;border-radius:var(--radius);
+  padding:20px 22px;box-shadow:var(--shadow);margin-bottom:18px
 }
-.hero .q-de{font-size:1.35rem;font-weight:850;margin:0}
-.hero .q-es{margin:5px 0 0;color:#dceaf2;font-size:1.08rem}
-.hero small{display:block;margin-top:14px;color:#c9dce7}
-.nav{
-  display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px
+.intro p{margin:0;color:#ecf5fa}
+.intro .es-note{margin-top:8px;font-size:.9rem;color:#cfe0e9}
+.meta-card,.criterion,.feedback-card{
+  background:white;border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);margin:16px 0;overflow:hidden
 }
-.nav a{
-  text-decoration:none;border:1px solid var(--blue);color:var(--navy);
-  background:#fff;border-radius:999px;padding:8px 12px;font-weight:800;font-size:.9rem
+.meta-card{padding:18px}
+.meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field label{display:block;font-weight:800;color:var(--navy);margin-bottom:6px}
+.field input,.feedback-card textarea{
+  width:100%;border:1px solid #b9c8d1;border-radius:12px;padding:11px 12px;background:white;outline:none;
+  font-size:16px
 }
-.card{
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  box-shadow:var(--shadow);margin:18px 0;overflow:hidden
+.field input:focus,.feedback-card textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(91,134,164,.16)}
+.type-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.type-btn{
+  min-height:48px;border:1px solid var(--blue);background:white;color:var(--navy);
+  border-radius:12px;padding:10px 14px;font-weight:800;flex:1
 }
-.card-head{padding:16px 20px;background:var(--pale);border-bottom:1px solid var(--line)}
-.card-head h2{margin:0;color:var(--navy);font-size:1.25rem}
-.card-head p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
-.card-body{padding:20px}
-.source-text{
-  font-family:Georgia,"Times New Roman",serif;font-size:1.04rem;line-height:1.72;margin:0
+.type-btn.active{background:var(--navy);color:white;border-color:var(--navy)}
+.progress-wrap{
+  position:sticky;top:0;z-index:12;background:rgba(245,248,250,.96);backdrop-filter:blur(8px);
+  padding:9px 0 11px;margin-bottom:2px
 }
-.translation{
-  display:none;margin-top:14px;padding:15px 17px;background:#f7fafc;border-left:5px solid var(--light);border-radius:10px
+.progress-meta{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.86rem;margin-bottom:6px}
+.track{height:8px;background:#dfe8ed;border-radius:999px;overflow:hidden}
+.bar{height:100%;width:0;background:var(--blue);transition:width .2s ease}
+.criterion-head{
+  padding:16px 18px;background:var(--pale);border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:12px;align-items:center
 }
-.translation.open{display:block}
-.translation h3{margin:0 0 7px;color:var(--navy);font-size:.98rem}
-.toggle{
-  margin-top:12px;border:1px solid var(--blue);background:#fff;color:var(--navy);
+.criterion-head h2{margin:0;color:var(--navy);font-size:1.18rem}
+.criterion-body{padding:18px}
+.original{font-size:1.02rem;margin:0}
+.term{
+  display:inline;border:0;border-bottom:2px dotted var(--blue);background:transparent;
+  color:inherit;font:inherit;padding:0 1px
+}
+.term:hover,.term:focus{background:#e8f1f6;outline:none;border-bottom-style:solid}
+.status-row{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:17px
+}
+.status{
+  min-height:56px;border-radius:13px;border:2px solid var(--line);background:white;
+  font-weight:850;padding:9px 8px;color:var(--ink)
+}
+.status[data-value="erfuellt"].active{border-color:var(--ok);background:var(--ok-bg);color:#1f5d3d}
+.status[data-value="teilweise"].active{border-color:var(--mid);background:var(--mid-bg);color:#725315}
+.status[data-value="offen"].active{border-color:var(--open);background:var(--open-bg);color:#743b3b}
+.help-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.help-btn{
+  min-height:44px;border:1px solid var(--blue);background:white;color:var(--navy);
   border-radius:999px;padding:8px 13px;font-weight:800
 }
-.toggle:hover,.toggle[aria-expanded="true"]{background:var(--blue);color:#fff}
-.operator{
-  display:inline;border:0;border-bottom:2px dotted var(--blue);background:#eef5f8;
-  color:var(--navy);font-weight:850;padding:0 2px;border-radius:3px
+.help-btn:hover,.help-btn[aria-expanded="true"]{background:var(--blue);color:white}
+.help-panel{
+  display:none;margin-top:12px;padding:14px 16px;background:#f7fafc;border-left:5px solid var(--light);border-radius:10px
 }
-.operator:hover,.operator:focus{background:#dbeaf1;outline:none;border-bottom-style:solid}
-.task{
-  padding:16px 0;border-top:1px solid var(--line)
+.help-panel.open{display:block}
+.help-panel h3{margin:0 0 6px;color:var(--navy);font-size:1rem}
+.help-panel p{margin:0}
+.spanish{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:#314958}
+.spanish.open{display:block}
+.feedback-card{padding:18px}
+.feedback-card h2{margin:0 0 4px;color:var(--navy);font-size:1.22rem}
+.feedback-card p{margin:0 0 14px;color:var(--muted)}
+.feedback-block{margin-top:16px}
+.feedback-block label{display:block;font-weight:850;color:var(--navy);margin-bottom:6px}
+.feedback-card textarea{min-height:112px;resize:vertical}
+.feedback-starter{
+  margin-top:6px;color:var(--muted);font-size:.9rem
 }
-.task:first-child{border-top:0;padding-top:0}
-.task-number{font-weight:900;color:var(--blue);margin-right:6px}
-.task p{margin:0}
-.subtasks{margin:7px 0 0 26px;padding:0}
-.subtasks li{margin:8px 0;padding-left:4px}
-.example,.official-help{
-  margin-top:15px;padding:13px 15px;border-radius:11px
+.summary{
+  margin-top:18px;padding:14px 16px;border:1px solid var(--line);border-radius:13px;background:#f9fbfc
 }
-.example{background:#fff8e8;border:1px solid #ead5a2}
-.official-help{background:#eef6f8;border:1px solid #c9dce5}
-.example strong,.official-help strong{color:var(--navy)}
-.official-help ul,.example ul{margin:8px 0 0;padding-left:20px}
-.official-help li,.example li{margin:6px 0}
-.perspectives{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px
+.summary strong{color:var(--navy)}
+.footer-tools{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.utility{
+  min-height:46px;border:1px solid var(--blue);background:white;color:var(--navy);border-radius:999px;padding:8px 14px;font-weight:800
 }
-.person{
-  --accent:var(--blue);
-  border:2px solid var(--accent);border-radius:16px;overflow:hidden;background:#fff
-}
-.person-head{
-  padding:12px 15px;background:color-mix(in srgb,var(--accent) 18%,white);
-  border-bottom:1px solid color-mix(in srgb,var(--accent) 48%,white)
-}
-.person-head h3{margin:0;color:var(--navy);font-size:1.25rem}
-.person-body{padding:15px}
-.person-body p{margin:0 0 11px}.person-body p:last-of-type{margin-bottom:0}
-.person.lina{--accent:var(--yellow)}
-.person.ben{--accent:var(--purple)}
-.person.amina{--accent:var(--green)}
-.person.robin{--accent:var(--cyan)}
-.person.mika{--accent:var(--coral)}
-.person.mika{grid-column:span 2}
-.meta-note{
-  margin-top:14px;color:var(--muted);font-size:.88rem
-}
-.phase-label{
-  display:inline-block;background:var(--navy);color:white;border-radius:999px;
-  padding:5px 10px;font-size:.8rem;font-weight:850;letter-spacing:.05em;text-transform:uppercase;margin-bottom:9px
-}
+.utility:hover{background:var(--blue);color:white}
 .popover{
-  position:fixed;z-index:50;left:50%;bottom:18px;transform:translateX(-50%);
+  position:fixed;z-index:60;left:50%;bottom:18px;transform:translateX(-50%);
   width:min(650px,calc(100vw - 28px));background:var(--navy);color:white;border-radius:14px;
-  padding:16px 45px 16px 17px;box-shadow:0 18px 60px rgba(0,0,0,.24);display:none
+  padding:15px 44px 15px 16px;box-shadow:0 18px 60px rgba(0,0,0,.24);display:none
 }
 .popover.open{display:block}
-.popover strong{font-size:1.02rem}
-.popover .de{margin-top:5px}
-.popover .es{margin-top:7px;color:#d9e8f0}
-.close-pop{
-  position:absolute;top:7px;right:8px;border:0;background:transparent;color:white;font-size:1.4rem;padding:5px 8px
-}
-.footer-note{
-  background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:var(--muted);font-size:.88rem;margin-top:20px
-}
-@supports not (color:color-mix(in srgb, red 20%, white)){
-  .person-head{background:#f3f7f9}
-}
+.popover .es{color:#d9e8f0;margin-top:7px}
+.close-pop{position:absolute;top:7px;right:8px;border:0;background:transparent;color:white;font-size:1.4rem;padding:5px 8px}
 @media(max-width:720px){
   .header-inner{display:block}
-  .school-logo{width:min(440px,100%);margin-bottom:18px}
+  .school-logo{width:min(430px,100%);margin-bottom:18px}
   .header-copy{border-left:0;border-top:4px solid var(--navy);padding:14px 0 0}
-  .perspectives{grid-template-columns:1fr}
-  .person.mika{grid-column:auto}
-  main{padding-left:14px;padding-right:14px}
+  .meta-grid{grid-template-columns:1fr}
+  .status-row{grid-template-columns:1fr}
+  .status{min-height:52px}
 }
 @media print{
-  body{background:#fff}.topline,.nav,.toggle,.popover{display:none!important}
-  header,.card{box-shadow:none}
-  .translation{display:block!important}
+  body{background:white}.topline,.progress-wrap,.help-actions,.footer-tools,.popover{display:none!important}
+  header,.meta-card,.criterion,.feedback-card{box-shadow:none}
+  .help-panel{display:block!important}
+  .spanish{display:none!important}
 }
+
+.language-switch{
+  display:flex;gap:8px;flex-wrap:wrap;margin-top:14px
+}
+.language-btn{
+  min-height:46px;border:1px solid rgba(255,255,255,.45);background:rgba(255,255,255,.08);
+  color:white;border-radius:999px;padding:8px 14px;font-weight:850
+}
+.language-btn.active{background:white;color:var(--navy);border-color:white}
+body.lang-es [data-de]{display:none!important}
+body:not(.lang-es) [data-es]{display:none!important}
+body.lang-es .help-panel h3,
+body.lang-es .help-panel > p,
+body.lang-es .spanish-btn{display:none!important}
+body.lang-es .help-panel .spanish{
+  display:block!important;margin-top:0;padding-top:0;border-top:0;color:var(--ink)
+}
+
 </style>
 </head>
 <body>
 <div class="topline"></div>
+
 <header>
   <div class="header-inner">
     <img class="school-logo" alt="Humboldt-Gymnasium Düsseldorf" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAFsCAMAAAADqy1kAAAAqFBMVEX///9XgZ8TMkihvs6AoLaqwM/V3+eQrL/o7vLt8vVkiqZqj6r2+Prk6/CYssSuwtFyla6Jp7x5m7MgPlLF0962yNWhucm9ztrL2OE3UWRFXm9ki6bz9vjT3uaeq7RUa3srR1utuMByhJKBkZ28xcuPnqnL0tdjeIba3+KImKOcqbO3wcdBW200TmF9lKMkQVVfdINRZ3iMpLJ3iZZlgpeOp7XGztNifpLi26chAAAgAElEQVR4nO2d6YLbNrCluzvaRa3WlrTktDveYjvjeDLj+/5vdlsSF+CgAAIgQFDu+n6KIgmSOFgKhaq7O8aOtx8+py4Cw3SX3x8enj69G6cuBsN0ks8PV/74+2PqojBM93j7UPL907tR6uIwTLf480Hi29fUBWKYDpE9AO9Tl4hhOsR7FEiWukQM0yGeQR9/pi4Qw3SJJxDI29QFYl4h2Wh2Omz2+8Np1rERzGfQxwMvGjLtcpydtr8JbE+pSyTyAfTxe+oCMa+LweI3hf4gdakqfoBA/kpdIOY1Me6r8jhzSF2wgiOOsH6mLhHzipjR8nhhk7poOe9AH286NkVifmXGWn389pvfRGR22FdDtv52f5g19DH8BAL5t9nlGMaeTDO+uuJcs8enPXmh7aGB/xQbeZlk6AdYZ/ZO18pOxGS/ZHHy7Eg+4hRk5ncdhnHnZBSISxcyo/sOSW9eEkEj7zefizCMFwdzlbaep1OWYoKDx/z6DzbyMsnY1tRoqwqd1fRDAu7LK4qRl7dMMa0xqKvQFoasrKYXAraO4yzFyOv3pAzjSDbTmJykFr+uCxltnORhKToBNPJ+8n9ihrHleKobXOWYDFk6o24dCxeb7xsQyLumj84wdWQOzb5unj46GJdQai5qPVlXjLzHQO+AYXQcnar2nqjM44Od1UpL33Yx4y/Qxx9B3wTDqLjp4wWwPGWWNl0zlp3INxDIhwgvhGEEnPXx0t6fioHNaHZyn5VrLmrTiczYyMu0S+bZ/G83p4PfnFzLvn6y/hb08RT/BTGvG0vrVTvU7jn5FwTy3MYrYn59stHnzx/ff3339gv4vgbuBJrSN3ciGRp5OWIc48/o8/t3H/769Oc3wUH8zRfpL8PJsreaz3ephVFh7ESUgFhs5GV8mH398AntPWe+vZVtRZv7ksm6I0IxdSL/wfP8iPwemV+Pz+/++vd3Qhvn3gNXnbPJvcJ0NU8tEb3PMD4YG3kZFz5/+YTb7QT+VJrmraqPK720IlloHBg5IBbjzfHLnziDlSH2TfR0AnlhuRomlAjtwPgFHukp7itlfh0+P5vV8fDwhThrahDImXW6joRyaMGsB2zkZez4jMsDKqTTa51AXlglk4i6sM5ZDxgv0LZj2X+Yh1gl01TdiGLw5awHjAczyp4L0ObQI2HEIkk0G8Fh1jM8FWc9YOr5Wjf5eOE7ubSwsRhhpR1p9WVrFgfEYpzB/REkxHLBceEgj3QSEZXNRl7GGdyhTfJGccgYDN3UkU4iwlSdsx4wrvxto4+Hv+GsgdXknCDFXKRSCGc9YBzBEDiaDkQeyc985ZFIIsX+Rc56wDiiBDCgkVvama3pimbSvkTyPoSzHjBufLawX52RdqWOHhvpI4lErgrhgFiME8d/7PQhLadljrYrktaXDi9jRDbyMk5YrJ9fkIw9Wv9dN3rtCqR/x1kPGEcsJyAwFAnRgZx5bHecdVANdpz1gDGCRk8t4irhLJA+Xli2Os4acdYDxomRrT6kuAab+opvT5udSJ8DYjFO/LQWiFiT+iEFcr9uUSG4jM5ZDxgjGEFNj7hM6ONhYuCxvWEW7nhhIy9jpH6LVIF4VpNFdJLW/LM46wHjguJ3YSeQdWiBtDXM+v/4VBwQizFhbeSV1wnDC+R+2kosrWd4KM56wBhxEIjY1gYfYr0waWMiwgGxGCeUzUN6xD1HgSfpOfHtvXN8KDbyMmYMAeIMdWkRRSDxFfJ/4JmeUr125law9cSS7T2nOAKJbszigFiMI/brIOJwPYskkNgK4awHjCO4sqznX/G0OJOQ+8ijrP+Lz8RGXsZMZj8H+S6eF9BbsUWF4F4pDojF1GDfgUB0nLDeWC0pBI28dJxIhikYWe62vSCvGcRTSLQVQ8XIywGxGDPPDvp4+Ec+dzZvFrZBTyyBsJGXccNhmfCMEh/nEGpjocwkkkBwbxgbeRkzVvEUK1TX8GwZRSHTKPrY4fP8WlkPxj2JXdy7yTfr2YZOGrVayKYou+vqUMfsoygCiePbqxh5f62AWPApenHvBh/M9lXOWi1kU55dBUL4vsbpQqIsGP7iRl4WSGgc9oIUYHTeaAK5j+DaaxcQC5dAlTygMO+ahv8wfvxKAslWvZ4+R3FbYCpLG5Rhe4SdIVeC60PZK0UbeVkgVsBbCiuQ7FyrFsHK6ottREWRN+gfHk0gwach6JapyXrAArEC3lJYgVy2GyUXiMNeKYNCYg2xwq8XYoY5TUAsFogV8JaCCmR1OZZcIFY5pQjkBfV4Agm8GqIYeTVZD1ggVsBbCimQ/AskFwg6JlkjWX/iLBVeCOuUhUZeXdYDFogV8JYCCmSeH0stEPuQiohk7G0oAiNBBYJ7pXQBsVggVsBbCieQXXEstUDsskpRiFUr2s6pM0Hn6eiWqct6wAKxAt5SMIFUm7lTC+TZWyCik3i8fSFnAs7TFSOvLusBC8QKeEuhBLKvjqUWCBp17BHtWEGjWCsEnKejkVcbEIsFYgW8pUACEatTaoF460MKsbi7j0q49XRsD1SfgBwWiBXwlsII5CAeSywQR093AWlbSIwIcgLBuhD7gFjdEMhooBkCZrPBjN5JrxHIeLDv9/tbhzxa2WDbP7MdGKo9vCXtP4+HxcuVDrP8D0aByLFyEgvEf44uDU5i7ZkqCGXqxb1S+qwHyQUy3q6ut5iutvLNB7t1njq1t1dFQghktBOWqda7gXKOQrafiytby/lGU/XhLZH/yvbD6mU99vaZWSAD+VhigWAmMnvEZZCjtmaHIpBA7LMeeAsEvu9SPGdWf878+stJXnntlfEss53cGO2wTioCOa3wZU635qHQQDnjhSHZ+cCfiOvOlMg3k/7YIBBDXvGtsdRxsE97gIjhfyJtBxEI1IXYZz1IJZD7c5+Qze+R3Kl1oKzITg5yueBbTEkfh4mhrh10fnU9ouuBvygCGdGBoWBILgjEoI8kArEP94NEylWoI4g+HLIeJBNI/+VvlF/CpXbsiQP3skO4ZWM11Qy0Zia3057yFuAPKBBL400lkNGj4W8JBOI/R38jBrE+GJ4qEEG6kGd4CEPWg2QCmWQDuhHdamMhSwqx7s371GPX5fXG3RlwWBbI2NZDrxTI2OiylEAg9hFHEWkFOlC6dCMhBOKQ9SCZQO61UWL22vZYnB7YD3fn6lOrQzsEZAVHJYHMTL2BRCGQo1lRCQSCnknWyG0vNakLTYC1EJesB+kE4sFSqJgO80ElVoJNJFlZIXBQFMjY3rSZC6Qu9kf7AvEfYcnb8KzfRAMCrIW4BMS6KYGItdbFYAIDJrsggHvDlxcE4hLp5iqQrG7XXfsC8d0LAruM4jqaFDT3yHIJiIUC2fUBaB/TCmRS1Uwni6JkurWdSYonwSFBIPWjtYqrQGpXm1sXyNgl4qjU9MqTsXi7pUSaO/XiY5iyHrjGrU8rEKFZdxKIWLqR7ZBoKnx9OFQdcbLb9OxeQusC8e5A5GjPpO0xAk314ZT14MYEsi7v4bYmJaxT208khbkLHKkE4rSDrqMC+ezbgbyRatYxtp9JQdMgWU4BsW5MIFXVdFy0LT+lS7awysSvK4WbXbObAjn6hDO58J90nWhJdBQaCgQXRY1ZD1ILZL3bD/ZkM7zqHwYLpVE6FddyFEhZ6Vzi0lQGYjhQCoS08E7WS7oxvQhknE/uYPIyqaZ9Fk5kIcEpqz2SCStA62dLM0uvW9aDxALJ66067Jlca4myBlfasSiBTHf72d14sCBEUJSP6ECWu9MoG512xBSztOnB74VAiFH3cn85aUSp3uSsKL3ANgnkx5tFDNeAPDYSiGVArJy0Aina9UxpcYvRDeqgbNQJgVRG4I3asuc2KUWKgo/XRilFeUX4vRCIapAShkeqP0AnBeIdzUS28baxiF7SyNL7BzzGf7o3cyGpQKopNy6eV/NjqNGr4ndFIGvRKeioCOF6RcUfeyku/Chr4mXJ4fdcIGO82lQsg+qQ2EWB+K8RypGkrN0JQtBroA/HrAdJBVIZbdFaWq1BQDtcagoFMgFbHQ6Y1uR95BUStYsr5AM/5wJRFsbAVR7Hc10UiP8IS0oX0JaJN6eBQByzHiQVSNV6Q3WfVNeCKj3VnFHN3uky5JUaeyo0GOEie7EGT13L1O/Rb7eLAvFeA3n4IV6mDS8sgQY+vY5ZD1IKRJABxFMSahKcoxOImpsGn+zSusOkQdkfiZOhYhIC18oFAlfDTsxpR2EqgXi7KcoOGvft0sAhyy7rQUlKgYjVUz6yqr8WCETxIVPGN5fJOJhaamVVFASulQtkSv9ZADZMioc6IhD/nVLiHL1FG+8Vb0uvZdaDkpQCEc+RjwzrryULROiMNJe8TnjgNxyXKWPpJX2tTH8HGXkQ1kGBjL31IW2iaGGnFLwuX4G4GXm7KhDnHoSK+gOrIX31Nvcj5SQo4iNZPI1AVLmB3jookK/+AhHHJq0aeS/4Wnotsx6U/CICodJjwqPt1Nvcq15qaLkli6cRCBHuQR7ndVAg/tFMpEAHmj2gEfG19OJTaLIelKTcDxJQIMSuQTSszNXbEDMXNI6RxbPvQeShRwcF4u9nIgmk/R7kvu+lD9usByW/iEDWdyrUhByMVGqbrzG0yb8WAoGrEWkGOz/E8nXkTS8Qv2m6fUCsnCgC0Vmr4gnk/k4BF80XxNOofrPwpc2T9FqbGGyn6p5AGqyjS/HQ7TZpBmXqJRDbrAcl3gKBivsongM2jfLbRxSI2hegmffSvsPKhWqY1fwBrkWvgxB1XHbAMAkkTdDjBnN0aZ3QZV9lKHz0YZ31oCSUQKT5LjTD5fgnokDUSQg6Eg6oD4lmLHyqolOAnzO6WiiTEPBFMQmE6ANb4IO/QKS2N1pyWwM++6ae4SEMAbFyvAWCIxhxEQBeV1kvIgpEWYRQRsWXSo0uQ0M4Cz0mzK4meDWcCaELuFEgLe8CuYKerfa8EWtK1MRSWjwEgq7L2qwHJf7Bq+FEobbjp59rDgQVCAyyFFesNX2WHDNaichldlZUbgKzEJSbJBA8OXICBxK/1M8XpPWDdsKZIO7TdJeAWDn+AkF32WrCi/1teSSqQKQZ9163tUPZFSXGv1JG0mWlhd8L26Di4z0XrIaqy72kAcVXXonPHR//vSAPUkVp2VUxx3013SUgVo6/QJTatLtOQwbKeLQcPMQVSBVSV62a5WxDtUeu85QH2V7dUrihi1cKRJ2bTstTVI3KAlGHJdPhNegSYS6OQ4MZiLTLKH7WAxpngdimthXwFwjRrQ5fvq5ayyo/qcgCOSf42B62Q2rGWNRNcrTcm/fJkx41xSsFQvnoTV/K8FIIale6PIrSBgEhnB6jMPJfBJFmIG1vBilxdnq3z3pQ4i8QdZushsrAFF0gespW2SWLXl9TvCpog5v1RhaIdlzSlkD8c4JAIJB2AsapuO5NdwqIldMgw5RtVatmz+kEUhXbIZSusL8DjpQCcQkihALRrj63JJCf/vqQXWBbd+UtcfRYxL1S9UbeRgJRZpk0wudOJxAh+479eOCkK54QOM7J2VMWiPYJ2hFI5h0OCz38UiyCXHH0WHTIelDSJEehXRcimF+TCURa7rA1uYhrj3CoEohDh6RYcnUFaUcg/nttIdizWy8aFid9eBh5mwkks4lkIS4NpBLIVDKgWsZjl1b94JhwPZcJKghEl7CsFYE0WAJ5kofu6ToQx6UQDyNvwyy3Fhst15n+/60JBBxurMJXT6VaAAfFh3JwQ8K1QM34rBWBNFgCkePkpFkkzHEaY7lkPShplga61st5Il0vkUAg/ac5g2ZxH9lLC45KPZK9QlAgmr6sDYE02Cgl78GzGkbEw0Ug+CCmrAclDfOk10xDJsawUy0JRNGHJn2oVDQwAMJhec3bWiGKNwldjhYE0sDNHUw/CRzdRRzsWD5G3sYCMfchS3CWjSYQQ06aR9IJ8Gi2PileH3AcDhvmIY/i+1PdrY5UyeMLJMOd2fa8kds8S1NmNBzWCh0DYuU0FcjdQD/lVapZLIFMspOuo5/rmomDvtxLVVPwD3ywkW6iujqK4qH8EbdqJxJfIA0GWDAuqU2XFRkHfyynrAcljQXy0n7SlXNVu581mEB2ui5haNoPc6A/7pJKzwH/Ud0Kt6Tezj74wnyHdtjdr2BKFF0gDSxYEOk5lZNJhbU+3LIelPR7MkqDO5SP4waKM9leqWqTOVU1Z/pryUfEZJ2ac8bCjxdVD3AqQJdBKs8Otb3s0+fAW6L8bgd4seX28jK31WlU7JVrQTb9ocXfAtFgifB3yBDfVlIpPdaTENeAWGEZLea9vA2drFe71vxRJbJDmXt9suoTMUYIRptdb1KccrCatukZzNdFAdaL2s2cycCqYs8baHXTuLlLWO8rdMt6EIfjbKCGYmuXbDwbDFxL8VLuWbDNGC8FmDUUWlwaDLBg2J4glomCrcOiY9YD5tVy9I/GC3YfnSdAu1gKBJfRa7IeMK8Wfyd3sPC2mXTNgKW3CT62nZGXeXW89dYHDrDay2prxNLbxDHrAfNK8c6Jriyhp7fw5ljpwzXrAfM6abCEDlWqGxOQM1aG3rRGXuZWaLAJRA4hZblnoA2sxliuWQ+YV8l7f318l60+HZmAXLDQh7KMXpf1gHmNjL/7C0Se1Kbbhk5gMcZCI29t1gPmNeKfsPPhH+lCiTeBABaL6c5ZD5hXSAMLL3QgKYK567FYTHfOesC8PhrEiYMhSes5bWuo1Yd71gPm9dFggAUmrO5YsK7ULqY/w+PYBMRiXhnvGuhDDlXdfsbOGmonIe5ZD5jXxrGBBUue01rHnG2NumxsXgGxmNfFcwN9yK7hicM0UNQIxCsgFvOqGDfRhzRF714HUrsS4pH1gHllNEgF8vDwr3ilzjgpCpgFsvPIesC8Mvx3ST3AnDZlpFEdZjOWX0As5jXRIN3zg7ys1h0vXgGzGcsn6wETlb4EFUeoZRrkynmQY2F1zsZ7Zm0UCPaeNlkPmKjIn29Zf0JkGk3RZSNWB21YNXZeZRmdjbzJkT9feoE08cJ6kIdYnfLjLTEJBPdKPaX6CkyJ/PXSCwQD/zsiTtK7aOU1CwQDYlllPTByPG22/fmq1+ut+ofUga5uEvnrpRdIM33IVaqTs3SDPpSAWFZZD/QMduCKNult2ffREfkNphdIg2w5Z+TNIKduhPuRMAgkqJF33KcffrljjbgAby91ce6+NBMITms3qWO6KxhWCgMGxBqZ9sEMeaxlj/zq0guk2UI64f06XnRrvdDQg/hlPaCoM+D1eR+vLfKL64BA7mb+EasfaMPP8dChwA16fQQLiGVIhFPwmCZo+w0iv7cuCOSF0cevH9CiYwu9ttadNRG9QAIFxMrsdhmvlPw6DIX81joikAuzv7023r4hB9idMWgZFgoxIJZf1oPMdkT5yJN1G+SX1iWBvHQkXltvaQ/x4DXdE33sOGWvlFfWg6PDjIvMicnIyK+sWwLxdMwiW96uzNT1qTyDBMSy7j8usELqGUh0rdf1i69I7ePuirlXb+XFxuBf4inqyNwec8LzkBvn6CUQKpxtB1KwXdALJERALNcoYOvGX4hJi2eArB9K09iVIZZWHyGMvBvn4vTrL8p0Gd8st0/oKN6VAFlagTzDE3gYeY8e3pkRBtXZbLNYbKhUmuPBZrHdH+wHdrPFbriav5xiVczxYXdJLz3vH6znb6ND/+UWvdV8tzglWj0dD/b97WZA3H122i+2G2O5/JOEPMstcEc8e/X7pdAJzSPrgU+Y1atZZjaom4uOqH8IpxX/O1UOkmspUflxMyy/wXqhakS91nErdPvTeU0u6NNc8j1b5SuhmVBmpaKdhnK1WO7UNQJ47uLnTPO76Rzh9+I+mfBWln3R92626CkPQ9AkxqK0ZOhRd2KgNWIFyHpAr/Wsd6fZ+NJ206PM/flUTAI8VS6Os//L3lPhitcvPgAHyVVZJ3fygckCa6swSbzWqC22aSuDC9le9cycXp5M3FYK5y8ob84eWPbGcFzzsieGc8pjo+q33FwM731SugCN4H0vdc0DbtJ2QTT34nOmQjtHD2Dkpfxp1mIjPqMsFRctKFtnDnDtIxyfXIonCGR+vgqo4Hz1a32bqSPcKVRXoWyrO1VqFxaaJyfkUdxcDO4v3ZEoUv4k0puPJJD7c4WfqU3W+tq1ElnLh/SjN8gz1ckADtoRVvOAWFQbgDEGKP//ixbQFWcFJ+IX211+FT/w8e5IVrmzQsi9nRNZIaJ4Z7qg40Oq2RjpDTA7qdziDQ0BCyTpxhLIyws+UTe/+DeQroP4Sa408e0V5+kdifKun4I0N/Kq7mYTYiFQffeXF489xD1sRcG6f23oxJrZH9NN8mSmM649ShMRUSBzsu6cWasKOVlPL4WKr/Z1AlOhYCEFIv0+0+wIX2a6JQmyD2kSx1r8xh0RiHYKouyVcrcuqfWTvIY6kz9SP8t9D3bA+bcSBTLRbU6baB1Fe+ItLBeq5vg8DpEHKoHU+K4uKxlGE4jWrNrTLvZSMYcapCp8I15HaSHToO1AmgfEUgeRtOlDzWm6p06XnY6wwc27pqaLS+IqjO1KLsyOXCJzlAKpHXDvyuvHGmJ5QbR4n/0FIi8kGPvU1tAKpHnWA6VR1Mzq1M702ihjBZWGZzCKKRbgG6++CmMZW4FM/BMklQKpXxQrq2KnBCJ1ufm9/AXyQ7pQJ5JBa115A2Q9UCqr1ija78lclYRVTRzL4JSg6JsaC0ToQqx9gcSBRuYUdGCkeRyCckbcKYFQXUgogXQizqK1kfdJV7m1ZHgvZbBeB0ZAEVpqmKCUqySNBSLcxFogj0KZ3cYFhUBs9pcWE9huCYT4qP5RTkAgHXDG0qfwxGhg7kZeZVhds/CsgramfXkEV0nK5Yjm77SaUdh7k1ZzK8caVwgEfu4dxtkMlyWLp++WQO7vFPyX0r9J1+lCKgRtZHclIJZ71gPFlOq+0AjDlWrAi9cuL91cINVs2F4gVTPqGGogFwgYbPLnHMsKKW7SMYGoY6y/AwmkC1OQvk4gAQJi4QiSmM/VgYuB5SQG6m5VQVWBTIbb04mst8vd/nRQLJiVvz0hkOV8exrslS9XGthc3SPyB4K6XfQV8uOvNPco7t3YzJs/y8tb2ZB1s9ffDLaP+Ktq6f3pLZAn8TIBxNsY/WZCNPL+UF5DLTgad56CqCOponVHE3k1+1cEkntKELbX/GKKD0V5LVUgRWVQJhpF80GtZqwWh+Px0Cf7o7zgYI4oRnlylS9UGFcguZFCXZuaXEulbBAlTJP++XTEq3RhoXChFUiArAdYi6SNHtuekQ19jeLDQqUWXB7w85ULbEqdLodSWBdKQ69SpQ/a2xQWaLXlXZZDEMqXi+5BaBeOgqhDrLIVUwpbPAfuYCAGBv6hFkU7ZwcivetT54TIeoBVUuqLa/zgi/9iZcirKNRPYfavq7nKlSprFbZUZY1GgQhdIJplD/RNwJlRtXDRc5D7tWlrfkyBVIux2LFWHcVcd0qF9zRdjArSgR5EOwMJkvWgiUBKexVMHlbUZxU/0Vp7CBp3YWQA9y77CRSI2LxBM5o/m2J32d1JKE+tsWKdtwTsqf1dZ2IKpOrl0QZZNUJgIJHuk3N89hSINFBRpjttY0gtFSLrAY7HpSFWjUBKuyl+pyNx5b1wXRCIUEFX2pNAOhvNGdJueZjba0bu2Loqq4iFQGjj2/Jl+qLu44opEKHngiOVWvGTKAU84+nzLi0mEB727aLvQIJkPUArljRJrxFI1V5BTbwMWeRqJnl6QE0TZAAdmmCdhFvoBCL1BnPyGJrElJESVq5CIIa6MO2DA0LMSbrwKuX2e6m9FimQj54b079LV0kc90cfMC5M1gP86NLUs0YgVZ2A0f75Q8HgVOqZQCCCHyEIRKh1lgKRhohwtVwg0EEQEVrgXkUpzJ6rPWmJNWYPIpwiP4vwKFhW9SHvZt/99AG7Vt1CqgVHr48wWQ/QCiF9sRqBCP+EAdBAOVcSr49AQAg6gYgjORzl5QKBmQlh2NaVosZDZSg85A0I5NlXHzCWdwnKGRxDBxIm64HiaiKuuZoFIo7dYeI7x2oo2+Ej9iDuAiF2S8DTlKWo81wVdprdgED8vbHeyHOulIuFBn0EynqAdxTri1kgUtMr17pJBj2T7OrQKYEQzmcwPKxKMaqx2VTbgW9AIP6Rf3DBzScsThj0i+jBsh5g/yg6vZofXKqLMNnfy5bfnvGeaQUinXEFbKRCKeqGE+XW3hsQiL831sN3uQux2AcQB2Ny9DBZD9RxNVFhrmDdkF4SfBAYixyMV2pZIFPyV8N5koFqYd7Krls8LU7vkECO3pN0rGzJxliGvISBsh4QvgKPGmMY+uaC9cc0gcVwWWkFAncnvDDgmrIFN9NkOb3SxBdrpDkWSSBNAjfISW9Txf4xDbDCZD04o7SItEPvCP8HwaZMLrI4D04rEHQaVlzB8VGUPZanXU/bj8zoa5SvUfP7GZj6RBfInW82NtxXkWhToXGAFSTrwQV1okEMOu7U4Dy4eqzfZDFB7aYVCDoPKA0CPgm5CXl06A8po1beGOgEghVXXKWENamy340mkI+++oDYIIncTUwDrDBZDy4Q7mYrpTc6KO9AcaDWu60pgksrEGVQCWFclAfRhy7NtoozcW7b065kG94N6K2s7tEE4r0UInvFJvI20e4jvKAYef3DrRO+AlN5pq5uWKKyTGl9DupySrQsEGVBHGZd9mEszmAo0twVQSsQ3MJf3RttQWUTFE8gI780IfK+o0QzEPMA6zfU/jf6DdhANv3TXRE9f0ZOSomJim5rgLpxIq1AVCU/CiUgYu+OqFKXT0W42dwZBIJdThUHBW9cTvLiCcTT1CvNQFLF/THO0INkPdB+s4LJstfTzUapvRAa647618QCoUI8m3Ybjqg7lVNoiI7CwMIAABfNSURBVAtTbFWHa5RlUm6+vjx+pgSlr95bRIFkPvsKZXtQqlVCs0ACZD2o8DBjk9vp6AAXhDNgYoGQTofL1W63ohvDEVm2YgUeOuB8YKQVCDEgeexRYUMrC3BEgXiZeiVXrGQ7pgz7QH4LaOS94Gymm9JrJWRvQ0QyTSwQ10YvLwW0/Y/XFh6dWfOb6N3NbUck1fQ9pkB8TL3SCCudt7tRIM2zHki4pirVbDalxifUXrbUAhm75Q3LS6FuDe8fBkqKEc2+3qpQtoGkKtNGVIE8uwtEtAcl8zKpGWMFM/Lmr9MpFCcZLpz6Kmeo5DWpBeJomDTvKJQp2gPDhiW7dy24gkYViPuuQmm/lGOIsZCYzFgBsh7I1LmpSuhDAxFjF2owllwgbqHrilLYtP11gePubHMKC7bxjglE2neUcku6YaGwedYDZGb/pLrw73fUdJ8UU3qBONnuHaK7l/81bXm1GbaLHW9UgbgbekVHxaQZ2AxjLDTyegTEQka2oyyDPojJDNm1pReIX36QeotNOfg0CcQi7bZkJYwqENw1UY+4omDXG0ZCH7M6QNYDlbHdsEOXEPMKViHa8bEDAvHLMFUXFb6q18agCbM6hSwlo2RUgWD883rE1jhtTJOIWQ9ILKyfU1OwtDP6aHH6PyURiF+OQvMr6tWnYMvvbb7hUp64xRTI0d3ZRNzaXZOTLjJLnUBQ9T4BsSgOdYPsXd1yCywrq3nTL3RCIKYstyvpbqIvlqkPEcdFNWF3ZqYBLfqKxhSIR7ZbUSCJo2Jp9BEkIBYNHTE8p1dvK4MXptmd2A2BaNu/yV4egNnlSZ9It66LS0Xkhs+ZKiurEQUy8/BWFOcgiUPzasLyBgmIpeOks7EsD/Unwwd71PyrKwK5m+2Icdb8bGEVfwdvXmVt8MxkJ3+E+sBtI3J1dtJXO+mIAvHZMiUuSqfOfkALBI28XgGx9IwW6thjubNaaQGfFd2Eft+XEC59ko8IlW6jOUf3O3E1ckJ0kJe6prs8EwNdivwcbERWSuORybcm38RY8ZPukV2u4Vpb6chee05fuegFr9ijUnVzW2EODr0nJEhALCPHQ3++ypMcrOb9jRp7lgSNfiF7togcdsPe8uKuaPugL33Ppr8brqaT6bJHC8+OwWaRv+jhbkuE+I3LyEcf8kp6uog/F8hpeqCAWOFBn0dq6y7TITyDV4v1LXV+EEoggQJiheI4eGGz6O+U3rbtBpFxxDPJlLgQgunF2oaapgcKiBUK7WKqeUmRSc5nP33Ik5C0KyFUF6IYeT0DYoVCJxDNGgjTGbzjYomGttRdiDpNV4y8jfZKNUcnkAZTV6YVvGOPSjumkrpj3d9PfvttPlz11svldDK5n0x78yBZDwKieUEe6XKZdsHlAmvkKpd4NV3pwXBm1XCvVGNogSwT92tMPe5+igXy0ukh8ShL5v9hYVMbeWmBNN3BxcTHP/8BxNA5Jl4NkfgfKGtiI69GINoQ8Ux38ExR+MIbjKU3onx20oCybxIQKwiUQIhIJkzn8FwGOaMuLWT7tLkKCyZY1CYBsYJACIT1cRM0EAi5RW+0HybPmq5MQZoFxAqBIpA1zz9uA/8h1svIXlPvxqftfJ1yuBU4IFYAQCBLnn7cCv5ZPB9qNum9yGQ3XK1TuPoGDogVAFEgk2HdllymO/jnzzljFSgkGw0O++3ZNXzZzuhLMfKmH86crk7xw521VzzTDXDJ2RHntvk4GqghugODz9Q8IBbzanGP+CPjY0CNna0N51V/B39rzKvhS0OBPPxhTC1EEtlzSzHyhgiIxbxSvFMUlrxx3swaOdg1TkGeIrw25tXgl4BN4vd39bcRiRyrFN3L0ht5mRvmublAHh6+OUnElC08ACh5R/lGYdQTycN7bKUf0xaQ0eETFYvg6YOD+TKqPhQjbxfChsidZh69WXbvTL7a/wsxW6ykJYVG67JfgwjkhU/Wk+GoKT87aeS9XYFkewlrD7KRHHLKJqBeINRIWg39poMp5OHp+Z1VP+KazMwJNPIGyHrQnNsVCIQFpJLFkYAlpr29k5QJqKFnz+fnYBJ5mY48f/lZp5K6APlNeMQCdcLIywKJWUYRMsNVY9e30V9hZiIFT3/+9faj/ovbpmj0AfdKPTV9N1cgeGfJdr85WHiysEBillF/25wQvqEf3/73R1iVPLz559ufn/77+8u79z9//hQ3vca086JzWaCsB+Y8jL1dzRibBRKzjBUj2o0pmPP05/fv3n746/nfH9++Y23//senvz68/frz/bOfWv4V72NX173A+wbKelCbqHSyMw0sWSAxy1ih+UxRdhfMPr5/9+7Lh78/vH339f1n4fP5BSv9R7x2vI2HsYy8Npl8V3o3dhZIzDKW6BINtLv9xi/ctVRT47krxgqIZZfqeqWbjrBAYpaxRBfis+X9aX6RUMTgn/HW0mNlPbDNBT+k6zkLJGYZS3R5jVoWiN8YS4rxYFvfXIkWEMu6wEvSu5kFErOMJbqP0rJA/FYWn8RLxLJjRQuIZa/oCTUTYYHELGMBDkwet6fBhZZ3cY69BCI35pEW06NlPXDp8n6pgD63JBBodqfJvPD8Ij1IG/vidCHKMnqwrAdOY8JfKSjDDQskXUPlF/H6SbqGbj7ViHgBsZwEMkkfJSIYtySQgXzPdF/Bc5+uFN8wSihfDIj1r+4JnHGzKvxCYdtZIB547tOVvD6iOCzGy3rgaHYLVx8G23m+O2C6WpyMwpvtd3m8vknPJhftbD/PV2yXQ+2lLQUy2A7PxZysh/39ZYQJiSt1LyQ7XU80F8KSzgjkzk8gUsaEGBlFIgbEcrVLC9OQg+zeKE1QToZj51MVW0Zvr6lDgzm6IS37Jo2MlVDjdDw7G4FsoJjLl0LaCGS8VVwq1guy0AMizfngnGO611vdla8YRiU77XuNjme4OXF3eAyPXjTyfgv3xCiQfJ/sUhfja1rVY/hsUtpO6EflVPZ7Mirl45Yo3oCe0s11dpwZKfg14XJZLxCqmJMdfF9CIHQZXoRKNGuC68VVQKN5sWPwXKK65qv1VKm+0bSEvRkxQptEzHqAn6CqeYMFWTmrauwpkKPWjLFW1iK149VHMgniTGtkXyqWnzqBzOy2hyoCyQxj7J3SSy7kK4nJaDopEN9NiEKTHsHOGzPrgV4gLxyINrTKX+snkJEhqPGjrJDMZBEkbJ3GpMQ9qJw1ArGNcYYCmRljNk+xExGd98Z3M7Hf7qRA7hRveEuqWXNm+WYdiJn1wCiQu4z4QmXN9BLI2BifVVaI2WKuDJtqatNSrpxmgVibWkAgtboCXYsCmZ+kd9NNgfi5Y0kRFMIHso6Z9cAsEGpKtS4O+Qgkqxm4iIvEdZVUrvDG7uaCvIpjFIi9KVIWiIWFRp6OGdy/uymQn376+Ca0fOH3hMTMelAnEOITFvXMRyC1Na+qcIO6v07FG9os0EoKMQnEOFbTlffO0oIpKeTmBHL00scfogkvuENv1KwHtQJRYxkV03QPgVhsB5hp76sgmr2sfOAmQjtmEIiLIXLufp5Y7JsTiJc71h9SrQq+Uhg1IFa9QBSrwyo/4CEQi3czzP9qYQ0UKrXlTrV1dYZeIE5mlrnHeQOrcndUIB7uWD/kOXPwhRDUbNCsB/UCUf5S1CUPgSgmnqWS0k5z9ZcRlZr9rqxp1nWzKqReIE5jZEEg1jnHhLWk2xPIB2d9fAObUu3Y2ZG4WQ8sBKK05fmA0l0gUI8nF5POAcZSea0HW0f/XDBc5yiH88QEZN3rEb9OyufTCsQtiUUlEIeJy6486fYE4jxLf0IXgqP9i7IiUkCsHAuBKIbrfJHOXSDgppF7V0BImy1102LgJbfuxWAPrvvSRl8dO7KNopGybmoF4hY/thSI027rss7cnkAyR318V/e+Bs7EFjfrgYVAlDFHXrHdBQKjz6KayBe6VmGov4Wnkty8L/NfUQbzqlNX+oPiAXUCUcR2vs98e9hsh9SHLQVCdSCPq91uRY28yq6vRiC5Lxa6hKXzxbpznaW/IcY7ge28cbMe2AgEpwPkzlobgYAZtLApHaR0Cdf/wmisEIicbiHvQbDx3oklwRFvYUPSCURttJelWwuRhbIUiKqDeW6Qm6mmicfiLFIg0sOdgYZleJcSN3csamdf2B0hkbMe2AgEP3CffE4LgUBzvsIbCUClX5oceBfGy8IUqjBkaQSiOkKI6xYjZcg2p+/yogHBGK/6nxSaUwXS26h+Ep0SyHsXfZAR1sMGx0Ij74+wj2sjEFz/yltod4Fgaz41ROWAv076ev8a6LJxmQgqdf6EGoEoFR18jHF4UAgEG5GJ5DSjONgUnZxSV+SF9pxOCcQldxu9sY8axfoTOeuBjUBweO0tECJAYG+3HZBVXx2yLIfbA9WRQKO/xuPwPQ5kWQqBYEXHXg6reiEQnNqDpxjWiWL2hAKh83F1SyDP1vr4nW7UgkaPU0ZYgbMe+MxBFuTPXusgV6ar/gHfpWagOunt9uAVD/3SWolUT5ZFIxAcQyke+HC1XCA4MlNGj7jSnz8uCoSedXdLINb7bt/ogrepn9WfuEZeO4Hgx/WepBtX0ldyo2taSZe3HzquzObVSyMQkLA6TQIrfi4QHDwqFR3/kI8DQSCajb/dEoi1HUsbX916SdWCSFkPSmwEgv7JeU32EIh5xVuekpjforD3yNG3Jx+CaQQCfyYmSfIsJBcIVGGiosPQLHd7B4FoMp52TCBv7fSh9/gIKRBrVXpiIRClVuetn483b42FryeMaGpWtKcDy2sqJ17PogWCq7yEX6h8u1wgYMcgKjqM3fJeGASiqfodE0hmNU3XuwyG3FMYPbWthUAUS0v+e4z9IBNhK21dxS9u6Og+nUuBFgiaEQijgKyFOfmOiCoMT9Mnz9PESOmYQKx2TT2RsZwvhIxrgnulQmU9KKkXSIYmysJM5LWjcFSnEKFK1rmwH+hHqMEoEDSwEAKRaystEKKiwxvZ2Z6n3jK9QEYWXYjBmBRyQ0isrAfawqoCUfRe2PD99qRnNdVetNLW+P/law0tD7HkOk0PsYglUHjRN92DWHQhptWIgFOQaFkPSmoFombHK6xNvmF/NuZORDRm6cOUXNhR96rDOElHcy0RL4icg0AVXqqnwQojPQe5FYGM67oQ43K22/cyEi3rQUmdQNRJQ2mhoUfV5DHwOlXjxgnIre9MiRunFAVa73XPjHkdBO5A1NhH6g9olFaGZqg82op1KwKp60IUF3cJ/Qd1JlrWg5IagRDRocqPuNP8fgYUoMSEG292PV3NhyXD7NAnPWLPXBp42om+Do1AoKGfKufBgsacvJr6wGiTo9dBbkYgNV2IOS6V5mP6gDcOlvWgxCwQyt5QmldhhiANK6Dy05V2fNjOiapPrSZng/2O8JK+9AYwb7CsPhqB4PtQSg7m2qJKwwMrwsKGhl5JvxmBmOO81wQ2DDcHiRkQK8cgkIwMEVpNolE9QsXGxW0yDuKVQR97Em0XMNpiNbtWFfjVLu2SRiD4UBO4GvYERZVGF5WdfBrOk4qFkpsVyB36CArgHlsk3H6QeFkPSlAgh0tqr9Nm29fE0ammreiAJ6yOobLyWjaQKAzlR6jgl25hJv11pinuVa1Q+6D+zOQpSHFUIxBlEWstKURxgCmqtNLXSlMyxRxXTMpuVyB6r3etC1ZBuBQ68bIelLjapAUVKE6Zfd1Fi/1Bcl9RNrLQKl9qiTyJWWruef0d/ZykLugIYi0KqdswpfSakyoYIhF3t6jSqofqsFTWWH3JxbHbFcgd7sOwr6XBNkxFDYiV4yoQsT1VY5ScnQjHC+X34ovKXUU5WIOu6FKFoSoWnTYYg3p0QYT4ngNNZ6YVCGE07m0uA8/ZlgiaWVZpwjC32s+O2WxPHSnOumGB6FYL64c5weL+RMx6UOIoEKlxtl6AKIZl0LfO6DJc7gE1pxiS0FVFeePFtryD8nhl5dIJhNiz8sLjWrN4U1Zpp6j+5ZzshgWi8Vk0W3gvBPPFipj1oMRNILBGYXlWadIBRV0HLxn2uJfagxOc63gMlVCM0ghrQm9Omb2qpXFtVBO3N1JVaYepZ2XouGWB3OEU+YJN5oFQYU3w3oH3Sl1wqg6YotBytlUuCighw5arnRIrZJKRL3Ha282VVrwwnFnHsqqMS1qB0F2IDodYwhXVUPmmBTIjBllW2zECTUJwhPUmxkO6CETJz21XJ4Q1ARsL+ND+JVa12lKqk0rh+siKTjEFhCptHTmur73XbQmEsGQ9WXmbB0oyFTPrQYmDQJaqA7PV2cKU2abu5eNzG/FV/YE57UiJsFRjCF7tEjpOrNKWKhU3i9y2QNQQQJapncKMseIGxMqxFwimaDpjUy/Fz5nVdyE9+5IJ/YFdZyZmrzEIxGUSKVZptCjTLMVG9sYFcgdRDW1nyUHGWNH3Sl2wFggZj8ais1xLuqqN+FKtXNeHcJXW5y2mIZLLpCk/iMMQQKrSquezyqNk5bl1gRylBfV/bE8LYseKmvWgxFIga90STJ1NewpWv7qBuuBfXiemnVtJIPuZMcOUvULkKm3OUHhmKo9Tb10gd5/FcY69FSnEnil0dgma9cCtpBMqQ3OOef/kWrGKmxdPpP0XZoXs8MoHY/s9AYmbcxQObEfJUKXHNcbeHgwDbl4g4kTdIaCIm6mQBkdYMYy8VgJZ743OZydDXVLzHhsVNQGnxpOhQSYCm48N20yUzOo1WW6P2mtNpJDxSpU22SEmih/m7QukUoidBSun+SwkdkCsnDqBTHe1/i3azOA9+lQ1wG2OUon1l9YM+QaaSy9Vd+K6POl3G1r465HUs6lV+rjTtRhDdZH5FxDI3cfvHkak5klCMCBWFCOvUSDr4eKgD00hMqPag6Hex/1ENM+TOVnnR9SlV0SS9JwBcekhsXG2XiB32V6V2/pyKcEOTFXpbEv0fMs+9Xy/gkDuZpe66uhq7hvBeli0mTjCimLkRbdywcHczWaW7aXB97S3NbvkzOQNhcuhfhh3XKzEv05XNZc+SvV6OieipV+LIEG3BOOF+FiTea75GeGILzPoi883WS00/xvBW6f/Nbb6V0Le/njjutnVwuJPMsgN+u0YeUOSzU77fr+/3QzsdizdzQ6b/XY4X2zo6NUi49Nhv50P+/uT1Ws4Xkqy2G4OzevS+LDtz1e94dw5W81oc4kMvCAjbjNuqe4KlsUqY+SsBwyTGq8uZFHM7yNnPWCY1HgFWDzmXU/8gFgMkxYlZKcFZyvGZfNmS0ZehkmHY8S/MxdbytmIGDvrAcMkx305/erRcZ6E4AgrfEAshklNXXRypNphrUxBwgfEYpjUOE7TiwXScQtZDxgmPU7ZPB8rR7ZlGwGxGCY51oEuJpKrxY6NvMyrQD/G6p2dEHbD3q7f3+7RIeIQP+sBw3QArU8vkWBFIGsjIBbDpEe3FGLOYXHEEZZlrAiGuTF0SyFmn9R3oI8IWQ8YphPQOwuJHI8in0AgkfZKMUxy6C5EvyHuAgbEYiMv88tCbWk1T9HvPuIUpHs7yBgmEFSIrJoKjxlE4wTEYphOoDpk0TEKK9DIGycgFsN0AqUL0USuqE7AEVacgFgM0w00eYO1YOKeKFkPGKYrHNz0wUZe5pUhzkLq5h93d1krWQ8YpjMIecCpEH/AT5yCdD4gFsM0o0hTubRZ0GAjL/P6GG/nq7nZQ7HgdxAIB8RimIrPbORlGD1o5H1KXSCG6RIYroEDYjFMRYYjrK+pS8QwHUJJzc5GXoapeAZ9cEAshhHAgFhfUheIYTqEYuTlgFgMU/EB9MEBsRhG4AcIxDUzIsP8yigBsTjrAcNUfAV9cEAshhFAI69jbnaG+bXhrAcMo4cDYjGMATTyfktdIIbpEpjalrMeMEyFYuTlvVIMU6FkPUhdIIbpEhwQi2EMcNYDhtHDRl6GMcABsRjGAGc9YBg9nPWAYQxwQCyGMfAvG3kZRgtnPWAYAxwQi2EM/Af6+JG6QAzTJTjrAcPo4YBYDGOAjbwMY4CzHjCMHiXrAQfEYpgKxcjLAbEYpuIZ9MFZDxhG4G+IiMVZDxhG4vMHMXA1G3kZBjl+/e+fqz446wHDkHz+8ucbDojFMHqy9//xXikmJP8LnWRA9d9dImAAAAAASUVORK5CYII=">
     <div class="header-copy">
-      <p class="eyebrow">Philosophie EF · Sprachlicher Unterrichtsbegleiter</p>
-      <h1>Was macht eine Schule gerecht?</h1>
-      <p class="subtitle">Gedankenexperiment · Kommission für Bildungsgerechtigkeit (KoPhiBi)</p>
+      <p class="eyebrow">Philosophie EF · Gedankenexperiment · Phase 2</p>
+      <h1><span data-de>Kriterienbogen zum Schreibprodukt</span><span data-es lang="es">Hoja de criterios para el texto escrito</span></h1>
+      <p class="subtitle"><span data-de>Was macht eine Schule gerecht?</span><span data-es lang="es">¿Qué hace que una escuela sea justa?</span></p>
     </div>
   </div>
 </header>
 
 <main>
-  <section class="hero" id="stundenfrage">
-    <p class="q-de">Was macht eine Schule gerecht?</p>
-    <p class="q-es" lang="es">¿Qué es lo que hace que una escuela sea justa?</p>
-    <small>Die Aufgaben bleiben inhaltlich identisch mit dem Unterrichtsmaterial. Unterstrichene Operatoren kannst du anklicken.</small>
-  </section>
-
-  <nav class="nav" aria-label="Navigation">
-    <a href="#auftrag">Auftrag</a>
-    <a href="#top2">TOP 2</a>
-    <a href="#perspektiven">Perspektivkarten</a>
-    <a href="#transfer">Intuitionspumpe</a>
-    <a href="#phase2">Phase 2</a>
-  </nav>
-
-  <section class="card" id="auftrag">
-    <div class="card-head">
-      <h2>Ausgangslage des Gedankenexperiments</h2>
-    </div>
-    <div class="card-body">
-      <p class="source-text">Ihr wurdet von der Bundesregierung in die Kommission der Philosophinnen und Philosophen für Bildungsgerechtigkeit (KoPhiBi) berufen. Eure Aufgabe: Ihr entwickelt Grundsätze für die gerechteste Schule Deutschlands. Dabei dürft ihr völlig neu denken! Ihr seid an keine bestehenden Schulformen oder Strukturen gebunden.</p>
-      <p class="source-text" style="margin-top:12px">Mit eurer Auswahl ist allerdings eine besondere Bedingung verbunden: Stellt euch vor, ihr würdet die von euch entworfene Schule später selbst besuchen. Ihr wisst jedoch noch nicht, mit welchen Fähigkeiten, Bedürfnissen und Voraussetzungen ihr dort lernen werdet. Ihr wisst also auch nicht, welche Vorteile oder Schwierigkeiten ihr möglicherweise haben werdet.</p>
-      <p class="source-text" style="margin-top:12px">Erst nachdem ihr eure Grundsätze festgelegt habt, wird sich herausstellen, unter welchen Voraussetzungen ihr die Schule tatsächlich besuchen werdet. Die Bundesregierung stellt euch fünf beispielhafte Lebenssituationen zur Verfügung, die ihr bei euren Überlegungen berücksichtigen sollt.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3>
-        <p>Habéis sido nombrados por el Gobierno Federal miembros de la Comisión de Filósofas y Filósofos para la Justicia Educativa (KoPhiBi). Vuestra tarea es desarrollar principios para la escuela más justa de Alemania. ¡Podéis pensar de una manera completamente nueva! No estáis vinculados a las formas o estructuras escolares existentes.</p>
-        <p>Sin embargo, vuestra elección está vinculada a una condición especial: imaginad que más adelante vosotros mismos asistiréis a la escuela que diseñéis. Todavía no sabéis con qué capacidades, necesidades y condiciones personales aprenderéis allí. Por tanto, tampoco sabéis qué ventajas o dificultades podríais tener.</p>
-        <p>Solo después de haber establecido vuestros principios se sabrá en qué condiciones asistiréis realmente a la escuela. El Gobierno Federal os proporciona cinco situaciones de vida a modo de ejemplo que debéis tener en cuenta en vuestras reflexiones.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="card" id="top2">
-    <div class="card-head">
-      <span class="phase-label">Phase 1</span>
-      <h2>TOP 2 – Konzeptionsphase in den Arbeitskreisen</h2>
-    </div>
-    <div class="card-body">
-      
-    <div class="task">
-      <p><span class="task-number">1a.</span><button type="button" class="operator" data-op="lies">Lies</button> deine Perspektivkarte und <button type="button" class="operator" data-op="überlege">überlege</button>, welche Interessen und Bedürfnisse die beschriebene Person im Hinblick auf eine gerechte Schule haben könnte.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Lee tu tarjeta de perspectiva y piensa qué intereses y necesidades podría tener la persona descrita con respecto a una escuela justa.</p></div>
-    </div>
-      
-    <div class="task">
-      <p><span class="task-number">1b.</span><button type="button" class="operator" data-op="formuliere">Formuliere</button> ein bis zwei zentrale Forderungen, die sich daraus an eine gerechte Schule ergeben.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Formula una o dos demandas centrales que se deriven de ello para una escuela justa.</p></div>
-    </div>
-      
-    <div class="task">
-      <p><span class="task-number">2a.</span><button type="button" class="operator" data-op="stellt vor">Stellt einander vor</button> die fünf Personen und die von euch erarbeiteten Forderungen.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Presentaos mutuamente a las cinco personas y las demandas que habéis elaborado.</p></div>
-    </div>
-      
-    <div class="task">
-      <p><span class="task-number">2b.</span><button type="button" class="operator" data-op="diskutiert">Diskutiert</button> anschließend, was eine Schule gerecht macht, und <button type="button" class="operator" data-op="entwickelt">entwickelt</button> gemeinsam drei bis vier zentrale Gerechtigkeitsgrundsätze.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Debatid después qué hace justa a una escuela y desarrollad juntos tres o cuatro principios centrales de justicia.</p></div>
-    </div>
-      
-    <div class="task">
-      <p><span class="task-number">2c.</span><button type="button" class="operator" data-op="notiert">Notiert</button> eure Gerechtigkeitsgrundsätze mit Bleistift auf der Beschlussvorlage.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Anotad vuestros principios de justicia con lápiz en la plantilla de resolución.</p></div>
-    </div>
-
-      <div class="example">
-        <strong>BEISPIEL:</strong>
-        <ul>
-          <li>Eine konkrete Maßnahme wäre: „Freitags gibt es für alle Pizza.“</li>
-          <li>Ein Grundsatz wäre: „An unserer Schule darf niemand allein entscheiden, was alle anderen essen müssen.“</li>
-        </ul>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3>
-          <p><strong>EJEMPLO:</strong></p>
-          <ul>
-            <li>Una medida concreta sería: «Los viernes hay pizza para todos».</li>
-            <li>Un principio sería: «En nuestra escuela nadie puede decidir por sí solo lo que todos los demás tienen que comer».</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="official-help">
-        <strong>HILFESTELLUNGEN:</strong>
-        <ul>
-          <li>Bedeutet Gerechtigkeit, alle gleich zu behandeln, oder müssen unterschiedliche Voraussetzungen und Bedürfnisse unterschiedlich berücksichtigt werden?</li>
-          <li>Welche Grundsätze erscheinen euch für alle gleichermaßen gerecht?</li>
-          <li>Welche Regeln würdet ihr auch dann akzeptieren, wenn ihr nicht wüsstet, welche Voraussetzungen ihr selbst mitbringt und welche Position ihr an der Schule einnehmen werdet?</li>
-        </ul>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3>
-          <ul>
-            <li>¿Significa la justicia tratar a todos por igual, o deben tenerse en cuenta de manera diferente las distintas condiciones y necesidades?</li>
-            <li>¿Qué principios os parecen igualmente justos para todos?</li>
-            <li>¿Qué reglas aceptaríais también si no supierais qué condiciones personales tendréis ni qué posición ocuparéis en la escuela?</li>
-          </ul>
-        </div>
-      </div>
-
-      
-    <div class="task">
-      <p><span class="task-number">3a.</span><button type="button" class="operator" data-op="diskutiert">Diskutiert</button>, welche eurer Gerechtigkeitsgrundsätze im Zweifelsfall Vorrang haben sollten.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Debatid cuáles de vuestros principios de justicia deberían tener prioridad en caso de duda.</p></div>
-    </div>
-      
-    <div class="task">
-      <p><span class="task-number">3b.</span><button type="button" class="operator" data-op="ordnet">Ordnet</button> diese anschließend auf eurer Beschlussempfehlung der KoPhiBi in eine <button type="button" class="operator" data-op="begründete Rangfolge">begründete Rangfolge</button> und tragt sie mit einem dokumentenechten Stift (Kugelschreiber, Füller) ein.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Ordenadlos después en vuestra recomendación de resolución de la KoPhiBi según un orden de prioridad justificado y escribidlos con un bolígrafo o una pluma de tinta permanente.</p></div>
-    </div>
-
-      <div class="official-help">
-        <strong>HILFESTELLUNGEN:</strong>
-        <ul>
-          <li>Stellt euch vor, eure Schule könnte zunächst nur zwei eurer Grundsätze verwirklichen. Welche würdet ihr auswählen?</li>
-          <li>Welche Grundsätze müssten aus eurer Sicht unbedingt gewährleistet sein?</li>
-          <li>Würdet ihr eure Rangfolge auch dann vertreten, wenn ihr selbst zu den am stärksten benachteiligten Personen an der Schule gehören würdet?</li>
-        </ul>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3>
-          <ul>
-            <li>Imaginad que vuestra escuela solo pudiera aplicar inicialmente dos de vuestros principios. ¿Cuáles elegiríais?</li>
-            <li>¿Qué principios deberían garantizarse necesariamente desde vuestro punto de vista?</li>
-            <li>¿Defenderíais el mismo orden de prioridad si vosotros mismos pertenecierais a las personas más desfavorecidas de la escuela?</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="card" id="perspektiven">
-    <div class="card-head">
-      <h2>Perspektivkarten</h2>
-      <p>Alle fünf Karten aus dem Unterrichtsmaterial.</p>
-    </div>
-    <div class="card-body">
-      <div class="perspectives">
-        
-      <article class="person lina">
-        <div class="person-head"><h3>Lina</h3></div>
-        <div class="person-body">
-          <p>Lina interessiert sich besonders für Naturwissenschaften und das Programmieren.</p><p>Neue Zusammenhänge versteht sie oft sehr schnell und beschäftigt sich gerne mit schwierigen Fragen.</p><p>Sie lebt mit zwei Geschwistern in einer kleinen Wohnung. Der einzige Computer der Familie wird von mehreren Personen genutzt. An manchen Nachmittagen übernimmt Lina Aufgaben im Haushalt.</p>
-          <button type="button" class="toggle" aria-expanded="false">Español</button>
-          <div class="translation" lang="es"><h3>Español</h3><p>A Lina le interesan especialmente las ciencias naturales y la programación.</p><p>Suele comprender muy rápido nuevas relaciones y le gusta ocuparse de preguntas difíciles.</p><p>Vive con dos hermanos en un piso pequeño. El único ordenador de la familia lo utilizan varias personas. Algunas tardes Lina se ocupa de tareas domésticas.</p></div>
-        </div>
-      </article>
-    
-      <article class="person ben">
-        <div class="person-head"><h3>Ben</h3></div>
-        <div class="person-body">
-          <p>Ben erfindet gerne Geschichten und beteiligt sich mit vielen Ideen an Gesprächen.</p><p>Wenn er mehrere neue Informationen in kurzer Zeit erhält, benötigt er länger, um sie zu verarbeiten und zu ordnen.</p><p>Seine Familie verfügt über ausreichend Geld, um ihm Bücher, Freizeitkurse und andere Materialien zu finanzieren. Zu Hause hat Ben einen eigenen, ruhigen Arbeitsplatz.</p>
-          <button type="button" class="toggle" aria-expanded="false">Español</button>
-          <div class="translation" lang="es"><h3>Español</h3><p>A Ben le gusta inventar historias y participa en las conversaciones con muchas ideas.</p><p>Cuando recibe mucha información nueva en poco tiempo, necesita más tiempo para procesarla y organizarla.</p><p>Su familia dispone de suficiente dinero para financiarle libros, cursos de ocio y otros materiales. En casa Ben tiene su propio lugar de trabajo tranquilo.</p></div>
-        </div>
-      </article>
-    
-      <article class="person amina">
-        <div class="person-head"><h3>Amina</h3></div>
-        <div class="person-body">
-          <p>Amina beschäftigt sich gerne mit mathematischen Problemen und entwickelt eigene Ideen für technische Projekte.</p><p>Bei gemeinsamen Aktivitäten erlebt sie wiederholt, dass andere ihre Kenntnisse anzweifeln oder ihre Beiträge übergehen.</p><p>Dabei wurden auch schon abwertende Bemerkungen über ihren Namen und ihre Hautfarbe gemacht.</p><p>Ihre Familie unterstützt sie bei ihren Interessen.</p>
-          <button type="button" class="toggle" aria-expanded="false">Español</button>
-          <div class="translation" lang="es"><h3>Español</h3><p>A Amina le gusta ocuparse de problemas matemáticos y desarrolla sus propias ideas para proyectos técnicos.</p><p>En actividades conjuntas vive repetidamente que otras personas ponen en duda sus conocimientos o pasan por alto sus aportaciones.</p><p>También se han hecho comentarios despectivos sobre su nombre y el color de su piel.</p><p>Su familia la apoya en sus intereses.</p></div>
-        </div>
-      </article>
-    
-      <article class="person robin">
-        <div class="person-head"><h3>Robin</h3></div>
-        <div class="person-body">
-          <p>Robin spielt gerne Theater und entwickelt gemeinsam mit anderen kreative Projekte.</p><p>Robin nutzt aufgrund einer körperlichen Behinderung einen Rollstuhl.</p><p>Bei gemeinsamen Unternehmungen stellt sich manchmal erst vor Ort heraus, dass bestimmte Räume nur über Treppen erreichbar sind oder andere räumliche Hindernisse bestehen.</p>
-          <button type="button" class="toggle" aria-expanded="false">Español</button>
-          <div class="translation" lang="es"><h3>Español</h3><p>A Robin le gusta hacer teatro y desarrollar proyectos creativos junto con otras personas.</p><p>Robin utiliza una silla de ruedas debido a una discapacidad física.</p><p>En actividades conjuntas, a veces solo al llegar al lugar se descubre que determinadas salas únicamente son accesibles por escaleras o que existen otras barreras físicas.</p></div>
-        </div>
-      </article>
-    
-      <article class="person mika">
-        <div class="person-head"><h3>Mika</h3></div>
-        <div class="person-body">
-          <p>Mika interessiert sich für Musik, Natur und verschiedene Freizeitaktivitäten.</p><p>Zu Hause stehen ein eigenes Zimmer, ein Computer und zahlreiche Materialien zur Verfügung.</p><p>Mikas Eltern haben ausreichend Zeit und finanzielle Möglichkeiten, um verschiedene Interessen und Aktivitäten zu unterstützen.</p><p>Mika arbeitet gerne mit anderen zusammen und bringt dabei häufig eigene Ideen ein.</p>
-          <button type="button" class="toggle" aria-expanded="false">Español</button>
-          <div class="translation" lang="es"><h3>Español</h3><p>A Mika le interesan la música, la naturaleza y diferentes actividades de ocio.</p><p>En casa dispone de una habitación propia, un ordenador y numerosos materiales.</p><p>Los padres de Mika tienen suficiente tiempo y recursos económicos para apoyar diferentes intereses y actividades.</p><p>A Mika le gusta trabajar con otras personas y aporta con frecuencia sus propias ideas.</p></div>
-        </div>
-      </article>
-    
-      </div>
-    </div>
-  </section>
-
-  <section class="card" id="transfer">
-    <div class="card-head">
-      <h2>Für diejenigen unter euch, die TOP 2 bereits zu den Akten gelegt haben</h2>
-    </div>
-    <div class="card-body">
-      <p class="source-text">Der Philosoph Daniel Dennett hat Gedankenexperimente als „Intuitionspumpen“ bezeichnet.</p>
-      <p style="margin:14px 0 0"><button type="button" class="operator" data-op="erklärt">Erklärt</button> euch gegenseitig die Metapher und <button type="button" class="operator" data-op="diskutiert">diskutiert</button>, inwieweit sie euch passend erscheint.</p>
-      <p class="meta-note"><strong>Intuition:</strong> Gefühlsmäßiges Erkennen einer Sache oder eines Sachverhaltes.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3>
-        <p>El filósofo Daniel Dennett denominó los experimentos mentales «bombas de intuición».</p>
-        <p>Explicaos mutuamente la metáfora y debatid hasta qué punto os parece adecuada.</p>
-        <p><strong>Intuición:</strong> comprensión o reconocimiento inmediato y más bien intuitivo de una cosa o de un hecho.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="card" id="phase2">
-    <div class="card-head">
-      <span class="phase-label">Phase 2</span>
-      <h2>TOP 4 – Individuelle Vertiefung der konzeptionellen Impulse</h2>
-    </div>
-    <div class="card-body">
-      <p class="source-text">Ein Jahr ist vergangen. Die von eurer Regierungskommission entwickelte Schule wurde gegründet. Die von euch beschlossenen Grundsätze bestimmen nun, wie Menschen an dieser Schule lernen und zusammenleben.</p>
-      <p class="source-text" style="margin-top:10px">Doch wie gerecht ist diese Schule tatsächlich?</p>
-
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3>
-        <p>Ha pasado un año. La escuela desarrollada por vuestra comisión gubernamental ha sido fundada. Los principios que habéis decidido determinan ahora cómo aprenden y conviven las personas en esta escuela.</p>
-        <p>Pero ¿hasta qué punto es realmente justa esta escuela?</p>
-      </div>
-
-      
-    <div class="task">
-      <p><span class="task-number"></span><button type="button" class="operator" data-op="verfasse">Verfasse</button> aus der Perspektive von mindestens einem der fünf Kinder einen analogen Tagebuch- oder digitalen Blogbeitrag über eine erfundene Erfahrung an deiner Schule. Kleine Erinnerung: Du darfst dir frei vorstellen, wie deine Schule organisiert ist. Du musst nicht von unserem gegenwärtigen Schulsystem ausgehen.</p>
-      <button type="button" class="toggle" aria-expanded="false">Español</button>
-      <div class="translation" lang="es"><h3>Español</h3><p>Redacta, desde la perspectiva de al menos uno de los cinco niños, una entrada de diario en papel o una entrada de blog digital sobre una experiencia inventada en tu escuela. Recuerda: puedes imaginar libremente cómo está organizada tu escuela. No tienes que partir del sistema escolar actual.</p></div>
-    </div>
-
-      <div class="task">
-        <p><span class="task-number">1.</span><button type="button" class="operator" data-op="beschreibe">Beschreibe</button> eine konkrete Situation, in der einer eurer Gerechtigkeitsgrundsätze eine wichtige Rolle spielt.</p>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3><p>Describe una situación concreta en la que uno de vuestros principios de justicia desempeñe un papel importante.</p></div>
-      </div>
-      <div class="task">
-        <p><span class="task-number">2.</span><button type="button" class="operator" data-op="zeige auf">Zeige auf</button>, welche Auswirkungen dieser Grundsatz auf das Kind und gegebenenfalls auf andere Menschen hat.</p>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3><p>Muestra qué consecuencias tiene este principio para el niño y, si corresponde, para otras personas.</p></div>
-      </div>
-      <div class="task">
-        <p><span class="task-number">3.</span>Entwickle Überlegungen dazu, ob der Grundsatz in dieser Situation gerecht ist. <button type="button" class="operator" data-op="berücksichtige">Berücksichtigt</button> dabei auch mögliche Gegenargumente oder Zielkonflikte.</p>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3><p>Desarrolla reflexiones sobre si el principio es justo en esta situación. Ten en cuenta también posibles contraargumentos o conflictos entre objetivos.</p></div>
-      </div>
-      <div class="task">
-        <p><span class="task-number">4.</span><button type="button" class="operator" data-op="nimm begründet Stellung">Nimm begründet Stellung</button>, inwieweit der Grundsatz beibehalten oder verändert werden sollte.</p>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3><p>Adopta una postura razonada sobre hasta qué punto el principio debería mantenerse o modificarse.</p></div>
-      </div>
-
-      <div class="official-help">
-        <strong>Mögliche Satzanfänge aus dem Material:</strong>
-        <ul>
-          <li>Zunächst dachte ich, dass …</li>
-          <li>Besonders deutlich wurde mir heute, dass …</li>
-          <li>Einerseits finde ich diesen Grundsatz gerecht, weil …</li>
-          <li>Andererseits könnte man einwenden, dass …</li>
-          <li>Wenn ich an die anderen denke, frage ich mich, ob …</li>
-          <li>Deshalb bin ich inzwischen der Ansicht, dass …</li>
-        </ul>
-        <button type="button" class="toggle" aria-expanded="false">Español</button>
-        <div class="translation" lang="es"><h3>Español</h3>
-          <ul>
-            <li>Al principio pensaba que …</li>
-            <li>Hoy me quedó especialmente claro que …</li>
-            <li>Por una parte, considero justo este principio porque …</li>
-            <li>Por otra parte, se podría objetar que …</li>
-            <li>Cuando pienso en los demás, me pregunto si …</li>
-            <li>Por eso ahora considero que …</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer-note">
-    Die Seite enthält keine Musterlösungen und keine zusätzlichen inhaltlichen Impulse. Spanisch dient ausschließlich der Verständnissicherung; die philosophischen Entscheidungen werden im Heft und in der Gruppe erarbeitet.
+  
+<section class="intro">
+  <p data-de>Prüfe das Schreibprodukt Kriterium für Kriterium. Die Sprache bleibt Deutsch. Wenn du etwas nicht verstehst, öffne zuerst „Kriterium verstehen“ und nutze Spanisch nur bei Bedarf.</p>
+  <p data-es lang="es">Revisa el texto criterio por criterio. Puedes utilizar toda la versión en español si lo deseas. También puedes volver al alemán en cualquier momento.</p>
+  <div class="language-switch" role="group" aria-label="Sprache wählen">
+    <button type="button" class="language-btn active" data-lang="de">Deutsch</button>
+    <button type="button" class="language-btn" data-lang="es">Español</button>
   </div>
+</section>
+
+
+  <section class="meta-card">
+    <div class="meta-grid">
+      <div class="field">
+        <label for="name"><span data-de>Name</span><span data-es lang="es">Nombre</span></label>
+        <input id="name" type="text" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="reviewer"><span data-de>Rückmeldung von</span><span data-es lang="es">Retroalimentación de</span></label>
+        <input id="reviewer" type="text" autocomplete="off">
+      </div>
+      <div class="field" style="grid-column:1/-1">
+        <label for="principle"><span data-de>Geprüfter Gerechtigkeitsgrundsatz</span><span data-es lang="es">Principio de justicia evaluado</span></label>
+        <input id="principle" type="text" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="type-row" role="group" aria-label="Textsorte">
+      <button type="button" class="type-btn" data-type="tagebuch"><span data-de>Tagebucheintrag</span><span data-es lang="es">Entrada de diario</span></button>
+      <button type="button" class="type-btn" data-type="blog"><span data-de>Blogeintrag</span><span data-es lang="es">Entrada de blog</span></button>
+    </div>
+  </section>
+
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span><span data-de>Bewertungsstand</span><span data-es lang="es">Estado de la evaluación</span></span>
+      <span id="progress-text">0 von 7 Kriterien bewertet</span>
+    </div>
+    <div class="track"><div class="bar" id="progress-bar"></div></div>
+  </div>
+
+  
+    <section class="criterion" data-id="schulalltag">
+      <div class="criterion-head">
+        <h2><span data-de>Grundsatz im Schulalltag</span><span data-es lang="es">Principio en la vida escolar</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original"><span data-de>Eine konkrete, erfundene Schulsituation zeigt, wie einer eurer beschlossenen Gerechtigkeitsgrundsätze umgesetzt wird.</span><span data-es lang="es">Una situación escolar concreta e inventada muestra cómo se aplica uno de los principios de justicia que habéis acordado.</span></p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Grundsatz im Schulalltag">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Im Text soll eine konkrete Situation in der Schule vorkommen. In dieser Situation muss man erkennen können, wie euer Gerechtigkeitsgrundsatz tatsächlich wirkt.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">En el texto debe aparecer una situación concreta e inventada de la vida escolar. En esa situación debe verse cómo se aplica realmente uno de vuestros principios de justicia.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="perspektive">
+      <div class="criterion-head">
+        <h2><span data-de>Perspektive des Kindes</span><span data-es lang="es">Perspectiva del niño o de la niña</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original" data-de>Der Text ist aus Sicht mindestens eines der fünf Kinder geschrieben. Dessen <button type="button" class="term" data-term="Lebenslage">Lebenslage</button> und <button type="button" class="term" data-term="Bedürfnisse">Bedürfnisse</button> prägen, wie es die Situation erlebt.</p><p class="original" data-es lang="es">El texto está escrito desde la perspectiva de al menos uno de los cinco niños. Su situación de vida y sus necesidades influyen en cómo vive la situación.</p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Perspektive des Kindes">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Der Text muss aus der Sicht eines Kindes geschrieben sein. Man soll merken, dass seine Lebenssituation und seine Bedürfnisse beeinflussen, wie es das Geschehen wahrnimmt.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">El texto debe estar escrito desde la perspectiva de al menos uno de los cinco niños. Debe notarse que su situación de vida y sus necesidades influyen en cómo vive y percibe la situación.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="auswirkungen">
+      <div class="criterion-head">
+        <h2><span data-de>Auswirkungen des Grundsatzes</span><span data-es lang="es">Consecuencias del principio</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original"><span data-de>Der Text zeigt, was sich durch den Grundsatz für das Kind und gegebenenfalls für andere Beteiligte ergibt.</span><span data-es lang="es">El texto muestra qué consecuencias tiene el principio para el niño y, si corresponde, para otras personas implicadas.</span></p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Auswirkungen des Grundsatzes">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Der Text soll deutlich machen, welche Folgen der Grundsatz hat – für das Kind und, wenn es wichtig ist, auch für andere Personen.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">El texto debe mostrar qué consecuencias tiene el principio para el niño y, si es relevante, también para otras personas implicadas.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="pruefung">
+      <div class="criterion-head">
+        <h2><span data-de>Prüfung der Gerechtigkeit</span><span data-es lang="es">Examen de la justicia</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original" data-de>Der Text erklärt, warum die Anwendung des Grundsatzes in dieser Situation gerecht oder ungerecht ist, etwa mit Blick auf <button type="button" class="term" data-term="Gleichbehandlung">Gleichbehandlung</button> oder unterschiedliche <button type="button" class="term" data-term="Bedürfnisse">Bedürfnisse</button>.</p><p class="original" data-es lang="es">El texto explica por qué la aplicación del principio en esta situación es justa o injusta, por ejemplo considerando la igualdad de trato o las diferentes necesidades.</p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Prüfung der Gerechtigkeit">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Der Text soll prüfen, ob der Grundsatz in dieser Situation gerecht ist. Dafür müssen Gründe genannt werden. Dabei kann zum Beispiel wichtig sein, ob alle gleich behandelt werden sollen oder ob unterschiedliche Bedürfnisse berücksichtigt werden müssen.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">El texto debe examinar si el principio es justo o injusto en esta situación y justificarlo con razones. Por ejemplo, puede ser importante considerar si todos deben recibir el mismo trato o si deben tenerse en cuenta necesidades diferentes.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="einwand">
+      <div class="criterion-head">
+        <h2><span data-de>Einwand oder Zielkonflikt</span><span data-es lang="es">Objeción o conflicto de objetivos</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original" data-de>Der Text geht auf einen passenden <button type="button" class="term" data-term="Einwand">Einwand</button> ein oder zeigt, welche berechtigten Interessen oder Ziele miteinander in Konflikt geraten.</p><p class="original" data-es lang="es">El texto aborda una objeción adecuada o muestra qué intereses u objetivos legítimos entran en conflicto entre sí.</p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Einwand oder Zielkonflikt">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Der Text soll zeigen, dass es auch eine andere berechtigte Sicht geben kann. Es kann einen Einwand geben oder zwei wichtige Ziele können sich widersprechen.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">El texto debe mostrar que también puede existir otra perspectiva razonable. Puede aparecer una objeción o puede haber dos intereses u objetivos legítimos que entren en conflicto.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="urteil">
+      <div class="criterion-head">
+        <h2><span data-de>Begründetes Urteil</span><span data-es lang="es">Juicio razonado</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original" data-de>Das <button type="button" class="term" data-term="begründetes Urteil">Urteil</button> ergibt sich aus den Überlegungen zur Situation. Der Text erklärt, warum der Grundsatz beibehalten oder wie und warum er verändert werden sollte.</p><p class="original" data-es lang="es">El juicio se deriva de las reflexiones sobre la situación. El texto explica por qué el principio debe mantenerse o cómo y por qué debería modificarse.</p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Begründetes Urteil">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Am Ende soll ein eigenes Urteil stehen. Dieses Urteil muss aus den vorherigen Überlegungen folgen und begründen, ob der Grundsatz bleiben oder verändert werden sollte.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">Al final debe aparecer un juicio propio. Este juicio debe derivarse de las reflexiones anteriores y explicar por qué el principio debe mantenerse o cómo y por qué debería modificarse.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="criterion" data-id="textsorte">
+      <div class="criterion-head">
+        <h2><span data-de>Textsorte und Verständlichkeit</span><span data-es lang="es">Tipo de texto y comprensibilidad</span></h2>
+      </div>
+      <div class="criterion-body">
+        <p class="original" data-de>Der Text ist verständlich und passt zur gewählten Form. Im Tagebuch <button type="button" class="term" data-term="reflektiert">reflektiert</button> das Kind sein Erlebnis persönlich. Im Blog macht es das Erlebnis für Leser:innen <button type="button" class="term" data-term="nachvollziehbar">nachvollziehbar</button>.</p><p class="original" data-es lang="es">El texto es comprensible y se ajusta al formato elegido. En el diario, el niño reflexiona personalmente sobre su experiencia. En el blog, presenta la experiencia de manera comprensible para quienes lo leen.</p>
+
+        <div class="status-row" role="group" aria-label="Bewertung: Textsorte und Verständlichkeit">
+          <button type="button" class="status" data-value="erfuellt"><span data-de>✓ Erfüllt</span><span data-es lang="es">✓ Cumplido</span></button>
+          <button type="button" class="status" data-value="teilweise"><span data-de>◐ Teilweise erfüllt</span><span data-es lang="es">◐ Parcialmente cumplido</span></button>
+          <button type="button" class="status" data-value="offen"><span data-de>○ Noch offen</span><span data-es lang="es">○ Aún pendiente</span></button>
+        </div>
+
+        <div class="help-actions">
+          <button type="button" class="help-btn explain-btn" aria-expanded="false"><span data-de>Kriterium verstehen</span><span data-es lang="es">Entender el criterio</span></button>
+        </div>
+        <div class="help-panel">
+          <h3>Einfaches Deutsch</h3>
+          <p>Der Text soll gut verständlich sein und zur gewählten Textsorte passen. Ein Tagebuch wirkt persönlicher. Ein Blog richtet sich stärker an Leserinnen und Leser.</p>
+          <button type="button" class="help-btn spanish-btn" aria-expanded="false">Español</button>
+          <div class="spanish" lang="es">El texto debe ser comprensible y ajustarse al tipo de texto elegido. En un diario, el niño reflexiona de forma personal sobre su experiencia. En un blog, presenta la experiencia de manera comprensible para otras personas.</div>
+        </div>
+      </div>
+    </section>
+    
+
+  <section class="feedback-card">
+    <h2><span data-de>Konkrete Rückmeldung</span><span data-es lang="es">Retroalimentación concreta</span></h2>
+    <p><span data-de>Beziehe dich auf eine konkrete Textstelle.</span><span data-es lang="es">Haz referencia a un pasaje concreto del texto.</span></p>
+
+    <div class="feedback-block">
+      <label for="positive"><span data-de>Das fand ich sehr gut:</span><span data-es lang="es">Esto me pareció muy logrado:</span></label>
+      <div class="feedback-starter"><span data-de>Diese Stelle überzeugt, weil …</span><span data-es lang="es">Este pasaje convence porque …</span></div>
+      <textarea id="positive"></textarea>
+    </div>
+
+    <div class="feedback-block">
+      <label for="improve"><span data-de>Das ginge noch besser:</span><span data-es lang="es">Esto podría mejorarse:</span></label>
+      <div class="feedback-starter"><span data-de>An dieser Stelle könntest du …</span><span data-es lang="es">En este pasaje podrías …</span></div>
+      <textarea id="improve"></textarea>
+    </div>
+
+    <div class="summary" id="summary"><strong>Übersicht:</strong> Noch keine Kriterien bewertet.</div>
+
+    <div class="footer-tools">
+      <button type="button" class="utility" onclick="window.print()"><span data-de>Drucken / als PDF</span><span data-es lang="es">Imprimir / guardar como PDF</span></button>
+      <button type="button" class="utility" id="reset-btn"><span data-de>Eingaben löschen</span><span data-es lang="es">Borrar datos</span></button>
+    </div>
+  </section>
 </main>
 
-<div class="popover" id="op-popover" role="dialog" aria-live="polite">
+<div class="popover" id="term-popover" role="dialog" aria-live="polite">
   <button type="button" class="close-pop" id="close-pop" aria-label="Schließen">×</button>
-  <div id="op-content"></div>
+  <div id="term-content"></div>
 </div>
 
 <script>
-const OPERATORS = {"lies": {"de": "Nimm die Informationen genau auf. Achte darauf, was tatsächlich im Material steht.", "es": "Lee atentamente la información. Fíjate en lo que realmente dice el material."}, "überlege": {"de": "Denke über die Frage nach und entwickle einen eigenen Gedanken dazu.", "es": "Piensa sobre la cuestión y desarrolla una idea propia."}, "formuliere": {"de": "Drücke deinen Gedanken klar in eigenen Worten aus.", "es": "Expresa tu idea de forma clara con tus propias palabras."}, "stellt vor": {"de": "Erklärt den anderen eure Ergebnisse so, dass sie sie verstehen können.", "es": "Presentad vuestros resultados a los demás de manera que puedan entenderlos."}, "diskutiert": {"de": "Tauscht begründete Argumente aus, reagiert aufeinander und prüft unterschiedliche Positionen.", "es": "Intercambiad argumentos razonados, responded unos a otros y examinad posiciones diferentes."}, "entwickelt": {"de": "Erarbeitet auf Grundlage eurer Überlegungen etwas Neues.", "es": "Elaborad algo nuevo a partir de vuestras reflexiones."}, "notiert": {"de": "Schreibt das Ergebnis kurz und verständlich auf.", "es": "Anotad el resultado de forma breve y comprensible."}, "ordnet": {"de": "Bringt die Ergebnisse nach einem nachvollziehbaren Kriterium in eine Reihenfolge.", "es": "Ordenad los resultados según un criterio comprensible."}, "begründete Rangfolge": {"de": "Eine Reihenfolge, für die ihr Gründe nennen könnt.", "es": "Una clasificación u orden de prioridad que podéis justificar con razones."}, "erklärt": {"de": "Macht einen Zusammenhang verständlich und nennt dabei wichtige Merkmale oder Gründe.", "es": "Explicad una relación de forma comprensible, mencionando características o razones importantes."}, "reflektiert": {"de": "Denkt bewusst über euer eigenes Vorgehen oder eure Erfahrung nach und prüft deren Bedeutung.", "es": "Reflexionad conscientemente sobre vuestro propio procedimiento o experiencia y examinad su significado."}, "verfasse": {"de": "Schreibe einen zusammenhängenden Text in der verlangten Form.", "es": "Redacta un texto coherente en el formato indicado."}, "beschreibe": {"de": "Stelle genau dar, was in einer Situation geschieht, ohne schon zu bewerten.", "es": "Describe con precisión lo que ocurre en una situación, sin valorarlo todavía."}, "zeige auf": {"de": "Mache einen Zusammenhang oder eine Folge deutlich.", "es": "Muestra con claridad una relación o una consecuencia."}, "berücksichtige": {"de": "Beziehe diesen Gesichtspunkt in deine Überlegungen ein.", "es": "Ten en cuenta este aspecto en tus reflexiones."}, "nimm begründet Stellung": {"de": "Formuliere dein eigenes Urteil und stütze es auf nachvollziehbare Gründe.", "es": "Formula tu propio juicio y apóyalo con razones comprensibles."}, "erläutert": {"de": "Erklärt etwas verständlich und verdeutlicht es gegebenenfalls an Merkmalen oder Zusammenhängen.", "es": "Explicad algo de forma comprensible y aclaradlo mediante características o relaciones."}};
-const root = document;
-const $ = (s,r=root) => r.querySelector(s);
-const $$ = (s,r=root) => [...r.querySelectorAll(s)];
+const TERMS = {"Gerechtigkeitsgrundsatz": {"de": "Eine allgemeine Regel oder Leitidee dafür, was an einer Schule gerecht sein soll.", "es": "principio de justicia: una regla general o idea orientadora sobre lo que debe considerarse justo en una escuela."}, "Lebenslage": {"de": "Die konkreten Bedingungen, unter denen eine Person lebt.", "es": "situación de vida: las condiciones concretas en las que vive una persona."}, "Bedürfnisse": {"de": "Dinge, die eine Person braucht, damit es ihr gut geht oder sie gut teilnehmen kann.", "es": "necesidades."}, "Auswirkungen": {"de": "Folgen oder Veränderungen, die durch etwas entstehen.", "es": "consecuencias / efectos."}, "Gleichbehandlung": {"de": "Alle Personen werden nach derselben Regel behandelt.", "es": "igualdad de trato: todas las personas son tratadas según la misma regla."}, "Einwand": {"de": "Ein begründeter Gedanke, der gegen eine Aussage oder Entscheidung spricht.", "es": "objeción: una razón que habla en contra de una afirmación o decisión."}, "Zielkonflikt": {"de": "Zwei wichtige Ziele lassen sich nicht gleichzeitig vollständig verwirklichen.", "es": "conflicto de objetivos: dos objetivos importantes no pueden realizarse completamente al mismo tiempo."}, "begründetes Urteil": {"de": "Eine eigene Bewertung, die durch nachvollziehbare Gründe gestützt wird.", "es": "juicio razonado: una valoración propia apoyada en razones comprensibles."}, "Textsorte": {"de": "Die Form eines Textes, zum Beispiel Tagebucheintrag oder Blogeintrag.", "es": "tipo de texto, por ejemplo una entrada de diario o de blog."}, "reflektiert": {"de": "Denkt bewusst über ein Erlebnis oder einen Gedanken nach und bewertet ihn.", "es": "reflexiona: piensa conscientemente sobre una experiencia o una idea y la valora."}, "nachvollziehbar": {"de": "So erklärt, dass andere den Gedankengang gut verstehen können.", "es": "comprensible / fácil de seguir."}};
+const STORAGE_KEY = "philo-kriterienbogen-gerechte-schule-v1";
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-$$(".toggle").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const box = btn.nextElementSibling;
-    if(!box || !box.classList.contains("translation")) return;
-    const open = box.classList.toggle("open");
-    btn.setAttribute("aria-expanded", String(open));
-    btn.textContent = open ? "Español ausblenden" : "Español";
+function getState(){
+  let state = {statuses:{}, type:"", name:"", reviewer:"", principle:"", positive:"", improve:"", lang:"de"};
+  try{
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
+    if(saved) state = Object.assign(state, saved);
+  }catch(e){}
+  return state;
+}
+let state = getState();
+state.lang = state.lang || "de";
+
+
+function applyLanguage(lang){
+  state.lang = lang === "es" ? "es" : "de";
+  document.body.classList.toggle("lang-es", state.lang === "es");
+  document.documentElement.lang = state.lang === "es" ? "es" : "de";
+  $$(".language-btn").forEach(b=>b.classList.toggle("active", b.dataset.lang===state.lang));
+  updateProgress();
+}
+
+$$(".language-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    applyLanguage(btn.dataset.lang);
+    save();
   });
 });
 
-const pop = $("#op-popover");
-const popContent = $("#op-content");
-$$(".operator").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const key = btn.dataset.op;
-    const x = OPERATORS[key];
+function save(){
+  state.name = $("#name").value;
+  state.reviewer = $("#reviewer").value;
+  state.principle = $("#principle").value;
+  state.positive = $("#positive").value;
+  state.improve = $("#improve").value;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  updateProgress();
+}
+
+function load(){
+  applyLanguage(state.lang || "de");
+  $("#name").value = state.name || "";
+  $("#reviewer").value = state.reviewer || "";
+  $("#principle").value = state.principle || "";
+  $("#positive").value = state.positive || "";
+  $("#improve").value = state.improve || "";
+
+  $$(".criterion").forEach(card=>{
+    const id = card.dataset.id;
+    const value = state.statuses[id];
+    if(value){
+      $$(".status",card).forEach(b=>b.classList.toggle("active", b.dataset.value===value));
+    }
+  });
+  $$(".type-btn").forEach(b=>b.classList.toggle("active", b.dataset.type===state.type));
+  updateProgress();
+}
+
+function updateProgress(){
+  const total = $$(".criterion").length;
+  const done = Object.values(state.statuses).filter(Boolean).length;
+  $("#progress-text").textContent = state.lang==="es" ? `${done} de ${total} criterios evaluados` : `${done} von ${total} Kriterien bewertet`;
+  $("#progress-bar").style.width = `${Math.round(done/total*100)}%`;
+
+  const counts = {erfuellt:0, teilweise:0, offen:0};
+  Object.values(state.statuses).forEach(v=>{ if(counts[v]!==undefined) counts[v]++; });
+  $("#summary").innerHTML = done
+    ? (state.lang==="es" ? `<strong>Resumen:</strong> ${counts.erfuellt} cumplidos · ${counts.teilweise} parcialmente cumplidos · ${counts.offen} pendientes` : `<strong>Übersicht:</strong> ${counts.erfuellt} erfüllt · ${counts.teilweise} teilweise erfüllt · ${counts.offen} noch offen`)
+    : (state.lang==="es" ? `<strong>Resumen:</strong> Aún no se ha evaluado ningún criterio.` : `<strong>Übersicht:</strong> Noch keine Kriterien bewertet.`);
+}
+
+$$(".criterion").forEach(card=>{
+  const id = card.dataset.id;
+  $$(".status",card).forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      state.statuses[id] = btn.dataset.value;
+      $$(".status",card).forEach(b=>b.classList.toggle("active", b===btn));
+      save();
+    });
+  });
+
+  const explainBtn = $(".explain-btn",card);
+  const panel = $(".help-panel",card);
+  explainBtn.addEventListener("click",()=>{
+    const open = panel.classList.toggle("open");
+    explainBtn.setAttribute("aria-expanded", String(open));
+
+  });
+
+  const esBtn = $(".spanish-btn",card);
+  const es = $(".spanish",card);
+  esBtn.addEventListener("click",()=>{
+    const open = es.classList.toggle("open");
+    esBtn.setAttribute("aria-expanded", String(open));
+    esBtn.textContent = open ? "Español ausblenden" : "Español";
+  });
+});
+
+$$(".type-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    state.type = btn.dataset.type;
+    $$(".type-btn").forEach(b=>b.classList.toggle("active", b===btn));
+    save();
+  });
+});
+
+["name","reviewer","principle","positive","improve"].forEach(id=>{
+  $("#"+id).addEventListener("input", save);
+});
+
+const pop = $("#term-popover");
+const popContent = $("#term-content");
+$$(".term").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const x = TERMS[btn.dataset.term];
     if(!x) return;
-    popContent.innerHTML = `<strong>${esc(btn.textContent)}</strong><div class="de">${esc(x.de)}</div><div class="es" lang="es">${esc(x.es)}</div>`;
+    popContent.innerHTML = `<strong>${esc(btn.textContent)}</strong><div>${esc(x.de)}</div><div class="es" lang="es">${esc(x.es)}</div>`;
     pop.classList.add("open");
   });
 });
-$("#close-pop").addEventListener("click", () => pop.classList.remove("open"));
-document.addEventListener("keydown", e => { if(e.key === "Escape") pop.classList.remove("open"); });
+$("#close-pop").addEventListener("click",()=>pop.classList.remove("open"));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")pop.classList.remove("open")});
+
+$("#reset-btn").addEventListener("click",()=>{
+  if(confirm(state.lang==="es" ? "¿Borrar todas las entradas y evaluaciones de este dispositivo?" : "Alle Eingaben und Bewertungen auf diesem Gerät löschen?")){
+    localStorage.removeItem(STORAGE_KEY);
+    state = {statuses:{}, type:"", name:"", reviewer:"", principle:"", positive:"", improve:"", lang:state.lang || "de"};
+    $$(".status,.type-btn").forEach(b=>b.classList.remove("active"));
+    ["name","reviewer","principle","positive","improve"].forEach(id=>$("#"+id).value="");
+    updateProgress();
+  }
+});
+
+load();
 </script>
 </body>
 </html>
